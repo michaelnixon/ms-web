@@ -1,0 +1,3555 @@
+  [1m[36m (1.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateBootsyImages (20140529003853)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "bootsy_images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image_file" varchar(255), "image_gallery_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140529003853"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Migrating to CreateBootsyImageGalleries (20140529003854)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "bootsy_image_galleries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "bootsy_resource_id" integer, "bootsy_resource_type" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140529003854"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-28 17:39:33 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/railties-4.1.1/lib/rails/templates/rails/welcome/index.html.erb (2.9ms)
+Completed 200 OK in 18ms (Views: 10.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages" for 127.0.0.1 at 2014-05-28 17:39:39 -0700
+
+ActionController::RoutingError (No route matches [GET] "/pages"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/michaelnixon/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/michaelnixon/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/michaelnixon/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.1ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.4ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (8.2ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (43.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-30 10:26:07 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/railties-4.1.1/lib/rails/templates/rails/welcome/index.html.erb (1.7ms)
+Completed 200 OK in 16ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-30 10:30:09 -0700
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+):
+  activerecord (4.1.1) lib/active_record/migration.rb:389:in `check_pending!'
+  activerecord (4.1.1) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/michaelnixon/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/michaelnixon/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/michaelnixon/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.5ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateCategories (20140530173003)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "categories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140530173003"]]
+  [1m[36m (3.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-30 10:30:20 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/railties-4.1.1/lib/rails/templates/rails/welcome/index.html.erb (0.0ms)
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2014-05-30 10:30:25 -0700
+Processing by CategoriesController#index as HTML
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered categories/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 748ms (Views: 746.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-05-30 10:30:25 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-05-30 10:30:25 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-submenu.css?body=1" for 127.0.0.1 at 2014-05-30 10:30:25 -0700
+
+
+Started GET "/assets/bootsy/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 10:30:25 -0700
+
+
+Started GET "/assets/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 10:30:25 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.css?body=1" for 127.0.0.1 at 2014-05-30 10:30:25 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-30 10:30:25 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-30 10:30:25 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-30 10:30:25 -0700
+
+
+Started GET "/assets/jquery.iframe-transport.js?body=1" for 127.0.0.1 at 2014-05-30 10:30:25 -0700
+
+
+Started GET "/assets/jquery.remotipart.js?body=1" for 127.0.0.1 at 2014-05-30 10:30:25 -0700
+
+
+Started GET "/assets/bootsy/wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 10:30:25 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 10:30:25 -0700
+
+
+Started GET "/assets/bootsy/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 10:30:25 -0700
+
+
+Started GET "/assets/bootsy/bootstrap.file-input.js?body=1" for 127.0.0.1 at 2014-05-30 10:30:26 -0700
+
+
+Started GET "/assets/bootsy/init.js?body=1" for 127.0.0.1 at 2014-05-30 10:30:26 -0700
+
+
+Started GET "/assets/bootsy/editor_options.js?body=1" for 127.0.0.1 at 2014-05-30 10:30:26 -0700
+
+
+Started GET "/assets/bootsy/translations.js?body=1" for 127.0.0.1 at 2014-05-30 10:30:26 -0700
+
+
+Started GET "/assets/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 10:30:26 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-30 10:30:26 -0700
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-05-30 10:30:26 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-30 10:30:26 -0700
+
+
+Started GET "/categories/new" for 127.0.0.1 at 2014-05-30 10:30:27 -0700
+Processing by CategoriesController#new as HTML
+  Rendered categories/_form.html.erb (19.1ms)
+  Rendered categories/new.html.erb within layouts/application (22.9ms)
+Completed 200 OK in 31ms (Views: 29.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/categories" for 127.0.0.1 at 2014-05-30 10:30:46 -0700
+Processing by CategoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"H5Aqlzf7RhTArBcjCOFD+y+3gOxL/n5Ho3XiDHnMlWU=", "category"=>{"name"=>"Event"}, "commit"=>"Create Category"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "categories" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", "2014-05-30 17:30:46.776532"], ["name", "Event"], ["updated_at", "2014-05-30 17:30:46.776532"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/categories/1
+Completed 302 Found in 27ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2014-05-30 10:30:46 -0700
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories"  WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered categories/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 10ms (Views: 7.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-30 10:30:46 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-05-30 10:30:46 -0700
+
+
+Started GET "/assets/bootsy/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 10:30:46 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-submenu.css?body=1" for 127.0.0.1 at 2014-05-30 10:30:46 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.css?body=1" for 127.0.0.1 at 2014-05-30 10:30:46 -0700
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-05-30 10:30:46 -0700
+
+
+Started GET "/assets/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 10:30:46 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-30 10:30:46 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-30 10:30:46 -0700
+
+
+Started GET "/assets/jquery.iframe-transport.js?body=1" for 127.0.0.1 at 2014-05-30 10:30:46 -0700
+
+
+Started GET "/assets/jquery.remotipart.js?body=1" for 127.0.0.1 at 2014-05-30 10:30:46 -0700
+
+
+Started GET "/assets/bootsy/wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 10:30:46 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 10:30:46 -0700
+
+
+Started GET "/assets/bootsy/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 10:30:46 -0700
+
+
+Started GET "/assets/bootsy/bootstrap.file-input.js?body=1" for 127.0.0.1 at 2014-05-30 10:30:46 -0700
+
+
+Started GET "/assets/bootsy/init.js?body=1" for 127.0.0.1 at 2014-05-30 10:30:46 -0700
+
+
+Started GET "/assets/bootsy/editor_options.js?body=1" for 127.0.0.1 at 2014-05-30 10:30:46 -0700
+
+
+Started GET "/assets/bootsy/translations.js?body=1" for 127.0.0.1 at 2014-05-30 10:30:46 -0700
+
+
+Started GET "/assets/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 10:30:46 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-30 10:30:46 -0700
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-05-30 10:30:46 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-30 10:30:46 -0700
+
+
+Started GET "/categories" for 127.0.0.1 at 2014-05-30 10:30:48 -0700
+Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered categories/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/categories/new" for 127.0.0.1 at 2014-05-30 10:30:49 -0700
+Processing by CategoriesController#new as HTML
+  Rendered categories/_form.html.erb (1.6ms)
+  Rendered categories/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/categories" for 127.0.0.1 at 2014-05-30 10:30:58 -0700
+Processing by CategoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"H5Aqlzf7RhTArBcjCOFD+y+3gOxL/n5Ho3XiDHnMlWU=", "category"=>{"name"=>"People"}, "commit"=>"Create Category"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "categories" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-05-30 17:30:58.268573"], ["name", "People"], ["updated_at", "2014-05-30 17:30:58.268573"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/categories/2
+Completed 302 Found in 4ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/categories/2" for 127.0.0.1 at 2014-05-30 10:30:58 -0700
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories"  WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered categories/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-05-30 10:30:58 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-05-30 10:30:58 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.css?body=1" for 127.0.0.1 at 2014-05-30 10:30:58 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-30 10:30:58 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-submenu.css?body=1" for 127.0.0.1 at 2014-05-30 10:30:58 -0700
+
+
+Started GET "/assets/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 10:30:58 -0700
+
+
+Started GET "/assets/bootsy/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 10:30:58 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-30 10:30:58 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-30 10:30:58 -0700
+
+
+Started GET "/assets/jquery.iframe-transport.js?body=1" for 127.0.0.1 at 2014-05-30 10:30:58 -0700
+
+
+Started GET "/assets/jquery.remotipart.js?body=1" for 127.0.0.1 at 2014-05-30 10:30:58 -0700
+
+
+Started GET "/assets/bootsy/wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 10:30:58 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 10:30:58 -0700
+
+
+Started GET "/assets/bootsy/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 10:30:58 -0700
+
+
+Started GET "/assets/bootsy/bootstrap.file-input.js?body=1" for 127.0.0.1 at 2014-05-30 10:30:58 -0700
+
+
+Started GET "/assets/bootsy/editor_options.js?body=1" for 127.0.0.1 at 2014-05-30 10:30:58 -0700
+
+
+Started GET "/assets/bootsy/translations.js?body=1" for 127.0.0.1 at 2014-05-30 10:30:58 -0700
+
+
+Started GET "/assets/bootsy/init.js?body=1" for 127.0.0.1 at 2014-05-30 10:30:58 -0700
+
+
+Started GET "/assets/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 10:30:58 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-30 10:30:58 -0700
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-05-30 10:30:58 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-30 10:30:58 -0700
+
+
+Started GET "/categories" for 127.0.0.1 at 2014-05-30 10:30:59 -0700
+Processing by CategoriesController#index as HTML
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered categories/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/categories/new" for 127.0.0.1 at 2014-05-30 10:31:00 -0700
+Processing by CategoriesController#new as HTML
+  Rendered categories/_form.html.erb (1.3ms)
+  Rendered categories/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/categories" for 127.0.0.1 at 2014-05-30 10:31:03 -0700
+Processing by CategoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"H5Aqlzf7RhTArBcjCOFD+y+3gOxL/n5Ho3XiDHnMlWU=", "category"=>{"name"=>"Technology"}, "commit"=>"Create Category"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "categories" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", "2014-05-30 17:31:03.176015"], ["name", "Technology"], ["updated_at", "2014-05-30 17:31:03.176015"]]
+  [1m[36m (2.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/categories/3
+Completed 302 Found in 5ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/categories/3" for 127.0.0.1 at 2014-05-30 10:31:03 -0700
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories"  WHERE "categories"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered categories/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-30 10:31:03 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-05-30 10:31:03 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.css?body=1" for 127.0.0.1 at 2014-05-30 10:31:03 -0700
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-05-30 10:31:03 -0700
+
+
+Started GET "/assets/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 10:31:03 -0700
+
+
+Started GET "/assets/bootsy/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 10:31:03 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-submenu.css?body=1" for 127.0.0.1 at 2014-05-30 10:31:03 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-30 10:31:03 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-30 10:31:03 -0700
+
+
+Started GET "/assets/jquery.iframe-transport.js?body=1" for 127.0.0.1 at 2014-05-30 10:31:03 -0700
+
+
+Started GET "/assets/jquery.remotipart.js?body=1" for 127.0.0.1 at 2014-05-30 10:31:03 -0700
+
+
+Started GET "/assets/bootsy/wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 10:31:03 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 10:31:03 -0700
+
+
+Started GET "/assets/bootsy/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 10:31:03 -0700
+
+
+Started GET "/assets/bootsy/bootstrap.file-input.js?body=1" for 127.0.0.1 at 2014-05-30 10:31:03 -0700
+
+
+Started GET "/assets/bootsy/init.js?body=1" for 127.0.0.1 at 2014-05-30 10:31:03 -0700
+
+
+Started GET "/assets/bootsy/editor_options.js?body=1" for 127.0.0.1 at 2014-05-30 10:31:03 -0700
+
+
+Started GET "/assets/bootsy/translations.js?body=1" for 127.0.0.1 at 2014-05-30 10:31:03 -0700
+
+
+Started GET "/assets/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 10:31:03 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-30 10:31:03 -0700
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-05-30 10:31:03 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-30 10:31:03 -0700
+
+
+Started GET "/categories" for 127.0.0.1 at 2014-05-30 10:31:04 -0700
+Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered categories/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/categories/new" for 127.0.0.1 at 2014-05-30 10:31:04 -0700
+Processing by CategoriesController#new as HTML
+  Rendered categories/_form.html.erb (1.2ms)
+  Rendered categories/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 9ms (Views: 8.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/categories" for 127.0.0.1 at 2014-05-30 10:31:08 -0700
+Processing by CategoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"H5Aqlzf7RhTArBcjCOFD+y+3gOxL/n5Ho3XiDHnMlWU=", "category"=>{"name"=>"Workshop"}, "commit"=>"Create Category"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "categories" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-05-30 17:31:08.499056"], ["name", "Workshop"], ["updated_at", "2014-05-30 17:31:08.499056"]]
+  [1m[35m (2.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/categories/4
+Completed 302 Found in 5ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/categories/4" for 127.0.0.1 at 2014-05-30 10:31:08 -0700
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories"  WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered categories/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-05-30 10:31:08 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-05-30 10:31:08 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-submenu.css?body=1" for 127.0.0.1 at 2014-05-30 10:31:08 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-30 10:31:08 -0700
+
+
+Started GET "/assets/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 10:31:08 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.css?body=1" for 127.0.0.1 at 2014-05-30 10:31:08 -0700
+
+
+Started GET "/assets/bootsy/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 10:31:08 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-30 10:31:08 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-30 10:31:08 -0700
+
+
+Started GET "/assets/jquery.iframe-transport.js?body=1" for 127.0.0.1 at 2014-05-30 10:31:08 -0700
+
+
+Started GET "/assets/jquery.remotipart.js?body=1" for 127.0.0.1 at 2014-05-30 10:31:08 -0700
+
+
+Started GET "/assets/bootsy/wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 10:31:08 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 10:31:08 -0700
+
+
+Started GET "/assets/bootsy/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 10:31:08 -0700
+
+
+Started GET "/assets/bootsy/bootstrap.file-input.js?body=1" for 127.0.0.1 at 2014-05-30 10:31:08 -0700
+
+
+Started GET "/assets/bootsy/editor_options.js?body=1" for 127.0.0.1 at 2014-05-30 10:31:08 -0700
+
+
+Started GET "/assets/bootsy/init.js?body=1" for 127.0.0.1 at 2014-05-30 10:31:08 -0700
+
+
+Started GET "/assets/bootsy/translations.js?body=1" for 127.0.0.1 at 2014-05-30 10:31:08 -0700
+
+
+Started GET "/assets/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 10:31:08 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-30 10:31:08 -0700
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-05-30 10:31:08 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-30 10:31:08 -0700
+
+
+Started GET "/categories" for 127.0.0.1 at 2014-05-30 10:31:09 -0700
+Processing by CategoriesController#index as HTML
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered categories/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/categories/new" for 127.0.0.1 at 2014-05-30 10:31:14 -0700
+Processing by CategoriesController#new as HTML
+  Rendered categories/_form.html.erb (1.3ms)
+  Rendered categories/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 9ms (Views: 8.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/categories" for 127.0.0.1 at 2014-05-30 10:31:21 -0700
+Processing by CategoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"H5Aqlzf7RhTArBcjCOFD+y+3gOxL/n5Ho3XiDHnMlWU=", "category"=>{"name"=>"Performance"}, "commit"=>"Create Category"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "categories" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", "2014-05-30 17:31:21.969064"], ["name", "Performance"], ["updated_at", "2014-05-30 17:31:21.969064"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/categories/5
+Completed 302 Found in 3ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/categories/5" for 127.0.0.1 at 2014-05-30 10:31:21 -0700
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories"  WHERE "categories"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered categories/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-05-30 10:31:22 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-30 10:31:22 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-05-30 10:31:22 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-submenu.css?body=1" for 127.0.0.1 at 2014-05-30 10:31:22 -0700
+
+
+Started GET "/assets/bootsy/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 10:31:22 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.css?body=1" for 127.0.0.1 at 2014-05-30 10:31:22 -0700
+
+
+Started GET "/assets/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 10:31:22 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-30 10:31:22 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-30 10:31:22 -0700
+
+
+Started GET "/assets/bootsy/wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 10:31:22 -0700
+
+
+Started GET "/assets/jquery.remotipart.js?body=1" for 127.0.0.1 at 2014-05-30 10:31:22 -0700
+
+
+Started GET "/assets/jquery.iframe-transport.js?body=1" for 127.0.0.1 at 2014-05-30 10:31:22 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 10:31:22 -0700
+
+
+Started GET "/assets/bootsy/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 10:31:22 -0700
+
+
+Started GET "/assets/bootsy/bootstrap.file-input.js?body=1" for 127.0.0.1 at 2014-05-30 10:31:22 -0700
+
+
+Started GET "/assets/bootsy/editor_options.js?body=1" for 127.0.0.1 at 2014-05-30 10:31:22 -0700
+
+
+Started GET "/assets/bootsy/translations.js?body=1" for 127.0.0.1 at 2014-05-30 10:31:22 -0700
+
+
+Started GET "/assets/bootsy/init.js?body=1" for 127.0.0.1 at 2014-05-30 10:31:22 -0700
+
+
+Started GET "/assets/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 10:31:22 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-30 10:31:22 -0700
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-05-30 10:31:22 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-30 10:31:22 -0700
+
+
+Started GET "/categories" for 127.0.0.1 at 2014-05-30 10:31:23 -0700
+Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered categories/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.1ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateItems (20140530173347)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "body" text, "preview" text, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140530173347"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddCategoryRefToItems (20140530173613)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "items" ADD "category_id" integer[0m
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_items_on_category_id" ON "items" ("category_id")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140530173613"]]
+  [1m[36m (7.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_items_on_category_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_items_on_category_id' AND type='index'
+[0m
+
+
+Started GET "/items" for 127.0.0.1 at 2014-05-30 10:41:05 -0700
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered items/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 115ms (Views: 112.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-05-30 10:41:06 -0700
+
+
+Started GET "/assets/items.css?body=1" for 127.0.0.1 at 2014-05-30 10:41:06 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-05-30 10:41:06 -0700
+
+
+Started GET "/assets/bootsy/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 10:41:06 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-submenu.css?body=1" for 127.0.0.1 at 2014-05-30 10:41:06 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-30 10:41:06 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.css?body=1" for 127.0.0.1 at 2014-05-30 10:41:06 -0700
+
+
+Started GET "/assets/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 10:41:06 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-30 10:41:06 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-30 10:41:06 -0700
+
+
+Started GET "/assets/jquery.iframe-transport.js?body=1" for 127.0.0.1 at 2014-05-30 10:41:06 -0700
+
+
+Started GET "/assets/jquery.remotipart.js?body=1" for 127.0.0.1 at 2014-05-30 10:41:06 -0700
+
+
+Started GET "/assets/bootsy/wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 10:41:06 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 10:41:06 -0700
+
+
+Started GET "/assets/bootsy/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 10:41:06 -0700
+
+
+Started GET "/assets/bootsy/init.js?body=1" for 127.0.0.1 at 2014-05-30 10:41:06 -0700
+
+
+Started GET "/assets/bootsy/bootstrap.file-input.js?body=1" for 127.0.0.1 at 2014-05-30 10:41:06 -0700
+
+
+Started GET "/assets/bootsy/editor_options.js?body=1" for 127.0.0.1 at 2014-05-30 10:41:06 -0700
+
+
+Started GET "/assets/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 10:41:06 -0700
+
+
+Started GET "/assets/bootsy/translations.js?body=1" for 127.0.0.1 at 2014-05-30 10:41:06 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-30 10:41:06 -0700
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-05-30 10:41:06 -0700
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2014-05-30 10:41:06 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-30 10:41:06 -0700
+
+
+Started GET "/items/new" for 127.0.0.1 at 2014-05-30 10:41:07 -0700
+Processing by ItemsController#new as HTML
+  Rendered items/_form.html.erb (9.7ms)
+  Rendered items/new.html.erb within layouts/application (10.8ms)
+Completed 500 Internal Server Error in 14ms
+
+ActionView::Template::Error (undefined method `movement_group_id' for #<Item:0x00000105afa310>):
+    27:   </div>
+    28:   <div class="field">
+    29: 	<%= f.label :movement_group %>
+    30: 	<%= f.collection_select :movement_group_id, @movement_groups, :id, :name %>
+    31:   </div>
+    32:   <div class="actions">
+    33:     <%= f.submit %>
+  app/views/items/_form.html.erb:30:in `block in _app_views_items__form_html_erb___3965892272751077658_2195133640'
+  app/views/items/_form.html.erb:1:in `_app_views_items__form_html_erb___3965892272751077658_2195133640'
+  app/views/items/new.html.erb:3:in `_app_views_items_new_html_erb___1591148289512116181_2195168820'
+
+
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (13.7ms)
+
+
+Started GET "/items/new" for 127.0.0.1 at 2014-05-30 10:41:07 -0700
+Processing by ItemsController#new as HTML
+  Rendered items/_form.html.erb (2.9ms)
+  Rendered items/new.html.erb within layouts/application (3.7ms)
+Completed 500 Internal Server Error in 6ms
+
+ActionView::Template::Error (undefined method `movement_group_id' for #<Item:0x00000102f02c80>):
+    27:   </div>
+    28:   <div class="field">
+    29: 	<%= f.label :movement_group %>
+    30: 	<%= f.collection_select :movement_group_id, @movement_groups, :id, :name %>
+    31:   </div>
+    32:   <div class="actions">
+    33:     <%= f.submit %>
+  app/views/items/_form.html.erb:30:in `block in _app_views_items__form_html_erb___3965892272751077658_2172031800'
+  app/views/items/_form.html.erb:1:in `_app_views_items__form_html_erb___3965892272751077658_2172031800'
+  app/views/items/new.html.erb:3:in `_app_views_items_new_html_erb___1591148289512116181_2172111580'
+
+
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (10.3ms)
+
+
+Started GET "/items/new" for 127.0.0.1 at 2014-05-30 10:42:16 -0700
+Processing by ItemsController#new as HTML
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered items/_form.html.erb (8.5ms)
+  Rendered items/new.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 26ms (Views: 16.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-05-30 10:42:16 -0700
+
+
+Started GET "/assets/bootsy/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 10:42:16 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-05-30 10:42:16 -0700
+
+
+Started GET "/assets/items.css?body=1" for 127.0.0.1 at 2014-05-30 10:42:16 -0700
+
+
+Started GET "/assets/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 10:42:16 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-30 10:42:16 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-30 10:42:16 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-submenu.css?body=1" for 127.0.0.1 at 2014-05-30 10:42:16 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-30 10:42:16 -0700
+
+
+Started GET "/assets/jquery.iframe-transport.js?body=1" for 127.0.0.1 at 2014-05-30 10:42:16 -0700
+
+
+Started GET "/assets/jquery.remotipart.js?body=1" for 127.0.0.1 at 2014-05-30 10:42:16 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.css?body=1" for 127.0.0.1 at 2014-05-30 10:42:16 -0700
+
+
+Started GET "/assets/bootsy/wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 10:42:16 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 10:42:16 -0700
+
+
+Started GET "/assets/bootsy/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 10:42:16 -0700
+
+
+Started GET "/assets/bootsy/bootstrap.file-input.js?body=1" for 127.0.0.1 at 2014-05-30 10:42:16 -0700
+
+
+Started GET "/assets/bootsy/init.js?body=1" for 127.0.0.1 at 2014-05-30 10:42:16 -0700
+
+
+Started GET "/assets/bootsy/editor_options.js?body=1" for 127.0.0.1 at 2014-05-30 10:42:16 -0700
+
+
+Started GET "/assets/bootsy/translations.js?body=1" for 127.0.0.1 at 2014-05-30 10:42:16 -0700
+
+
+Started GET "/assets/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 10:42:16 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-30 10:42:16 -0700
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-05-30 10:42:16 -0700
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2014-05-30 10:42:16 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-30 10:42:16 -0700
+
+
+Started GET "/items/new" for 127.0.0.1 at 2014-05-30 10:42:35 -0700
+Processing by ItemsController#new as HTML
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered items/_form.html.erb (4.1ms)
+  Rendered items/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-30 10:42:35 -0700
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-05-30 10:42:35 -0700
+
+
+Started GET "/assets/items.css?body=1" for 127.0.0.1 at 2014-05-30 10:42:35 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-05-30 10:42:35 -0700
+
+
+Started GET "/assets/bootsy/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 10:42:35 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.css?body=1" for 127.0.0.1 at 2014-05-30 10:42:35 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-submenu.css?body=1" for 127.0.0.1 at 2014-05-30 10:42:35 -0700
+
+
+Started GET "/assets/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 10:42:35 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-30 10:42:35 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-30 10:42:35 -0700
+
+
+Started GET "/assets/jquery.iframe-transport.js?body=1" for 127.0.0.1 at 2014-05-30 10:42:35 -0700
+
+
+Started GET "/assets/jquery.remotipart.js?body=1" for 127.0.0.1 at 2014-05-30 10:42:35 -0700
+
+
+Started GET "/assets/bootsy/wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 10:42:35 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 10:42:35 -0700
+
+
+Started GET "/assets/bootsy/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 10:42:35 -0700
+
+
+Started GET "/assets/bootsy/bootstrap.file-input.js?body=1" for 127.0.0.1 at 2014-05-30 10:42:35 -0700
+
+
+Started GET "/assets/bootsy/init.js?body=1" for 127.0.0.1 at 2014-05-30 10:42:35 -0700
+
+
+Started GET "/assets/bootsy/editor_options.js?body=1" for 127.0.0.1 at 2014-05-30 10:42:35 -0700
+
+
+Started GET "/assets/bootsy/translations.js?body=1" for 127.0.0.1 at 2014-05-30 10:42:35 -0700
+
+
+Started GET "/assets/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 10:42:35 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-30 10:42:35 -0700
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-05-30 10:42:35 -0700
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2014-05-30 10:42:35 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-30 10:42:35 -0700
+
+
+Started GET "/items/new" for 127.0.0.1 at 2014-05-30 10:43:00 -0700
+Processing by ItemsController#new as HTML
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered items/_form.html.erb (3.5ms)
+  Rendered items/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-05-30 10:43:00 -0700
+
+
+Started GET "/assets/items.css?body=1" for 127.0.0.1 at 2014-05-30 10:43:00 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-05-30 10:43:00 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-30 10:43:00 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-submenu.css?body=1" for 127.0.0.1 at 2014-05-30 10:43:00 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.css?body=1" for 127.0.0.1 at 2014-05-30 10:43:00 -0700
+
+
+Started GET "/assets/bootsy/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 10:43:00 -0700
+
+
+Started GET "/assets/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 10:43:00 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-30 10:43:00 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-30 10:43:00 -0700
+
+
+Started GET "/assets/jquery.remotipart.js?body=1" for 127.0.0.1 at 2014-05-30 10:43:00 -0700
+
+
+Started GET "/assets/jquery.iframe-transport.js?body=1" for 127.0.0.1 at 2014-05-30 10:43:00 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 10:43:00 -0700
+
+
+Started GET "/assets/bootsy/wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 10:43:00 -0700
+
+
+Started GET "/assets/bootsy/bootstrap.file-input.js?body=1" for 127.0.0.1 at 2014-05-30 10:43:00 -0700
+
+
+Started GET "/assets/bootsy/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 10:43:00 -0700
+
+
+Started GET "/assets/bootsy/init.js?body=1" for 127.0.0.1 at 2014-05-30 10:43:00 -0700
+
+
+Started GET "/assets/bootsy/editor_options.js?body=1" for 127.0.0.1 at 2014-05-30 10:43:00 -0700
+
+
+Started GET "/assets/bootsy/translations.js?body=1" for 127.0.0.1 at 2014-05-30 10:43:00 -0700
+
+
+Started GET "/assets/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 10:43:00 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-30 10:43:00 -0700
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-05-30 10:43:00 -0700
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2014-05-30 10:43:00 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-30 10:43:00 -0700
+
+
+Started GET "/items/new" for 127.0.0.1 at 2014-05-30 10:43:11 -0700
+Processing by ItemsController#new as HTML
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered items/_form.html.erb (3.4ms)
+  Rendered items/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 11ms (Views: 10.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-05-30 10:43:11 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-05-30 10:43:11 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-30 10:43:11 -0700
+
+
+Started GET "/assets/items.css?body=1" for 127.0.0.1 at 2014-05-30 10:43:11 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-submenu.css?body=1" for 127.0.0.1 at 2014-05-30 10:43:11 -0700
+
+
+Started GET "/assets/bootsy/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 10:43:11 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.css?body=1" for 127.0.0.1 at 2014-05-30 10:43:11 -0700
+
+
+Started GET "/assets/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 10:43:11 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-30 10:43:11 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-30 10:43:11 -0700
+
+
+Started GET "/assets/jquery.iframe-transport.js?body=1" for 127.0.0.1 at 2014-05-30 10:43:11 -0700
+
+
+Started GET "/assets/jquery.remotipart.js?body=1" for 127.0.0.1 at 2014-05-30 10:43:11 -0700
+
+
+Started GET "/assets/bootsy/wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 10:43:11 -0700
+
+
+Started GET "/assets/bootsy/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 10:43:11 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 10:43:11 -0700
+
+
+Started GET "/assets/bootsy/bootstrap.file-input.js?body=1" for 127.0.0.1 at 2014-05-30 10:43:11 -0700
+
+
+Started GET "/assets/bootsy/init.js?body=1" for 127.0.0.1 at 2014-05-30 10:43:11 -0700
+
+
+Started GET "/assets/bootsy/editor_options.js?body=1" for 127.0.0.1 at 2014-05-30 10:43:11 -0700
+
+
+Started GET "/assets/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 10:43:11 -0700
+
+
+Started GET "/assets/bootsy/translations.js?body=1" for 127.0.0.1 at 2014-05-30 10:43:11 -0700
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-05-30 10:43:11 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-30 10:43:11 -0700
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2014-05-30 10:43:11 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-30 10:43:11 -0700
+
+
+Started GET "/items/new" for 127.0.0.1 at 2014-05-30 10:43:25 -0700
+Processing by ItemsController#new as HTML
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered items/_form.html.erb (3.7ms)
+  Rendered items/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/items.css?body=1" for 127.0.0.1 at 2014-05-30 10:43:25 -0700
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-05-30 10:43:25 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-05-30 10:43:25 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.css?body=1" for 127.0.0.1 at 2014-05-30 10:43:25 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-30 10:43:25 -0700
+
+
+Started GET "/assets/bootsy/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 10:43:25 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-submenu.css?body=1" for 127.0.0.1 at 2014-05-30 10:43:25 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-30 10:43:25 -0700
+
+
+Started GET "/assets/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 10:43:25 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-30 10:43:25 -0700
+
+
+Started GET "/assets/jquery.iframe-transport.js?body=1" for 127.0.0.1 at 2014-05-30 10:43:25 -0700
+
+
+Started GET "/assets/jquery.remotipart.js?body=1" for 127.0.0.1 at 2014-05-30 10:43:25 -0700
+
+
+Started GET "/assets/bootsy/wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 10:43:25 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 10:43:25 -0700
+
+
+Started GET "/assets/bootsy/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 10:43:25 -0700
+
+
+Started GET "/assets/bootsy/bootstrap.file-input.js?body=1" for 127.0.0.1 at 2014-05-30 10:43:25 -0700
+
+
+Started GET "/assets/bootsy/editor_options.js?body=1" for 127.0.0.1 at 2014-05-30 10:43:25 -0700
+
+
+Started GET "/assets/bootsy/translations.js?body=1" for 127.0.0.1 at 2014-05-30 10:43:25 -0700
+
+
+Started GET "/assets/bootsy/init.js?body=1" for 127.0.0.1 at 2014-05-30 10:43:25 -0700
+
+
+Started GET "/assets/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 10:43:25 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-30 10:43:25 -0700
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-05-30 10:43:25 -0700
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2014-05-30 10:43:25 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-30 10:43:25 -0700
+
+
+Started POST "/items" for 127.0.0.1 at 2014-05-30 10:44:26 -0700
+Processing by ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"H5Aqlzf7RhTArBcjCOFD+y+3gOxL/n5Ho3XiDHnMlWU=", "item"=>{"name"=>"May Residency 2014", "preview"=>"The goal of this eight-day residency is to develop a foundation that enables us to create a shared language for modeling movement computationally, experientially and meaningfully.", "body"=>"\r\nDifferent types of sensors are able to measure different low-context properties of human movement, such as the position, velocity, and acceleration of specific body parts. By applying computational techniques to these measurements, we can infer higher-context properties, such as gait information (stride length, walking speed), postural changes (falling, standing up), and energy expenditure. What has been underexplored is how these can properties can be used to recognize higher-context qualities of human...\r\n", "category_id"=>"4"}, "commit"=>"Create Item"}
+Unpermitted parameters: category_id
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "items" ("body", "created_at", "name", "preview", "updated_at") VALUES (?, ?, ?, ?, ?)  [["body", "\r\nDifferent types of sensors are able to measure different low-context properties of human movement, such as the position, velocity, and acceleration of specific body parts. By applying computational techniques to these measurements, we can infer higher-context properties, such as gait information (stride length, walking speed), postural changes (falling, standing up), and energy expenditure. What has been underexplored is how these can properties can be used to recognize higher-context qualities of human...\r\n"], ["created_at", "2014-05-30 17:44:26.447333"], ["name", "May Residency 2014"], ["preview", "The goal of this eight-day residency is to develop a foundation that enables us to create a shared language for modeling movement computationally, experientially and meaningfully."], ["updated_at", "2014-05-30 17:44:26.447333"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/items/1
+Completed 302 Found in 4ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/items/1" for 127.0.0.1 at 2014-05-30 10:44:26 -0700
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items"  WHERE "items"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered items/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-05-30 10:44:26 -0700
+
+
+Started GET "/assets/items.css?body=1" for 127.0.0.1 at 2014-05-30 10:44:26 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-05-30 10:44:26 -0700
+
+
+Started GET "/assets/bootsy/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 10:44:26 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-submenu.css?body=1" for 127.0.0.1 at 2014-05-30 10:44:26 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-30 10:44:26 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.css?body=1" for 127.0.0.1 at 2014-05-30 10:44:26 -0700
+
+
+Started GET "/assets/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 10:44:26 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-30 10:44:26 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-30 10:44:26 -0700
+
+
+Started GET "/assets/jquery.iframe-transport.js?body=1" for 127.0.0.1 at 2014-05-30 10:44:26 -0700
+
+
+Started GET "/assets/jquery.remotipart.js?body=1" for 127.0.0.1 at 2014-05-30 10:44:26 -0700
+
+
+Started GET "/assets/bootsy/wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 10:44:26 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 10:44:26 -0700
+
+
+Started GET "/assets/bootsy/bootstrap.file-input.js?body=1" for 127.0.0.1 at 2014-05-30 10:44:26 -0700
+
+
+Started GET "/assets/bootsy/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 10:44:26 -0700
+
+
+Started GET "/assets/bootsy/init.js?body=1" for 127.0.0.1 at 2014-05-30 10:44:26 -0700
+
+
+Started GET "/assets/bootsy/editor_options.js?body=1" for 127.0.0.1 at 2014-05-30 10:44:26 -0700
+
+
+Started GET "/assets/bootsy/translations.js?body=1" for 127.0.0.1 at 2014-05-30 10:44:26 -0700
+
+
+Started GET "/assets/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 10:44:26 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-30 10:44:26 -0700
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-05-30 10:44:26 -0700
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2014-05-30 10:44:26 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-30 10:44:26 -0700
+
+
+Started GET "/items" for 127.0.0.1 at 2014-05-30 10:44:28 -0700
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered items/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 9ms (Views: 8.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/pages" for 127.0.0.1 at 2014-05-30 10:48:59 -0700
+
+ActionController::RoutingError (No route matches [GET] "/pages"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/michaelnixon/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/michaelnixon/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/michaelnixon/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.8ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.6ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.9ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (30.4ms)
+
+
+Started GET "/pages/main" for 127.0.0.1 at 2014-05-30 10:49:02 -0700
+Processing by PagesController#main as HTML
+  Rendered pages/main.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 112ms (Views: 111.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-05-30 10:49:03 -0700
+
+
+Started GET "/assets/items.css?body=1" for 127.0.0.1 at 2014-05-30 10:49:03 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-05-30 10:49:03 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-05-30 10:49:03 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.css?body=1" for 127.0.0.1 at 2014-05-30 10:49:03 -0700
+
+
+Started GET "/assets/bootsy/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 10:49:03 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-30 10:49:03 -0700
+
+
+Started GET "/assets/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 10:49:03 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-submenu.css?body=1" for 127.0.0.1 at 2014-05-30 10:49:03 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-30 10:49:03 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-30 10:49:03 -0700
+
+
+Started GET "/assets/jquery.iframe-transport.js?body=1" for 127.0.0.1 at 2014-05-30 10:49:03 -0700
+
+
+Started GET "/assets/jquery.remotipart.js?body=1" for 127.0.0.1 at 2014-05-30 10:49:03 -0700
+
+
+Started GET "/assets/bootsy/wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 10:49:03 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 10:49:03 -0700
+
+
+Started GET "/assets/bootsy/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 10:49:03 -0700
+
+
+Started GET "/assets/bootsy/bootstrap.file-input.js?body=1" for 127.0.0.1 at 2014-05-30 10:49:03 -0700
+
+
+Started GET "/assets/bootsy/init.js?body=1" for 127.0.0.1 at 2014-05-30 10:49:03 -0700
+
+
+Started GET "/assets/bootsy/translations.js?body=1" for 127.0.0.1 at 2014-05-30 10:49:03 -0700
+
+
+Started GET "/assets/bootsy/editor_options.js?body=1" for 127.0.0.1 at 2014-05-30 10:49:03 -0700
+
+
+Started GET "/assets/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 10:49:03 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-30 10:49:03 -0700
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-05-30 10:49:03 -0700
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2014-05-30 10:49:03 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-05-30 10:49:03 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-30 10:49:03 -0700
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-30 10:50:08 -0700
+
+ArgumentError (Invalid route name, already in use: 'root' 
+You may have defined two routes with the same name using the `:as` option, or you may be overriding a route already defined by a resource with the same naming. For the latter, you can restrict the routes created with `resources` as explained here: 
+http://guides.rubyonrails.org/routing.html#restricting-the-routes-created):
+  config/routes.rb:3:in `block in <top (required)>'
+  config/routes.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-30 10:50:21 -0700
+Processing by PagesController#main as HTML
+  Rendered pages/main.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-05-30 10:50:21 -0700
+
+
+Started GET "/assets/items.css?body=1" for 127.0.0.1 at 2014-05-30 10:50:21 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-05-30 10:50:21 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.css?body=1" for 127.0.0.1 at 2014-05-30 10:50:21 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-30 10:50:21 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-05-30 10:50:21 -0700
+
+
+Started GET "/assets/bootsy/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 10:50:21 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-submenu.css?body=1" for 127.0.0.1 at 2014-05-30 10:50:21 -0700
+
+
+Started GET "/assets/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 10:50:21 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-30 10:50:21 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-30 10:50:21 -0700
+
+
+Started GET "/assets/jquery.remotipart.js?body=1" for 127.0.0.1 at 2014-05-30 10:50:21 -0700
+
+
+Started GET "/assets/jquery.iframe-transport.js?body=1" for 127.0.0.1 at 2014-05-30 10:50:21 -0700
+
+
+Started GET "/assets/bootsy/wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 10:50:21 -0700
+
+
+Started GET "/assets/bootsy/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 10:50:21 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 10:50:21 -0700
+
+
+Started GET "/assets/bootsy/bootstrap.file-input.js?body=1" for 127.0.0.1 at 2014-05-30 10:50:21 -0700
+
+
+Started GET "/assets/bootsy/init.js?body=1" for 127.0.0.1 at 2014-05-30 10:50:21 -0700
+
+
+Started GET "/assets/bootsy/editor_options.js?body=1" for 127.0.0.1 at 2014-05-30 10:50:21 -0700
+
+
+Started GET "/assets/bootsy/translations.js?body=1" for 127.0.0.1 at 2014-05-30 10:50:21 -0700
+
+
+Started GET "/assets/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 10:50:21 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-30 10:50:21 -0700
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-05-30 10:50:21 -0700
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2014-05-30 10:50:21 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-05-30 10:50:21 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-30 10:50:21 -0700
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-30 10:50:58 -0700
+Processing by PagesController#main as HTML
+  Rendered pages/main.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-05-30 10:50:58 -0700
+
+
+Started GET "/assets/items.css?body=1" for 127.0.0.1 at 2014-05-30 10:50:58 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-05-30 10:50:58 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-05-30 10:50:58 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.css?body=1" for 127.0.0.1 at 2014-05-30 10:50:58 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-submenu.css?body=1" for 127.0.0.1 at 2014-05-30 10:50:58 -0700
+
+
+Started GET "/assets/bootsy/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 10:50:58 -0700
+
+
+Started GET "/assets/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 10:50:58 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-30 10:50:58 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-30 10:50:58 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-30 10:50:58 -0700
+
+
+Started GET "/assets/jquery.iframe-transport.js?body=1" for 127.0.0.1 at 2014-05-30 10:50:58 -0700
+
+
+Started GET "/assets/jquery.remotipart.js?body=1" for 127.0.0.1 at 2014-05-30 10:50:58 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 10:50:58 -0700
+
+
+Started GET "/assets/bootsy/wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 10:50:58 -0700
+
+
+Started GET "/assets/bootsy/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 10:50:58 -0700
+
+
+Started GET "/assets/bootsy/bootstrap.file-input.js?body=1" for 127.0.0.1 at 2014-05-30 10:50:58 -0700
+
+
+Started GET "/assets/bootsy/editor_options.js?body=1" for 127.0.0.1 at 2014-05-30 10:50:58 -0700
+
+
+Started GET "/assets/bootsy/init.js?body=1" for 127.0.0.1 at 2014-05-30 10:50:58 -0700
+
+
+Started GET "/assets/bootsy/translations.js?body=1" for 127.0.0.1 at 2014-05-30 10:50:58 -0700
+
+
+Started GET "/assets/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 10:50:58 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-30 10:50:58 -0700
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-05-30 10:50:58 -0700
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2014-05-30 10:50:58 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-05-30 10:50:58 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-30 10:50:58 -0700
+
+
+Started GET "/about" for 127.0.0.1 at 2014-05-30 10:51:02 -0700
+
+ActionController::RoutingError (No route matches [GET] "/about"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/michaelnixon/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/michaelnixon/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/michaelnixon/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.1ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.6ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (28.5ms)
+
+
+Started GET "/pages/about" for 127.0.0.1 at 2014-05-30 10:51:37 -0700
+Processing by PagesController#about as HTML
+  Rendered pages/about.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-05-30 10:51:37 -0700
+
+
+Started GET "/assets/items.css?body=1" for 127.0.0.1 at 2014-05-30 10:51:37 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-05-30 10:51:37 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.css?body=1" for 127.0.0.1 at 2014-05-30 10:51:37 -0700
+
+
+Started GET "/assets/bootsy/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 10:51:37 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-30 10:51:38 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-05-30 10:51:38 -0700
+
+
+Started GET "/assets/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 10:51:38 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-submenu.css?body=1" for 127.0.0.1 at 2014-05-30 10:51:38 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-30 10:51:38 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-30 10:51:38 -0700
+
+
+Started GET "/assets/jquery.iframe-transport.js?body=1" for 127.0.0.1 at 2014-05-30 10:51:38 -0700
+
+
+Started GET "/assets/jquery.remotipart.js?body=1" for 127.0.0.1 at 2014-05-30 10:51:38 -0700
+
+
+Started GET "/assets/bootsy/wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 10:51:38 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 10:51:38 -0700
+
+
+Started GET "/assets/bootsy/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 10:51:38 -0700
+
+
+Started GET "/assets/bootsy/bootstrap.file-input.js?body=1" for 127.0.0.1 at 2014-05-30 10:51:38 -0700
+
+
+Started GET "/assets/bootsy/init.js?body=1" for 127.0.0.1 at 2014-05-30 10:51:38 -0700
+
+
+Started GET "/assets/bootsy/editor_options.js?body=1" for 127.0.0.1 at 2014-05-30 10:51:38 -0700
+
+
+Started GET "/assets/bootsy/translations.js?body=1" for 127.0.0.1 at 2014-05-30 10:51:38 -0700
+
+
+Started GET "/assets/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 10:51:38 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-30 10:51:38 -0700
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-05-30 10:51:38 -0700
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2014-05-30 10:51:38 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-05-30 10:51:38 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-30 10:51:38 -0700
+
+
+Started GET "/about" for 127.0.0.1 at 2014-05-30 10:51:40 -0700
+
+ActionController::RoutingError (No route matches [GET] "/about"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/michaelnixon/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/michaelnixon/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/michaelnixon/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.9ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.6ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.9ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (26.4ms)
+
+
+Started GET "/bootsy" for 127.0.0.1 at 2014-05-30 10:51:54 -0700
+
+ActionController::RoutingError (No route matches [GET] "/bootsy"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/michaelnixon/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/michaelnixon/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/michaelnixon/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.8ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.6ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.9ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (26.5ms)
+
+
+Started GET "/images" for 127.0.0.1 at 2014-05-30 10:52:02 -0700
+
+ActionController::RoutingError (No route matches [GET] "/images"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/michaelnixon/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/michaelnixon/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/michaelnixon/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.8ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.6ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (26.9ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2014-05-30 10:56:09 -0700
+
+ArgumentError (Missing :action key on routes definition, please check your routes.):
+  config/routes.rb:4:in `block in <top (required)>'
+  config/routes.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.4ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2014-05-30 10:57:36 -0700
+
+ActionController::RoutingError (uninitialized constant Pages):
+  activesupport (4.1.1) lib/active_support/inflector/methods.rb:238:in `const_get'
+  activesupport (4.1.1) lib/active_support/inflector/methods.rb:238:in `block in constantize'
+  activesupport (4.1.1) lib/active_support/inflector/methods.rb:236:in `each'
+  activesupport (4.1.1) lib/active_support/inflector/methods.rb:236:in `inject'
+  activesupport (4.1.1) lib/active_support/inflector/methods.rb:236:in `constantize'
+  actionpack (4.1.1) lib/action_dispatch/routing/route_set.rb:76:in `controller_reference'
+  actionpack (4.1.1) lib/action_dispatch/routing/route_set.rb:66:in `controller'
+  actionpack (4.1.1) lib/action_dispatch/routing/route_set.rb:44:in `call'
+  actionpack (4.1.1) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.1) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.1) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.1) lib/action_dispatch/routing/route_set.rb:676:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  remotipart (1.2.1) lib/remotipart/middleware.rb:27:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.1) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/michaelnixon/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/michaelnixon/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/michaelnixon/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.1ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.8ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.9ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (33.2ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2014-05-30 10:57:52 -0700
+Processing by PagesController#about as HTML
+  Rendered pages/about.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-05-30 10:57:52 -0700
+
+
+Started GET "/assets/items.css?body=1" for 127.0.0.1 at 2014-05-30 10:57:52 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-05-30 10:57:52 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.css?body=1" for 127.0.0.1 at 2014-05-30 10:57:52 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-05-30 10:57:52 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-30 10:57:52 -0700
+
+
+Started GET "/assets/bootsy/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 10:57:52 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-submenu.css?body=1" for 127.0.0.1 at 2014-05-30 10:57:52 -0700
+
+
+Started GET "/assets/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 10:57:52 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-30 10:57:52 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-30 10:57:52 -0700
+
+
+Started GET "/assets/jquery.iframe-transport.js?body=1" for 127.0.0.1 at 2014-05-30 10:57:52 -0700
+
+
+Started GET "/assets/jquery.remotipart.js?body=1" for 127.0.0.1 at 2014-05-30 10:57:52 -0700
+
+
+Started GET "/assets/bootsy/wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 10:57:52 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 10:57:52 -0700
+
+
+Started GET "/assets/bootsy/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 10:57:52 -0700
+
+
+Started GET "/assets/bootsy/bootstrap.file-input.js?body=1" for 127.0.0.1 at 2014-05-30 10:57:52 -0700
+
+
+Started GET "/assets/bootsy/init.js?body=1" for 127.0.0.1 at 2014-05-30 10:57:52 -0700
+
+
+Started GET "/assets/bootsy/editor_options.js?body=1" for 127.0.0.1 at 2014-05-30 10:57:52 -0700
+
+
+Started GET "/assets/bootsy/translations.js?body=1" for 127.0.0.1 at 2014-05-30 10:57:52 -0700
+
+
+Started GET "/assets/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 10:57:52 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-30 10:57:52 -0700
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-05-30 10:57:52 -0700
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2014-05-30 10:57:52 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-30 10:57:52 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-05-30 10:57:52 -0700
+
+
+Started GET "/about" for 127.0.0.1 at 2014-05-30 10:58:00 -0700
+Processing by PagesController#about as HTML
+  Rendered pages/about.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-05-30 10:58:00 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-30 10:58:00 -0700
+
+
+Started GET "/assets/items.css?body=1" for 127.0.0.1 at 2014-05-30 10:58:00 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-05-30 10:58:00 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-submenu.css?body=1" for 127.0.0.1 at 2014-05-30 10:58:00 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-05-30 10:58:00 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.css?body=1" for 127.0.0.1 at 2014-05-30 10:58:00 -0700
+
+
+Started GET "/assets/bootsy/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 10:58:00 -0700
+
+
+Started GET "/assets/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 10:58:00 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-30 10:58:00 -0700
+
+
+Started GET "/assets/jquery.iframe-transport.js?body=1" for 127.0.0.1 at 2014-05-30 10:58:00 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-30 10:58:00 -0700
+
+
+Started GET "/assets/jquery.remotipart.js?body=1" for 127.0.0.1 at 2014-05-30 10:58:00 -0700
+
+
+Started GET "/assets/bootsy/wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 10:58:00 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 10:58:00 -0700
+
+
+Started GET "/assets/bootsy/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 10:58:00 -0700
+
+
+Started GET "/assets/bootsy/bootstrap.file-input.js?body=1" for 127.0.0.1 at 2014-05-30 10:58:00 -0700
+
+
+Started GET "/assets/bootsy/init.js?body=1" for 127.0.0.1 at 2014-05-30 10:58:00 -0700
+
+
+Started GET "/assets/bootsy/editor_options.js?body=1" for 127.0.0.1 at 2014-05-30 10:58:00 -0700
+
+
+Started GET "/assets/bootsy/translations.js?body=1" for 127.0.0.1 at 2014-05-30 10:58:00 -0700
+
+
+Started GET "/assets/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 10:58:00 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-30 10:58:00 -0700
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-05-30 10:58:00 -0700
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2014-05-30 10:58:00 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-05-30 10:58:00 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-30 10:58:00 -0700
+
+
+Started GET "/pages/about" for 127.0.0.1 at 2014-05-30 10:58:04 -0700
+Processing by PagesController#about as HTML
+  Rendered pages/about.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-05-30 10:58:04 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-05-30 10:58:04 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-30 10:58:04 -0700
+
+
+Started GET "/assets/items.css?body=1" for 127.0.0.1 at 2014-05-30 10:58:04 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-05-30 10:58:04 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-submenu.css?body=1" for 127.0.0.1 at 2014-05-30 10:58:04 -0700
+
+
+Started GET "/assets/bootsy/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 10:58:04 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.css?body=1" for 127.0.0.1 at 2014-05-30 10:58:04 -0700
+
+
+Started GET "/assets/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 10:58:04 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-30 10:58:04 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-30 10:58:04 -0700
+
+
+Started GET "/assets/jquery.iframe-transport.js?body=1" for 127.0.0.1 at 2014-05-30 10:58:04 -0700
+
+
+Started GET "/assets/jquery.remotipart.js?body=1" for 127.0.0.1 at 2014-05-30 10:58:04 -0700
+
+
+Started GET "/assets/bootsy/wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 10:58:04 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 10:58:04 -0700
+
+
+Started GET "/assets/bootsy/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 10:58:04 -0700
+
+
+Started GET "/assets/bootsy/bootstrap.file-input.js?body=1" for 127.0.0.1 at 2014-05-30 10:58:04 -0700
+
+
+Started GET "/assets/bootsy/init.js?body=1" for 127.0.0.1 at 2014-05-30 10:58:04 -0700
+
+
+Started GET "/assets/bootsy/editor_options.js?body=1" for 127.0.0.1 at 2014-05-30 10:58:04 -0700
+
+
+Started GET "/assets/bootsy/translations.js?body=1" for 127.0.0.1 at 2014-05-30 10:58:04 -0700
+
+
+Started GET "/assets/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 10:58:04 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-30 10:58:04 -0700
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-05-30 10:58:04 -0700
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2014-05-30 10:58:04 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-05-30 10:58:04 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-30 10:58:04 -0700
+
+
+Started GET "/contact" for 127.0.0.1 at 2014-05-30 10:58:23 -0700
+Processing by PagesController#contact as HTML
+  Rendered pages/contact.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-05-30 10:58:23 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-30 10:58:23 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-05-30 10:58:23 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-submenu.css?body=1" for 127.0.0.1 at 2014-05-30 10:58:23 -0700
+
+
+Started GET "/assets/items.css?body=1" for 127.0.0.1 at 2014-05-30 10:58:23 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-05-30 10:58:23 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.css?body=1" for 127.0.0.1 at 2014-05-30 10:58:23 -0700
+
+
+Started GET "/assets/bootsy/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 10:58:23 -0700
+
+
+Started GET "/assets/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 10:58:23 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-30 10:58:23 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-30 10:58:23 -0700
+
+
+Started GET "/assets/jquery.iframe-transport.js?body=1" for 127.0.0.1 at 2014-05-30 10:58:23 -0700
+
+
+Started GET "/assets/bootsy/wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 10:58:23 -0700
+
+
+Started GET "/assets/jquery.remotipart.js?body=1" for 127.0.0.1 at 2014-05-30 10:58:23 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 10:58:23 -0700
+
+
+Started GET "/assets/bootsy/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 10:58:23 -0700
+
+
+Started GET "/assets/bootsy/bootstrap.file-input.js?body=1" for 127.0.0.1 at 2014-05-30 10:58:23 -0700
+
+
+Started GET "/assets/bootsy/init.js?body=1" for 127.0.0.1 at 2014-05-30 10:58:23 -0700
+
+
+Started GET "/assets/bootsy/editor_options.js?body=1" for 127.0.0.1 at 2014-05-30 10:58:23 -0700
+
+
+Started GET "/assets/bootsy/translations.js?body=1" for 127.0.0.1 at 2014-05-30 10:58:23 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-30 10:58:23 -0700
+
+
+Started GET "/assets/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 10:58:23 -0700
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-05-30 10:58:23 -0700
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2014-05-30 10:58:23 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-05-30 10:58:23 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-30 10:58:23 -0700
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-30 11:13:40 -0700
+Processing by PagesController#main as HTML
+  Rendered pages/main.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-05-30 11:13:41 -0700
+
+
+Started GET "/assets/items.css?body=1" for 127.0.0.1 at 2014-05-30 11:13:41 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.css?body=1" for 127.0.0.1 at 2014-05-30 11:13:41 -0700
+
+
+Started GET "/assets/bootsy/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 11:13:41 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-05-30 11:13:41 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-05-30 11:13:41 -0700
+
+
+Started GET "/assets/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 11:13:41 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-30 11:13:41 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-30 11:13:41 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-submenu.css?body=1" for 127.0.0.1 at 2014-05-30 11:13:41 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-30 11:13:41 -0700
+
+
+Started GET "/assets/jquery.iframe-transport.js?body=1" for 127.0.0.1 at 2014-05-30 11:13:41 -0700
+
+
+Started GET "/assets/jquery.remotipart.js?body=1" for 127.0.0.1 at 2014-05-30 11:13:41 -0700
+
+
+Started GET "/assets/bootsy/wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 11:13:41 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 11:13:41 -0700
+
+
+Started GET "/assets/bootsy/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 11:13:41 -0700
+
+
+Started GET "/assets/bootsy/bootstrap.file-input.js?body=1" for 127.0.0.1 at 2014-05-30 11:13:41 -0700
+
+
+Started GET "/assets/bootsy/init.js?body=1" for 127.0.0.1 at 2014-05-30 11:13:41 -0700
+
+
+Started GET "/assets/bootsy/editor_options.js?body=1" for 127.0.0.1 at 2014-05-30 11:13:41 -0700
+
+
+Started GET "/assets/bootsy/translations.js?body=1" for 127.0.0.1 at 2014-05-30 11:13:41 -0700
+
+
+Started GET "/assets/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 11:13:41 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-30 11:13:41 -0700
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-05-30 11:13:41 -0700
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2014-05-30 11:13:41 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-05-30 11:13:41 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-30 11:13:41 -0700
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-30 11:16:16 -0700
+Processing by PagesController#main as HTML
+  Rendered pages/main.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-05-30 11:16:16 -0700
+
+
+Started GET "/assets/items.css?body=1" for 127.0.0.1 at 2014-05-30 11:16:16 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-05-30 11:16:16 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-05-30 11:16:16 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-30 11:16:16 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.css?body=1" for 127.0.0.1 at 2014-05-30 11:16:16 -0700
+
+
+Started GET "/assets/bootsy/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 11:16:16 -0700
+
+
+Started GET "/assets/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 11:16:16 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-submenu.css?body=1" for 127.0.0.1 at 2014-05-30 11:16:16 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-30 11:16:16 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-30 11:16:16 -0700
+
+
+Started GET "/assets/jquery.iframe-transport.js?body=1" for 127.0.0.1 at 2014-05-30 11:16:16 -0700
+
+
+Started GET "/assets/jquery.remotipart.js?body=1" for 127.0.0.1 at 2014-05-30 11:16:16 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 11:16:16 -0700
+
+
+Started GET "/assets/bootsy/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 11:16:16 -0700
+
+
+Started GET "/assets/bootsy/wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 11:16:16 -0700
+
+
+Started GET "/assets/bootsy/init.js?body=1" for 127.0.0.1 at 2014-05-30 11:16:16 -0700
+
+
+Started GET "/assets/bootsy/bootstrap.file-input.js?body=1" for 127.0.0.1 at 2014-05-30 11:16:16 -0700
+
+
+Started GET "/assets/bootsy/editor_options.js?body=1" for 127.0.0.1 at 2014-05-30 11:16:16 -0700
+
+
+Started GET "/assets/bootsy/translations.js?body=1" for 127.0.0.1 at 2014-05-30 11:16:16 -0700
+
+
+Started GET "/assets/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 11:16:16 -0700
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-05-30 11:16:16 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-30 11:16:16 -0700
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2014-05-30 11:16:16 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-05-30 11:16:16 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-30 11:16:16 -0700
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-30 11:16:59 -0700
+Processing by PagesController#main as HTML
+  Rendered pages/main.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-05-30 11:16:59 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-05-30 11:16:59 -0700
+
+
+Started GET "/assets/items.css?body=1" for 127.0.0.1 at 2014-05-30 11:16:59 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.css?body=1" for 127.0.0.1 at 2014-05-30 11:16:59 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-05-30 11:16:59 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-30 11:16:59 -0700
+
+
+Started GET "/assets/bootsy/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 11:16:59 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-submenu.css?body=1" for 127.0.0.1 at 2014-05-30 11:16:59 -0700
+
+
+Started GET "/assets/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 11:16:59 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-30 11:16:59 -0700
+
+
+Started GET "/assets/jquery.iframe-transport.js?body=1" for 127.0.0.1 at 2014-05-30 11:16:59 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-30 11:16:59 -0700
+
+
+Started GET "/assets/jquery.remotipart.js?body=1" for 127.0.0.1 at 2014-05-30 11:16:59 -0700
+
+
+Started GET "/assets/bootsy/wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 11:16:59 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 11:16:59 -0700
+
+
+Started GET "/assets/bootsy/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 11:16:59 -0700
+
+
+Started GET "/assets/bootsy/bootstrap.file-input.js?body=1" for 127.0.0.1 at 2014-05-30 11:16:59 -0700
+
+
+Started GET "/assets/bootsy/init.js?body=1" for 127.0.0.1 at 2014-05-30 11:16:59 -0700
+
+
+Started GET "/assets/bootsy/editor_options.js?body=1" for 127.0.0.1 at 2014-05-30 11:16:59 -0700
+
+
+Started GET "/assets/bootsy/translations.js?body=1" for 127.0.0.1 at 2014-05-30 11:16:59 -0700
+
+
+Started GET "/assets/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 11:16:59 -0700
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-05-30 11:16:59 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-30 11:16:59 -0700
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2014-05-30 11:16:59 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-05-30 11:16:59 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-30 11:16:59 -0700
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-30 11:17:03 -0700
+Processing by PagesController#main as HTML
+  Rendered pages/main.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-05-30 11:17:03 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-30 11:17:03 -0700
+
+
+Started GET "/assets/items.css?body=1" for 127.0.0.1 at 2014-05-30 11:17:03 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-05-30 11:17:03 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-05-30 11:17:03 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.css?body=1" for 127.0.0.1 at 2014-05-30 11:17:03 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-submenu.css?body=1" for 127.0.0.1 at 2014-05-30 11:17:03 -0700
+
+
+Started GET "/assets/bootsy/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 11:17:03 -0700
+
+
+Started GET "/assets/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 11:17:03 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-30 11:17:03 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-30 11:17:03 -0700
+
+
+Started GET "/assets/jquery.iframe-transport.js?body=1" for 127.0.0.1 at 2014-05-30 11:17:03 -0700
+
+
+Started GET "/assets/jquery.remotipart.js?body=1" for 127.0.0.1 at 2014-05-30 11:17:03 -0700
+
+
+Started GET "/assets/bootsy/wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 11:17:03 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 11:17:03 -0700
+
+
+Started GET "/assets/bootsy/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 11:17:03 -0700
+
+
+Started GET "/assets/bootsy/bootstrap.file-input.js?body=1" for 127.0.0.1 at 2014-05-30 11:17:03 -0700
+
+
+Started GET "/assets/bootsy/init.js?body=1" for 127.0.0.1 at 2014-05-30 11:17:03 -0700
+
+
+Started GET "/assets/bootsy/editor_options.js?body=1" for 127.0.0.1 at 2014-05-30 11:17:03 -0700
+
+
+Started GET "/assets/bootsy/translations.js?body=1" for 127.0.0.1 at 2014-05-30 11:17:03 -0700
+
+
+Started GET "/assets/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 11:17:03 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-30 11:17:03 -0700
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-05-30 11:17:03 -0700
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2014-05-30 11:17:03 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-05-30 11:17:03 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-30 11:17:03 -0700
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-30 11:17:33 -0700
+Processing by PagesController#main as HTML
+  Rendered pages/main.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-05-30 11:17:33 -0700
+
+
+Started GET "/assets/items.css?body=1" for 127.0.0.1 at 2014-05-30 11:17:33 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-05-30 11:17:33 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-30 11:17:33 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-05-30 11:17:33 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-submenu.css?body=1" for 127.0.0.1 at 2014-05-30 11:17:33 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.css?body=1" for 127.0.0.1 at 2014-05-30 11:17:33 -0700
+
+
+Started GET "/assets/bootsy/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 11:17:33 -0700
+
+
+Started GET "/assets/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 11:17:33 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-30 11:17:33 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-30 11:17:33 -0700
+
+
+Started GET "/assets/jquery.iframe-transport.js?body=1" for 127.0.0.1 at 2014-05-30 11:17:33 -0700
+
+
+Started GET "/assets/jquery.remotipart.js?body=1" for 127.0.0.1 at 2014-05-30 11:17:33 -0700
+
+
+Started GET "/assets/bootsy/wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 11:17:33 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 11:17:33 -0700
+
+
+Started GET "/assets/bootsy/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 11:17:33 -0700
+
+
+Started GET "/assets/bootsy/bootstrap.file-input.js?body=1" for 127.0.0.1 at 2014-05-30 11:17:33 -0700
+
+
+Started GET "/assets/bootsy/init.js?body=1" for 127.0.0.1 at 2014-05-30 11:17:33 -0700
+
+
+Started GET "/assets/bootsy/translations.js?body=1" for 127.0.0.1 at 2014-05-30 11:17:33 -0700
+
+
+Started GET "/assets/bootsy/editor_options.js?body=1" for 127.0.0.1 at 2014-05-30 11:17:33 -0700
+
+
+Started GET "/assets/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 11:17:33 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-30 11:17:33 -0700
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-05-30 11:17:33 -0700
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2014-05-30 11:17:33 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-05-30 11:17:33 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-30 11:17:33 -0700
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-30 11:18:44 -0700
+Processing by PagesController#main as HTML
+  Rendered pages/main.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-05-30 11:18:44 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-05-30 11:18:44 -0700
+
+
+Started GET "/assets/items.css?body=1" for 127.0.0.1 at 2014-05-30 11:18:44 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-05-30 11:18:44 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.css?body=1" for 127.0.0.1 at 2014-05-30 11:18:44 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-submenu.css?body=1" for 127.0.0.1 at 2014-05-30 11:18:44 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-30 11:18:44 -0700
+
+
+Started GET "/assets/bootsy/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 11:18:44 -0700
+
+
+Started GET "/assets/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 11:18:44 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-30 11:18:44 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-30 11:18:44 -0700
+
+
+Started GET "/assets/jquery.iframe-transport.js?body=1" for 127.0.0.1 at 2014-05-30 11:18:44 -0700
+
+
+Started GET "/assets/jquery.remotipart.js?body=1" for 127.0.0.1 at 2014-05-30 11:18:44 -0700
+
+
+Started GET "/assets/bootsy/wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 11:18:44 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 11:18:44 -0700
+
+
+Started GET "/assets/bootsy/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 11:18:44 -0700
+
+
+Started GET "/assets/bootsy/bootstrap.file-input.js?body=1" for 127.0.0.1 at 2014-05-30 11:18:44 -0700
+
+
+Started GET "/assets/bootsy/editor_options.js?body=1" for 127.0.0.1 at 2014-05-30 11:18:44 -0700
+
+
+Started GET "/assets/bootsy/init.js?body=1" for 127.0.0.1 at 2014-05-30 11:18:44 -0700
+
+
+Started GET "/assets/bootsy/translations.js?body=1" for 127.0.0.1 at 2014-05-30 11:18:44 -0700
+
+
+Started GET "/assets/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 11:18:44 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-30 11:18:44 -0700
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2014-05-30 11:18:44 -0700
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-05-30 11:18:44 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-05-30 11:18:44 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-30 11:18:44 -0700
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-30 14:53:55 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#main as HTML
+  Rendered pages/main.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 30ms
+
+ActionView::Template::Error (undefined method `full_title' for #<#<Class:0x000001059a0aa0>:0x0000010599bfa0>):
+    1: <!DOCTYPE html>
+    2: <html>
+    3: <head>
+    4:   <title><%= full_title(yield(:title)) %></title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+  app/views/layouts/application.html.erb:4:in `_app_views_layouts_application_html_erb__4579943613893091540_2194328380'
+
+
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (15.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-30 14:54:05 -0700
+Processing by PagesController#main as HTML
+  Rendered pages/main.html.erb within layouts/application (0.1ms)
+Completed 500 Internal Server Error in 9ms
+
+ActionView::Template::Error (undefined method `full_title' for #<#<Class:0x000001059a0aa0>:0x00000101e0cc50>):
+    1: <!DOCTYPE html>
+    2: <html>
+    3: <head>
+    4:   <title><%= full_title(yield(:title)) %></title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+  app/views/layouts/application.html.erb:4:in `_app_views_layouts_application_html_erb__4579943613893091540_2194328380'
+
+
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (15.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-30 15:06:43 -0700
+Processing by PagesController#main as HTML
+  Rendered pages/main.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (4.9ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 1105ms (Views: 1104.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-05-30 15:06:45 -0700
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-05-30 15:06:45 -0700
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-05-30 15:06:45 -0700
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-05-30 15:06:45 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-05-30 15:06:45 -0700
+
+
+Started GET "/assets/items.css?body=1" for 127.0.0.1 at 2014-05-30 15:06:45 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-05-30 15:06:45 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-30 15:06:45 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-submenu.css?body=1" for 127.0.0.1 at 2014-05-30 15:06:45 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.css?body=1" for 127.0.0.1 at 2014-05-30 15:06:45 -0700
+
+
+Started GET "/assets/bootsy/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 15:06:45 -0700
+
+
+Started GET "/assets/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 15:06:45 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-30 15:06:45 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-30 15:06:45 -0700
+
+
+Started GET "/assets/jquery.iframe-transport.js?body=1" for 127.0.0.1 at 2014-05-30 15:06:45 -0700
+
+
+Started GET "/assets/bootsy/wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 15:06:45 -0700
+
+
+Started GET "/assets/jquery.remotipart.js?body=1" for 127.0.0.1 at 2014-05-30 15:06:45 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 15:06:45 -0700
+
+
+Started GET "/assets/bootsy/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 15:06:45 -0700
+
+
+Started GET "/assets/bootsy/bootstrap.file-input.js?body=1" for 127.0.0.1 at 2014-05-30 15:06:45 -0700
+
+
+Started GET "/assets/bootsy/init.js?body=1" for 127.0.0.1 at 2014-05-30 15:06:45 -0700
+
+
+Started GET "/assets/bootsy/editor_options.js?body=1" for 127.0.0.1 at 2014-05-30 15:06:45 -0700
+
+
+Started GET "/assets/bootsy/translations.js?body=1" for 127.0.0.1 at 2014-05-30 15:06:45 -0700
+
+
+Started GET "/assets/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 15:06:45 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-30 15:06:45 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-05-30 15:06:45 -0700
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-05-30 15:06:45 -0700
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-05-30 15:06:45 -0700
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2014-05-30 15:06:45 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-05-30 15:06:45 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-30 15:06:45 -0700
+
+
+Started GET "/images/logo.png" for 127.0.0.1 at 2014-05-30 15:06:45 -0700
+
+ActionController::RoutingError (No route matches [GET] "/images/logo.png"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/michaelnixon/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/michaelnixon/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/michaelnixon/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.9ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.9ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (7.2ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (36.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-30 15:06:54 -0700
+Processing by PagesController#main as HTML
+  Rendered pages/main.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (6.4ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 23ms (Views: 22.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/logo.png" for 127.0.0.1 at 2014-05-30 15:06:54 -0700
+
+ActionController::RoutingError (No route matches [GET] "/images/logo.png"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/michaelnixon/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/michaelnixon/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/michaelnixon/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.9ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.8ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.9ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (32.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-30 15:08:17 -0700
+Processing by PagesController#main as HTML
+  Rendered pages/main.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (4.6ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-05-30 15:08:17 -0700
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-05-30 15:08:17 -0700
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-05-30 15:08:17 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-05-30 15:08:17 -0700
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-05-30 15:08:17 -0700
+
+
+Started GET "/assets/items.css?body=1" for 127.0.0.1 at 2014-05-30 15:08:17 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-05-30 15:08:17 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-30 15:08:17 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-submenu.css?body=1" for 127.0.0.1 at 2014-05-30 15:08:17 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.css?body=1" for 127.0.0.1 at 2014-05-30 15:08:17 -0700
+
+
+Started GET "/assets/bootsy/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 15:08:17 -0700
+
+
+Started GET "/assets/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 15:08:17 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-30 15:08:17 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-30 15:08:17 -0700
+
+
+Started GET "/assets/jquery.remotipart.js?body=1" for 127.0.0.1 at 2014-05-30 15:08:17 -0700
+
+
+Started GET "/assets/bootsy/wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 15:08:17 -0700
+
+
+Started GET "/assets/jquery.iframe-transport.js?body=1" for 127.0.0.1 at 2014-05-30 15:08:17 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 15:08:17 -0700
+
+
+Started GET "/assets/bootsy/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 15:08:17 -0700
+
+
+Started GET "/assets/bootsy/bootstrap.file-input.js?body=1" for 127.0.0.1 at 2014-05-30 15:08:17 -0700
+
+
+Started GET "/assets/bootsy/init.js?body=1" for 127.0.0.1 at 2014-05-30 15:08:17 -0700
+
+
+Started GET "/assets/bootsy/editor_options.js?body=1" for 127.0.0.1 at 2014-05-30 15:08:17 -0700
+
+
+Started GET "/assets/bootsy/translations.js?body=1" for 127.0.0.1 at 2014-05-30 15:08:17 -0700
+
+
+Started GET "/assets/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 15:08:17 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-30 15:08:17 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-05-30 15:08:17 -0700
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-05-30 15:08:17 -0700
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-05-30 15:08:17 -0700
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2014-05-30 15:08:17 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-30 15:08:17 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-05-30 15:08:17 -0700
+
+
+Started GET "/images/logo.png" for 127.0.0.1 at 2014-05-30 15:08:17 -0700
+
+ActionController::RoutingError (No route matches [GET] "/images/logo.png"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/michaelnixon/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/michaelnixon/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/michaelnixon/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.3ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.8ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (32.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-30 15:08:28 -0700
+Processing by PagesController#main as HTML
+  Rendered pages/main.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (6.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 22ms (Views: 21.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-05-30 15:08:29 -0700
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-05-30 15:08:29 -0700
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-05-30 15:08:29 -0700
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-05-30 15:08:29 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-05-30 15:08:29 -0700
+
+
+Started GET "/assets/items.css?body=1" for 127.0.0.1 at 2014-05-30 15:08:29 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-05-30 15:08:29 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-30 15:08:29 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-submenu.css?body=1" for 127.0.0.1 at 2014-05-30 15:08:29 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.css?body=1" for 127.0.0.1 at 2014-05-30 15:08:29 -0700
+
+
+Started GET "/assets/bootsy/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 15:08:29 -0700
+
+
+Started GET "/assets/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 15:08:29 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-30 15:08:29 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-30 15:08:29 -0700
+
+
+Started GET "/assets/jquery.iframe-transport.js?body=1" for 127.0.0.1 at 2014-05-30 15:08:29 -0700
+
+
+Started GET "/assets/jquery.remotipart.js?body=1" for 127.0.0.1 at 2014-05-30 15:08:29 -0700
+
+
+Started GET "/assets/bootsy/wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 15:08:29 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 15:08:29 -0700
+
+
+Started GET "/assets/bootsy/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 15:08:29 -0700
+
+
+Started GET "/assets/bootsy/bootstrap.file-input.js?body=1" for 127.0.0.1 at 2014-05-30 15:08:29 -0700
+
+
+Started GET "/assets/bootsy/init.js?body=1" for 127.0.0.1 at 2014-05-30 15:08:29 -0700
+
+
+Started GET "/assets/bootsy/editor_options.js?body=1" for 127.0.0.1 at 2014-05-30 15:08:29 -0700
+
+
+Started GET "/assets/bootsy/translations.js?body=1" for 127.0.0.1 at 2014-05-30 15:08:29 -0700
+
+
+Started GET "/assets/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 15:08:29 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-30 15:08:29 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-05-30 15:08:29 -0700
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-05-30 15:08:29 -0700
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-05-30 15:08:29 -0700
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2014-05-30 15:08:29 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-05-30 15:08:29 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-30 15:08:29 -0700
+
+
+Started GET "/images/logo.png" for 127.0.0.1 at 2014-05-30 15:08:29 -0700
+
+ActionController::RoutingError (No route matches [GET] "/images/logo.png"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/michaelnixon/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/michaelnixon/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/michaelnixon/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.9ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.6ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.0ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (31.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-30 15:08:42 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#main as HTML
+  Rendered pages/main.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (5.8ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 152ms (Views: 143.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-05-30 15:08:42 -0700
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-05-30 15:08:42 -0700
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-05-30 15:08:42 -0700
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-05-30 15:08:42 -0700
+
+
+Started GET "/assets/items.css?body=1" for 127.0.0.1 at 2014-05-30 15:08:42 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-05-30 15:08:42 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-05-30 15:08:42 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-30 15:08:42 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-submenu.css?body=1" for 127.0.0.1 at 2014-05-30 15:08:42 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.css?body=1" for 127.0.0.1 at 2014-05-30 15:08:42 -0700
+
+
+Started GET "/assets/bootsy/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 15:08:42 -0700
+
+
+Started GET "/assets/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 15:08:42 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-30 15:08:42 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-30 15:08:42 -0700
+
+
+Started GET "/assets/jquery.iframe-transport.js?body=1" for 127.0.0.1 at 2014-05-30 15:08:42 -0700
+
+
+Started GET "/assets/jquery.remotipart.js?body=1" for 127.0.0.1 at 2014-05-30 15:08:42 -0700
+
+
+Started GET "/assets/bootsy/wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 15:08:42 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 15:08:42 -0700
+
+
+Started GET "/assets/bootsy/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 15:08:42 -0700
+
+
+Started GET "/assets/bootsy/bootstrap.file-input.js?body=1" for 127.0.0.1 at 2014-05-30 15:08:42 -0700
+
+
+Started GET "/assets/bootsy/init.js?body=1" for 127.0.0.1 at 2014-05-30 15:08:42 -0700
+
+
+Started GET "/assets/bootsy/editor_options.js?body=1" for 127.0.0.1 at 2014-05-30 15:08:42 -0700
+
+
+Started GET "/assets/bootsy/translations.js?body=1" for 127.0.0.1 at 2014-05-30 15:08:42 -0700
+
+
+Started GET "/assets/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 15:08:42 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-30 15:08:42 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-05-30 15:08:42 -0700
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-05-30 15:08:42 -0700
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-05-30 15:08:42 -0700
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2014-05-30 15:08:42 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-05-30 15:08:42 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-30 15:08:42 -0700
+
+
+Started GET "/images/logo.png" for 127.0.0.1 at 2014-05-30 15:08:42 -0700
+
+ActionController::RoutingError (No route matches [GET] "/images/logo.png"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/michaelnixon/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/michaelnixon/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/michaelnixon/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.1ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.8ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.9ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (40.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-30 15:10:03 -0700
+Processing by PagesController#main as HTML
+  Rendered pages/main.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (8.4ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 24ms (Views: 23.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-05-30 15:10:04 -0700
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-05-30 15:10:04 -0700
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-05-30 15:10:04 -0700
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-05-30 15:10:04 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-05-30 15:10:04 -0700
+
+
+Started GET "/assets/items.css?body=1" for 127.0.0.1 at 2014-05-30 15:10:04 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-05-30 15:10:04 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-30 15:10:04 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-submenu.css?body=1" for 127.0.0.1 at 2014-05-30 15:10:04 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.css?body=1" for 127.0.0.1 at 2014-05-30 15:10:04 -0700
+
+
+Started GET "/assets/bootsy/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 15:10:04 -0700
+
+
+Started GET "/assets/bootsy.css?body=1" for 127.0.0.1 at 2014-05-30 15:10:04 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-30 15:10:04 -0700
+
+
+Started GET "/assets/jquery.iframe-transport.js?body=1" for 127.0.0.1 at 2014-05-30 15:10:04 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-30 15:10:04 -0700
+
+
+Started GET "/assets/jquery.remotipart.js?body=1" for 127.0.0.1 at 2014-05-30 15:10:04 -0700
+
+
+Started GET "/assets/bootsy/wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 15:10:04 -0700
+
+
+Started GET "/assets/bootsy/bootstrap-wysihtml5.js?body=1" for 127.0.0.1 at 2014-05-30 15:10:04 -0700
+
+
+Started GET "/assets/bootsy/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 15:10:04 -0700
+
+
+Started GET "/assets/bootsy/bootstrap.file-input.js?body=1" for 127.0.0.1 at 2014-05-30 15:10:04 -0700
+
+
+Started GET "/assets/bootsy/init.js?body=1" for 127.0.0.1 at 2014-05-30 15:10:04 -0700
+
+
+Started GET "/assets/bootsy/editor_options.js?body=1" for 127.0.0.1 at 2014-05-30 15:10:04 -0700
+
+
+Started GET "/assets/bootsy.js?body=1" for 127.0.0.1 at 2014-05-30 15:10:04 -0700
+
+
+Started GET "/assets/bootsy/translations.js?body=1" for 127.0.0.1 at 2014-05-30 15:10:04 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-30 15:10:04 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-05-30 15:10:04 -0700
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-05-30 15:10:04 -0700
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-05-30 15:10:04 -0700
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2014-05-30 15:10:04 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-05-30 15:10:04 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-30 15:10:04 -0700
+
+
+Started GET "/images/logo.png" for 127.0.0.1 at 2014-05-30 15:10:04 -0700
+
+ActionController::RoutingError (No route matches [GET] "/images/logo.png"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/michaelnixon/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/michaelnixon/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/michaelnixon/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.9ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.4ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendered /Users/michaelnixon/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (33.9ms)
