@@ -1,0 +1,30 @@
+<h1>Listing items</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Body</th>
+      <th>Preview</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @items.each do |item| %>
+      <tr>
+        <td><%= item.name %></td>
+        <td><%= item.body %></td>
+        <td><%= item.preview %></td>
+        <td><%= link_to 'Show', [:admin, item] %></td>
+        <td><%= link_to 'Edit', [:edit, :admin, item] %></td>
+        <td><%= link_to 'Destroy', [:admin, item], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Create a new Item', new_admin_item_path %><br/>
+<%= link_to 'Back to dashboard', admin_path %>

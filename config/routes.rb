@@ -6,9 +6,16 @@ Rails.application.routes.draw do
   get 'about' => 'pages#about'
 #  get 'pages/contact'
   get 'contact' => 'pages#contact'
-  resources :items
-  resources :categories
-
+  get "log_out" => "sessions#destroy", :as => "log_out"
+  get "log_in" => "sessions#new", :as => "log_in"
+  get "sign_up" => "users#new", :as => "sign_up"
+  resources :sessions, only: [:new, :create, :destroy]
+  namespace :admin do
+    get '', to: 'dashboard#index', as: '/'
+    resources :items
+    resources :categories
+    resources :users    
+  end
   mount Bootsy::Engine => '/bootsy', as: 'bootsy'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

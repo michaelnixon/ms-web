@@ -1,4 +1,4 @@
-@import "bootstrap";
+
 /* universal */
 
 html {
@@ -6,7 +6,7 @@ html {
 }
 
 body {
-  padding-top: 60px;
+/*  padding-top: 60px; */
 }
 
 section {
@@ -40,10 +40,15 @@ h1 {
 h2 {
   font-size: 1.2em;
   letter-spacing: -1px;
-  margin-bottom: 30px;
+  margin-bottom: 0px; /* was 30 */
   text-align: center;
   font-weight: normal;
   color: #999;
+}
+div.story h2 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  color: dimgray;	
 }
 
 p {
@@ -65,7 +70,7 @@ p {
 }
 
 #logo:hover {
-  color: #fff;
+/*  color: #fff;*/
   text-decoration: none;
 }
 
@@ -83,7 +88,7 @@ footer a {
 }
 
 footer a:hover {
-  color: #222;
+ /* color: #222;*/
 }
 
 footer small {
@@ -98,4 +103,87 @@ footer ul {
 footer ul li {
   float: left;
   margin-left: 10px;
+}
+
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('/assets/glyphicons-halflings-regular.eot');
+  src: url('/assets/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('/assets/glyphicons-halflings-regular.woff') format('woff'), url('/assets/glyphicons-halflings-regular.ttf') format('truetype'), url('/assets/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
+}
+
+/* isotope styles  */
+/* ---- isotope ---- */
+
+#isotope {
+
+  max-width: 1200px;
+}
+
+/* clear fix */
+#isotope:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---- .story ---- */
+
+#isotope > .story {
+  float: left;
+  width: 200px;
+  height: 200px;
+  background: #F7F6F2;
+  border: 2px solid #333;
+  border-color: hsla(0, 0%, 0%, 0.7);
+  overflow: hidden;
+}
+
+#isotope > .story.width2 { width: 400px; }
+#isotope > .story.height2 { height: 300px; }
+
+#isotope > .story:hover {
+/*  background: #8CF; */
+  cursor: pointer;
+}
+
+/* gigante styles */
+#isotope > .story.gigante {
+  width: 100%;
+  height: 300px;
+/*  background: #D38847; */
+}
+
+#isotope > .story.gigante img{
+  float:right;	
+  margin-right: 10px;
+
+}
+
+#isotope > .story.gigante > p {
+  margin-left: 20px;
+	width: 50%;
+  background-color: black;
+	height: 260px;
+	color: white;
+	padding-left: 10px;
+}
+
+#isotope > .story.gigante button {
+  position: relative;
+	left: 50%;
+	top: -35px;
+}
+
+#isotope > .story.full-gigante {
+	height: 740px;
+}
+
+.item{
+    background: #333;    
+    text-align: center;
+    height: 400px !important;
+}
+.carousel-caption {
+	color: green;
+	text-align: center;
 }

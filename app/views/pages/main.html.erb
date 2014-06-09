@@ -1,2 +1,66 @@
 <% provide(:title, 'Main') %>
-Main
+<div id="isotope">
+  <div class="story technology" id="story1"><h2>Update 1</h2><img src="assets/test/techproject.jpg" width="200"/><p>Amet dolor? Diam cras ac quis a ut, augue massa cursus natoque cursus in sociis rhoncus, scelerisque mus ac. Pellentesque odio rhoncus, aliquet tempor? Nisi cursus lorem tincidunt penatibus eu scelerisque! Scelerisque mid rhoncus turpis eros? Nunc rhoncus in turpis, mus, nec augue, odio, mid tempor aliquam, ultricies.</p>
+<button type="button" class="btn btn-default btn-sm" id="story1-btn"><span class="glyphicon glyphicon-plus-sign"></span></button>
+<!--  Carousel - consult the Twitter Bootstrap docs at
+      http://twitter.github.com/bootstrap/javascript.html#carousel -->
+<div id="this-carousel-id" class="carousel slide"><!-- class of slide for animation -->
+	<!-- Carousel indicators -->
+  <ol class="carousel-indicators">
+      <li data-target="#this-carousel-id" data-slide-to="0" class="active"></li>
+      <li data-target="#this-carousel-id" data-slide-to="1"></li>
+      <li data-target="#this-carousel-id" data-slide-to="2"></li>
+      <li data-target="#this-carousel-id" data-slide-to="3"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="active item"><!-- class of active since it's the first item -->
+			<div style="height: 480px">content</div>
+      <div class="carousel-caption">
+        <p>first</p>
+      </div>
+    </div>
+    <div class="item">
+      <img src="http://placehold.it/1200x420" alt="" />
+      <div class="carousel-caption">
+        <p>Caption text here</p>
+      </div>
+    </div>
+    <div class="item">
+      <img src="http://placehold.it/1200x420" alt="" />
+      <div class="carousel-caption">
+        <p>Caption text here</p>
+      </div>
+    </div>
+    <div class="item">
+      <img src="http://placehold.it/1200x420" alt="" />
+      <div class="carousel-caption">
+        <p>last</p>
+      </div>
+    </div>
+  </div><!-- /.carousel-inner -->
+  <!--  Next and Previous controls below
+        href values must reference the id for this carousel -->
+    <a class="carousel-control left" href="#this-carousel-id" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+    <a class="carousel-control right" href="#this-carousel-id" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+</div><!-- /.carousel -->
+</div>
+  <div class="story height2 personnel"><h2>John Smith - Researcher</h2><img src="assets/test/male-headshot.jpg" width="200" height="300"/><p>Read more about John</p></div>
+  <div class="story width2 events"><h2>News 1</h2> <img src="assets/test/LatestNews.jpg" width="400"/><p>Amet dolor? Diam cras ac quis a ut, augue massa cursus natoque cursus in sociis rhoncus, scelerisque mus ac. Pellentesque odio rhoncus, aliquet tempor? Nisi cursus lorem tincidunt penatibus eu scelerisque! Scelerisque mid rhoncus turpis eros? Nunc rhoncus in turpis, mus, nec augue, odio, mid tempor aliquam, ultricies.</p></div>
+  <div class="story community"><h2>News 2</h2> <img src="assets/test/newsign.jpg" width="200"/></div>
+  <div class="story height2 personnel"><h2>Jill Smith - Researcher</h2> <img src="assets/test/female-headshot.jpg" width="200" height="300"/><p>Read more about Jill</p></div>
+  <div class="story technology"><h2>Update 2</h2> <img src="assets/test/techdemo.jpg" width="200"/><p>Amet dolor? Diam cras ac quis a ut, augue massa cursus natoque cursus in sociis rhoncus, scelerisque mus ac. Pellentesque odio rhoncus, aliquet tempor? Nisi cursus lorem tincidunt penatibus eu scelerisque! Scelerisque mid rhoncus turpis eros? Nunc rhoncus in turpis, mus, nec augue, odio, mid tempor aliquam, ultricies.</p></div>
+  <div class="story technology"><h2>Update 3</h2> <img src="assets/test/techproject.jpg" width="200"/><p>Amet dolor? Diam cras ac quis a ut, augue massa cursus natoque cursus in sociis rhoncus, scelerisque mus ac. Pellentesque odio rhoncus, aliquet tempor? Nisi cursus lorem tincidunt penatibus eu scelerisque! Scelerisque mid rhoncus turpis eros? Nunc rhoncus in turpis, mus, nec augue, odio, mid tempor aliquam, ultricies.</p></div>
+  <div class="story height2 personnel"><h2>Joe Smith - Postdoc<h2> <img src="assets/test/male-headshot.jpg" width="200" height="300"/><p>Read more about Joe</p></div>
+  <div class="story width2 community"><h2>News 3</h2> <img src="assets/test/LatestNews.jpg" width="400"/><p>Amet dolor? Diam cras ac quis a ut, augue massa cursus natoque cursus in sociis rhoncus, scelerisque mus ac. Pellentesque odio rhoncus, aliquet tempor? Nisi cursus lorem tincidunt penatibus eu scelerisque! Scelerisque mid rhoncus turpis eros? Nunc rhoncus in turpis, mus, nec augue, odio, mid tempor aliquam, ultricies.</p></div>
+  <div class="story technology"><h2>Update 4</h2> <img src="assets/test/techdemo.jpg" width="200"/></div>
+  <div class="story height2 personnel"><h2>Sally Smith - Movement Specialist</h2> <img src="assets/test/female-headshot.jpg" width="200" height="300"/><p>Link to Sally's Website</p></div>
+  <div class="story community"><h2>News 4</h2> <img src="assets/test/newsign.jpg" width="200"/></div>
+  <div class="story community"><h2>News 5</h2> <img src="assets/test/newsign.jpg" width="200"/></div>
+  <div class="story technology"><h2>Update 5</h2> <img src="assets/test/techproject.jpg" width="200"/></div>
+  <div class="story height2 personnel"><h2>Bob Smith - LMA</h2> <img src="assets/test/male-headshot.jpg" width="200" height="300"/><p>Bob does LMA here</p></div>
+  <div class="story community"><h2>News 6</h2> <img src="assets/test/newsign.jpg" width="200"/></div>
+  <div class="story technology"><h2>Update 6 </h2><img src="assets/test/techdemo.jpg" width="200"/></div>
+  <div class="story height2 personnel"><h2>Jane Smith - Dancer</h2> <img src="assets/test/female-headshot.jpg" width="200" height="300"/><p>Read more</p></div>
+  <div class="story width2 community"><h2>News 7</h2> <img src="assets/test/LatestNews.jpg" width="400"/></div>
+  <div class="story community"><h2>News 8</h2> <img src="assets/test/newsign.jpg" width="200"/></div>
+</div>

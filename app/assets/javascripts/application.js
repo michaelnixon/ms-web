@@ -12,7 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-1.11.0.min
+//= require isotope.pkgd.min
 //= require bootsy
 //= require turbolinks
+//= require bootstrap.min.js
 //= require_tree .
-//= require bootstrap

@@ -1,13 +1,31 @@
-<header class="navbar navbar-fixed-top">
-	Moving Stories is an interdisciplinary collaborative research partnership ...
-	<%= link_to image_tag("logo.png", alt: "Moving Stories logo"), '#', id: "logo" %>
-	<nav>
-		<ul class="nav pull-right">
-			<li><%= link_to "Events", '#' %></li>
-			<li><%= link_to "People", '#' %></li> 
-			<li><%= link_to "Workshops", '#' %></li> 
-			<li><%= link_to "Technology", '#' %></li> 				
-			<li><%= link_to "Performances", '#' %></li> 
-		</ul>
-	</nav>
+<header class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Moving Stories</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="" data-filter="*">All</a></li>
+    </ul>
+    <ul class="nav navbar-nav">
+      <li><a href="" data-filter=".events">Events</a></li>
+    </ul>
+    <ul class="nav navbar-nav">
+      <li><a href="" data-filter=".personnel">People</a></li>
+    </ul>
+    <ul class="nav navbar-nav">
+      <li><a href="" data-filter=".technology">Technology</a></li>
+    </ul>
+    <ul class="nav navbar-nav">
+      <li><a href="" data-filter=".workshops">Workshops</a></li>
+    </ul>
+    <ul class="nav navbar-nav">
+      <li><a href="" data-filter=".performances">Performances</a></li>
+    </ul>
+  	<form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+  </div>
 </header>
