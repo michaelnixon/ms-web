@@ -19,7 +19,7 @@ set :deploy_to, '/var/www/ms-web'
 # set :tmp_dir, "/home/deployer/tmp"
 
 set :user, "deployer"  # The server's user for deploys
-set :scm_passphrase, "uH3yZYGuCr9d*Zf"  # The deploy user's password
+
 # Custom SSH Options
 # ==================
 # You may pass any option but keep in mind that net/ssh understands a

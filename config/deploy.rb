@@ -40,6 +40,7 @@ set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
+after "deploy", "deploy:cleanup"
 
 namespace :deploy do
 
@@ -54,10 +55,14 @@ namespace :deploy do
 
   after :publishing, :restart
 
-  desc "Symlink shared config files"
-  task :symlink_config_files do
-      run "#{ try_sudo } ln -s #{ deploy_to }/shared/config/database.yml #{ current_path }/config/database.yml"
+  after "deploy:setup", "deploy:symlink_config"
+
+  task :symlink_config, roles: :app do
+    run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
   end
+  
+  after "deploy:finalize_update", "deploy:symlink_config"
+  
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
       # Here we can do anything such as:
