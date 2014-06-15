@@ -32,7 +32,7 @@ gem 'bcrypt', '~> 3.1.7', :require => true
 # gem 'unicorn'
 
 # Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+gem 'capistrano-rails', group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
@@ -40,3 +40,5 @@ gem "mini_magick"
 gem 'bootsy'
 gem 'nested_form'
 gem "mediaelement_rails"
+
+gem 'i18n', '~> 0.6'
