@@ -41,4 +41,4 @@ gem 'bootsy'
 gem 'nested_form'
 gem "mediaelement_rails"
 gem 'mysql', group: :production
-gem 'i18n', '~> 0.6.9'
+gem 'i18n', '0.6.9'
