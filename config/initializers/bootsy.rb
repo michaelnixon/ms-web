@@ -16,7 +16,6 @@ Bootsy.setup do |config|
   # Possible values: :small, :medium, :large and/or :original
   config.image_versions_available = [:small, :medium, :large, :original]
 
-
   # SMALL IMAGES
 
   # Width limit for small images
@@ -24,7 +23,6 @@ Bootsy.setup do |config|
 
   # Height limit for small images
   # config.small_image[:height] = 160
-
 
   # MEDIUM IMAGES
 
@@ -34,7 +32,6 @@ Bootsy.setup do |config|
   # Height limit for medium images
   # config.medium_image[:height] = 360
 
-
   # LARGE IMAGES
 
   # Width limit for large images
@@ -43,10 +40,8 @@ Bootsy.setup do |config|
   # Height limit for large images
   # config.large_image[:height] = 760
 
-
   # Whether user can destroy uploaded files
   # config.allow_destroy = true
-
 
   # Storage mode
   # You can change the sorage mode below from :file to :fog if you want
@@ -56,7 +51,6 @@ Bootsy.setup do |config|
   # https://github.com/carrierwaveuploader/carrierwave/blob/master/README.md#using-amazon-s3
   #
   # config.storage = :file
-
 
   # Store directory (inside 'public') for storage = :file
   # BE CAREFUL! Changing this may break previously uploaded file paths!

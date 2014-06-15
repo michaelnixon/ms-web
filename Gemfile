@@ -36,5 +36,7 @@ gem 'bcrypt', '~> 3.1.7', :require => true
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
+gem "mini_magick"
 gem 'bootsy'
+gem 'nested_form'
+gem "mediaelement_rails"

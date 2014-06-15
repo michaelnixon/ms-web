@@ -17,4 +17,5 @@
 //= require bootsy
 //= require turbolinks
 //= require bootstrap.min.js
+//= require mediaelement_rails
 //= require_tree .

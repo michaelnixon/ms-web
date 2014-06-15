@@ -115,7 +115,6 @@ footer ul li {
 /* ---- isotope ---- */
 
 #isotope {
-
   max-width: 1200px;
 }
 
@@ -125,7 +124,7 @@ footer ul li {
   display: block;
   clear: both;
 }
-
+.gone { display: none }
 /* ---- .story ---- */
 
 #isotope > .story {
@@ -139,7 +138,7 @@ footer ul li {
 }
 
 #isotope > .story.width2 { width: 400px; }
-#isotope > .story.height2 { height: 300px; }
+#isotope > .story.height2 { height: 400px; }
 
 #isotope > .story:hover {
 /*  background: #8CF; */
@@ -149,40 +148,53 @@ footer ul li {
 /* gigante styles */
 #isotope > .story.gigante {
   width: 100%;
-  height: 300px;
+  height: 310px;
 /*  background: #D38847; */
 }
 
 #isotope > .story.gigante img{
   float:right;	
-  margin-right: 10px;
+  margin-right: 20px;
 
 }
 
-#isotope > .story.gigante > p {
+p.preview {
   margin-left: 20px;
 	width: 50%;
   background-color: black;
-	height: 260px;
+	height: 270px;
 	color: white;
 	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 5px;
 }
 
 #isotope > .story.gigante button {
-  position: relative;
+	position: relative;
+	/*margin-left: 15px;*/
 	left: 50%;
-	top: -35px;
+	top: -35px; 
 }
 
 #isotope > .story.full-gigante {
-	height: 740px;
+	height: 820px;
 }
 
-.item{
-    background: #333;    
-    text-align: center;
-    height: 400px !important;
+.carousel {
+	clear: both;
 }
+
+.carousel-inner {
+	width: 70%;
+	margin-right: auto;
+	margin-left: auto;
+  height: 400px !important;	
+}
+
+.item {   
+		margin-top: 10px;
+}
+
 .carousel-caption {
 	color: green;
 	text-align: center;

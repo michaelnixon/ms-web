@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140609171548) do
+ActiveRecord::Schema.define(version: 20140611224055) do
+
+  create_table "attachments", force: true do |t|
+    t.text     "description"
+    t.string   "file"
+    t.integer  "attachable_id"
+    t.string   "attachable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "attachments", ["attachable_id", "attachable_type"], name: "index_attachments_on_attachable_id_and_attachable_type"
 
   create_table "bootsy_image_galleries", force: true do |t|
     t.integer  "bootsy_resource_id"
@@ -40,9 +51,18 @@ ActiveRecord::Schema.define(version: 20140609171548) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "category_id"
+    t.string   "image"
+    t.integer  "shape_id"
   end
 
   add_index "items", ["category_id"], name: "index_items_on_category_id"
+  add_index "items", ["shape_id"], name: "index_items_on_shape_id"
+
+  create_table "shapes", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email"

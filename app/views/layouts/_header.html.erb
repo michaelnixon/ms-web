@@ -1,31 +1,21 @@
-<header class="navbar navbar-default">
+<nav class="navbar navbar-default" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <a class="navbar-brand" href="/">Moving Stories</a>
+		</div>
+		<div class="collapse navbar-collapse">
+	    <ul class="nav navbar-nav">
+	      <li class="active"><a href="" data-filter="*">All</a></li>
+	      <% @categories.each do |category| %>
+					<li><a href="" data-filter=".category<%=category.id%>"><%= category.name %></a></li>
+				<% end %>
+	    </ul>
+	  	<form class="navbar-form navbar-left" role="search">
+	        <div class="form-group">
+	          <input type="text" class="form-control" placeholder="Search">
+		      </div>
+	        <button type="submit" class="btn btn-default">Submit</button>
+	    </form>
     </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="" data-filter="*">All</a></li>
-    </ul>
-    <ul class="nav navbar-nav">
-      <li><a href="" data-filter=".events">Events</a></li>
-    </ul>
-    <ul class="nav navbar-nav">
-      <li><a href="" data-filter=".personnel">People</a></li>
-    </ul>
-    <ul class="nav navbar-nav">
-      <li><a href="" data-filter=".technology">Technology</a></li>
-    </ul>
-    <ul class="nav navbar-nav">
-      <li><a href="" data-filter=".workshops">Workshops</a></li>
-    </ul>
-    <ul class="nav navbar-nav">
-      <li><a href="" data-filter=".performances">Performances</a></li>
-    </ul>
-  	<form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-    </form>
   </div>
-</header>
+</nav>

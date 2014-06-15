@@ -1,33 +1,65 @@
-<% if @item.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
+<%= nested_form_for([:admin, @item], :html => {:multipart => true}) do |f| %>
+	<% if @item.errors.any? %>
+	  <div id="error_explanation">
+	    <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
 
-    <ul>
-    <% @item.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-    </ul>
-  </div>
-<% end %>
-<%= form_for([:admin, @item]) do |f| %>
+	    <ul>
+	    <% @item.errors.full_messages.each do |message| %>
+	      <li><%= message %></li>
+	    <% end %>
+	    </ul>
+	  </div>
+	<% end %>
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name, size: 60 %>
+    <%= f.label :name %><br/>
+		<em>The name appears in larger text in any context once an item has been selected <strong>(required)</strong></em><br/>
+    <%= f.text_field :name, size: 100 %>
   </div>
   <div class="field">
     <%= f.label :preview %><br/>
-	<em>The preview is a small block of text that shows up in short contexts</em><br/>
-    <%= f.text_area :preview, size: "60x12" %>
+		<em>The preview is a small block of text that shows up in preview contexts</em><br/>
+    <%= f.text_area :preview, size: "100x12" %>
+  </div>
+  <div class="field">
+    <%= f.label :image %><br/>
+		<em>This image is used in thumbnail format as the preview on the main page, and in full size once the item has been selected</em><br/>
+		<%= image_tag(@item.image_url(:thumb)) if @item.image? %>
+    <%= f.file_field :image %><br/>
+    <%= f.check_box :remove_image %> <%= f.label :remove_image %><br/>
   </div>
   <div class="field">
     <%= f.label :body %><br/>
-	<em>The body is the full text that shows up when an item has been fully selected</em><br/>
-    <%= f.text_area :body, size: "60x12" %>
+		<em>The body is the full text that shows up when an item has been fully selected</em><br/>
+    <%= f.bootsy_area :body, size: "100x12" %>
   </div>
   <div class="field">
-	<%= f.label :category %>
-	<%= f.collection_select :category_id, @categories, :id, :name %>
+		<%= f.label :category %><br/>
+		<em>Please return to the admin dashboard if you wish to manage the category list</em><br/>
+		<%= f.collection_select :category_id, @categories, :id, :name %>
   </div>
+  <div class="field">
+		<%= f.label :shape %><br/>
+		<em>What shape should this item take on the main page?</em><br/>
+		<%= f.collection_select :shape_id, @shapes, :id, :name %>
+	  <p>Landscape: <img src="http://placehold.it/100x50" alt="landscape shape image" />
+	     Portrait: <img src="http://placehold.it/50x100" alt="portrait shape image" />
+			 Square: <img src="http://placehold.it/50x50" alt="square shape image" />
+		</p>		
+  </div>
+  <h3>Attached Media Files</h3>
+	<%= f.fields_for :attachments do |attachment_form|  %>
+	    <p>
+	    <%= attachment_form.label :description %><br />
+	    <%= attachment_form.bootsy_area :description, size: "100x12" %>
+	    </p>
+	    <p>
+	    <%= attachment_form.label :file %><br />
+	    <%= attachment_form.file_field :file %>
+	    </p>
+	    <%= attachment_form.link_to_remove "Remove this attachment" %>
+	  <% end %>
+	  <%= f.link_to_add "Add attachment", :attachments %>
+	<hr/>
   <div class="actions">
     <%= f.submit %>
   </div>
