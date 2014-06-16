@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   def main
     @categories = Category.all
-    @items = Item.all.order("RANDOM()")
+    @items = Item.all.shuffle
   end
 
   def about

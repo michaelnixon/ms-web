@@ -6,15 +6,14 @@
 	  <a href="http://www.siat.sfu.ca" target="_blank"><%= image_tag("logosiat.png", size: "68x32", alt: "SIAT logo") %></a><a href="http://www.mitacs.ca/" target="_blank"><%= image_tag("mtacstrans.png", size: "68x32", alt: "MITACS logo") %></a>
 	   <a href="http://teamlab.com?campaign=nonprofit" target="_blank" style="cursor:pointer; display:inline-block;">
 	<img alt="We use TeamLab Online Office" title="We use TeamLab Online Office" alt="TeamLab Online Office logo" src="http://www.teamlab.com/images/nonprofit/banner.png?w=130&amp;h=30" border="0" align="absmiddle"/></a></p>
-    <p class="text-muted">&copy; Moving Stories 2012 All Rights Reserved</p>
-	<p class="pull-right user-info">
+    <p class="text-muted">&copy; Moving Stories 2012 All Rights Reserved
+	<span class="pull-right user-info">
 		<% if current_user %>
-	    Logged in as <%= current_user.email %>.
+	    Logged in as <%= current_user.email %>. <%= link_to "Admin", "/admin" %> or
 	    <%= link_to "Log out", log_out_path %>
 	  <% else %>
-	    <%= link_to "Sign up", sign_up_path %> or
 	    <%= link_to "log in", log_in_path %>
 	  <% end %>
-	</p>
+	</span></p>
   </div>
 </footer>

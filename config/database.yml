@@ -26,4 +26,4 @@ production:
   hostname: 127.0.0.1
   username: msweb
   password: DzyjrV
-  socket: /tmp/mysql.sock
+  socket: /var/lib/mysql/mysql.sock
