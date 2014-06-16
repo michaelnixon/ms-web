@@ -79,7 +79,7 @@ GEM
       subexec (~> 0.2.1)
     minitest (5.3.4)
     multi_json (1.10.1)
-    mysql2 (0.3.16)
+    mysql (2.9.1)
     nested_form (0.3.2)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
@@ -159,7 +159,7 @@ DEPENDENCIES
   jquery-rails
   mediaelement_rails
   mini_magick
-  mysql2
+  mysql
   nested_form
   rails (= 4.1.1)
   sass-rails (~> 4.0.3)

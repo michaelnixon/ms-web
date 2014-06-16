@@ -40,5 +40,5 @@ gem "mini_magick"
 gem 'bootsy'
 gem 'nested_form'
 gem "mediaelement_rails"
-gem 'mysql2', group: :production
+gem 'mysql', group: :production
 gem 'i18n', '0.6.9'

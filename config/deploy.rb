@@ -43,8 +43,10 @@ set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public
 after "deploy", "deploy:cleanup"
 
 namespace :deploy do
-  task :start, :roles => :app do
-    run "touch #{current_path}/tmp/restart.txt"
+  task :start do
+    on roles(:app), in: :sequence do
+      run "touch #{current_path}/tmp/restart.txt"
+    end
   end
 
   desc 'Restart application'
