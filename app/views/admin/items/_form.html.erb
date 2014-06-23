@@ -1,8 +1,7 @@
-<%= nested_form_for([:admin, @item], :html => {:multipart => true}) do |f| %>
+<%= nested_form_for([:admin, @item], :html => {:multipart => true, :role => "form"}) do |f| %>
 	<% if @item.errors.any? %>
 	  <div id="error_explanation">
 	    <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
-
 	    <ul>
 	    <% @item.errors.full_messages.each do |message| %>
 	      <li><%= message %></li>
@@ -10,47 +9,41 @@
 	    </ul>
 	  </div>
 	<% end %>
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :name %><br/>
-		<em>The name appears in larger text in any context once an item has been selected <strong>(required)</strong></em><br/>
-    <%= f.text_field :name, size: 100 %>
+    <%= f.text_field :name, size: 100, class: "form-control" %>
+    <span class="help-block">The item's name is required for identification and appears in larger text in any context once it has been selected</span>
   </div>
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :preview %><br/>
-		<em>The preview is a small block of text that shows up in preview contexts</em><br/>
-    <%= f.text_area :preview, size: "100x12" %>
+    <%= f.text_area :preview, size: "100x12", class: "form-control" %>
+    <span class="help-block">The preview is a small block of text that shows up in preview contexts</span>
   </div>
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :image %><br/>
-		<em>This image is used in thumbnail format as the preview on the main page, and in full size once the item has been selected</em><br/>
-		<%= image_tag(@item.image_url(:thumb)) if @item.image? %>
-    <%= f.file_field :image %><br/>
-    <%= f.check_box :remove_image %> <%= f.label :remove_image %><br/>
+    <% if @item.image? %>
+			<%= image_tag(@item.image_url(:thumb)) %><br/>
+    	<%= f.check_box :remove_image %> <%= f.label :remove_image, "Remove Current Image" %><br/>
+		<% end %>
+    <%= f.file_field :image %>
+    <p class="help-block">This image is used in thumbnail format as the preview on the main page, and in full size once the item has been selected. Use the browse button to find a new image for this item.</p>
   </div>
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :body %><br/>
-		<em>The body is the full text that shows up when an item has been fully selected</em><br/>
-    <%= f.bootsy_area :body, size: "100x12" %>
+    <%= f.bootsy_area :body, size: "100x12", class: "form-control" %>
+		<span class="help-block">The body is the full text that shows up when an item has been fully selected. You can use the controls to style this content, and you can even add in images.</span>
   </div>
-  <div class="field">
+  <div class="field form-group">
 		<%= f.label :category %><br/>
-		<em>Please return to the admin dashboard if you wish to manage the category list</em><br/>
 		<%= f.collection_select :category_id, @categories, :id, :name %>
-  </div>
-  <div class="field">
-		<%= f.label :shape %><br/>
-		<em>What shape should this item take on the main page?</em><br/>
-		<%= f.collection_select :shape_id, @shapes, :id, :name %>
-	  <p>Landscape: <img src="http://placehold.it/100x50" alt="landscape shape image" />
-	     Portrait: <img src="http://placehold.it/50x100" alt="portrait shape image" />
-			 Square: <img src="http://placehold.it/50x50" alt="square shape image" />
-		</p>		
+		<span class="help-block">This controls which top-level category contains the item. Please return to the admin dashboard if you wish to manage the category list.</span>
   </div>
   <h3>Attached Media Files</h3>
+    <p class="help-block">You can upload related files using these controls. Videos will be played on the site, while other file formats (e.g. PDF) will be linked in the media carousel for browsers to download.</p>
 	<%= f.fields_for :attachments do |attachment_form|  %>
 	    <p>
 	    <%= attachment_form.label :description %><br />
-	    <%= attachment_form.bootsy_area :description, size: "100x12" %>
+	    <%= attachment_form.bootsy_area :description, size: "100x12", class: "form-control" %>
 	    </p>
 	    <p>
 	    <%= attachment_form.label :file %><br />
@@ -61,6 +54,6 @@
 	  <%= f.link_to_add "Add attachment", :attachments %>
 	<hr/>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-primary" %>
   </div>
 <% end %>

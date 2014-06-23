@@ -1,3 +1,4 @@
+<%= form_for([:admin, @user], :html => { role: "form"}) do |f| %>
 <% if @user.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -9,20 +10,20 @@
     </ul>
   </div>
 <% end %>
-<%= form_for([:admin, @user]) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
+  <div class="field form-group">
+    <%= f.label :email %>
+    <%= f.text_field :email, size: 100, class: "form-control", placeholder: "Enter email" %>
   </div>
-  <div class="field">
-    <%= f.label :password %><br>
-    <%= f.password_field :password %>
+  <div class="field form-group">
+    <%= f.label :password %>
+    <%= f.password_field :password, class: "form-control", placeholder: "Enter password" %>
+		<span class="help-block">The password must: contain a digit from 0-9, one lowercase character, one uppercase character, one special symbol in the list '@#$%', and have a length of at least 6 characters and a maximum of 20 characters.</span>
   </div>
-  <div>
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation %>
+  <div class="field form-group">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Repeat the password" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-primary" %>
   </div>
 <% end %>

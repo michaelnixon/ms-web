@@ -1,20 +1,16 @@
 <h1>Listing categories</h1>
 <p><em>These are the top-level categories that items can belong to.</em></p>
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
       <th>Name</th>
-      <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @categories.each do |category| %>
       <tr>
-        <td><%= category.name %></td>
-        <td><%= link_to 'Show', [:admin, category] %></td>
-        <td><%= link_to 'Edit', [:edit, :admin, category] %></td>
-        <td><%= link_to 'Destroy', [:admin, category], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to raw("<span class='glyphicon glyphicon-edit'></span>"), [:edit, :admin, category] %><%= link_to raw("<span class='glyphicon glyphicon-trash'></span>"), [:admin, category], method: :delete, data: { confirm: 'Are you sure?' }%> <%= category.name %></td>
       </tr>
     <% end %>
   </tbody>
@@ -23,4 +19,4 @@
 <br>
 
 <%= link_to 'Create a new Category', new_admin_category_path %><br/>
-<%= link_to 'Back to dashboard', admin_path %>
+<%= link_to raw("<span class='glyphicon glyphicon-arrow-left'>Back</span>"), admin_path %>

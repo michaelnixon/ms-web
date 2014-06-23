@@ -1,22 +1,17 @@
 <h1>Listing users</h1>
 
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
       <th>Email</th>
-      <th></th>
-      <th></th>
-      <th></th>
+	    <th colspan="2"></th>	
     </tr>
   </thead>
 
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= user.email %></td>
-        <td><%= link_to 'Show', [:admin, user] %></td>
-        <td><%= link_to 'Edit', [:edit, :admin, user] %></td>
-        <td><%= link_to 'Destroy', [:admin, user], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td style="width:1%; white-space:nowrap;"><%= link_to raw("<span class='glyphicon glyphicon-edit'></span>"), [:edit, :admin, user] %><%= link_to raw("<span class='glyphicon glyphicon-trash'></span>"), [:admin, user], method: :delete, data: { confirm: 'Are you sure?' } %><%= user.email %></td>
       </tr>
     <% end %>
   </tbody>
@@ -25,4 +20,4 @@
 <br>
 
 <%= link_to 'New User', new_admin_user_path %><br/>
-<%= link_to 'Back to dashboard', admin_path %>
+<%= link_to raw("<span class='glyphicon glyphicon-arrow-left'>Back</span>"), admin_path %>
