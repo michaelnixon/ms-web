@@ -47,4 +47,14 @@ class Item < ActiveRecord::Base
   def square?
     image.version_exists? :square
   end
+  
+  # uses SQL like to determine if the name or preview text matches the search term
+  def self.search(search)
+    if search
+      where("name like ? or preview like ?", "%#{search}%", "%#{search}%") 
+    else
+      all
+    end
+  end
+
 end
