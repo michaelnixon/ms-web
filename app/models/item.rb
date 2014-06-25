@@ -6,6 +6,7 @@ class Item < ActiveRecord::Base
   accepts_nested_attributes_for :attachments, :allow_destroy => true
   belongs_to :category
   validates :name, presence: true
+  validates :preview, presence: true
     
   # checks if various resized versions exists to provide the preview geometry
   def preview_geometry

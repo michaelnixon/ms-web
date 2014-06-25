@@ -10,7 +10,7 @@
   <tbody>
     <% @categories.each do |category| %>
       <tr>
-        <td><%= link_to raw("<span class='glyphicon glyphicon-edit'></span>"), [:edit, :admin, category] %><%= link_to raw("<span class='glyphicon glyphicon-trash'></span>"), [:admin, category], method: :delete, data: { confirm: 'Are you sure?' }%> <%= category.name %></td>
+        <td><%= link_to edit_link_html, [:edit, :admin, category] %><%= link_to remove_link_html, [:admin, category], method: :delete, data: { confirm: 'Are you sure?' }%> <%= category.name %></td>
       </tr>
     <% end %>
   </tbody>
@@ -18,5 +18,5 @@
 
 <br>
 
-<%= link_to 'Create a new Category', new_admin_category_path %><br/>
-<%= link_to raw("<span class='glyphicon glyphicon-arrow-left'>Back</span>"), admin_path %>
+<%= link_to add_link_html("Create new category"), new_admin_category_path %><br/>
+<%= link_to back_link_html("Return to dashboard"), admin_path %>

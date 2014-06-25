@@ -11,16 +11,16 @@
   </div>
 <% end %>
   <div class="field form-group">
-    <%= f.label :email %>
+    <%= f.label :email, class: "control-label" %>
     <%= f.text_field :email, size: 100, class: "form-control", placeholder: "Enter email" %>
   </div>
   <div class="field form-group">
-    <%= f.label :password %>
+    <%= f.label :password, class: "control-label" %>
     <%= f.password_field :password, class: "form-control", placeholder: "Enter password" %>
 		<span class="help-block">The password must: contain a digit from 0-9, one lowercase character, one uppercase character, one special symbol in the list '@#$%', and have a length of at least 6 characters and a maximum of 20 characters.</span>
   </div>
   <div class="field form-group">
-    <%= f.label :password_confirmation %>
+    <%= f.label :password_confirmation, class: "control-label" %>
     <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Repeat the password" %>
   </div>
   <div class="actions">

@@ -10,17 +10,17 @@
 	  </div>
 	<% end %>
   <div class="field form-group">
-    <%= f.label :name %><br/>
+    <%= f.label :name, class: "control-label" %><br/>
     <%= f.text_field :name, size: 100, class: "form-control" %>
     <span class="help-block">The item's name is required for identification and appears in larger text in any context once it has been selected</span>
   </div>
   <div class="field form-group">
-    <%= f.label :preview %><br/>
+    <%= f.label :preview, class: "control-label"  %><br/>
     <%= f.text_area :preview, size: "100x12", class: "form-control" %>
     <span class="help-block">The preview is a small block of text that shows up in preview contexts</span>
   </div>
   <div class="field form-group">
-    <%= f.label :image %><br/>
+    <%= f.label :image, class: "control-label"  %><br/>
     <% if @item.image? %>
 			<%= image_tag(@item.image_url(:thumb)) %><br/>
     	<%= f.check_box :remove_image %> <%= f.label :remove_image, "Remove Current Image" %><br/>
@@ -29,12 +29,12 @@
     <p class="help-block">This image is used in thumbnail format as the preview on the main page, and in full size once the item has been selected. Use the browse button to find a new image for this item.</p>
   </div>
   <div class="field form-group">
-    <%= f.label :body %><br/>
+    <%= f.label :body, class: "control-label"  %><br/>
     <%= f.bootsy_area :body, size: "100x12", class: "form-control" %>
 		<span class="help-block">The body is the full text that shows up when an item has been fully selected. You can use the controls to style this content, and you can even add in images.</span>
   </div>
   <div class="field form-group">
-		<%= f.label :category %><br/>
+		<%= f.label :category, class: "control-label"  %><br/>
 		<%= f.collection_select :category_id, @categories, :id, :name %>
 		<span class="help-block">This controls which top-level category contains the item. Please return to the admin dashboard if you wish to manage the category list.</span>
   </div>
@@ -47,12 +47,13 @@
 	    </p>
 	    <p>
 	    <%= attachment_form.label :file %><br />
-	    <%= attachment_form.file_field :file %>
+	    <%= attachment_form.file_field :file, :hint => "foo" %>
 	    </p>
-	    <%= attachment_form.link_to_remove "Remove this attachment" %>
+			<%= link_to "Download existing attachment", attachment_form.object.file.url if attachment_form.object.file? %><br/>
+	    <%= attachment_form.link_to_remove remove_link_html("Remove this attachment") %>
 	  <% end %>
-	  <%= f.link_to_add "Add attachment", :attachments %>
-	<hr/>
+		<br/>
+		<p><%= f.link_to_add add_link_html("Add new media attachment"), :attachments %></p>
   <div class="actions">
     <%= f.submit class: "btn btn-primary" %>
   </div>

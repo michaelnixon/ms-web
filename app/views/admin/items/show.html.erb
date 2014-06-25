@@ -15,5 +15,5 @@
   <%= @item.preview %>
 </p>
 
-<%= link_to 'Edit', [:edit, :admin, @item] %> |
-<%= link_to 'Back', admin_items_path %>
+<%= link_to edit_link_html("Edit this item"), [:edit, :admin, @item] %> |
+<%= link_to back_link_html("Back to items listing"), admin_items_path %>

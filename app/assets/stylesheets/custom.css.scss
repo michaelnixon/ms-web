@@ -1,4 +1,4 @@
-
+@import "bootstrap.min";
 /* universal */
 
 html {
@@ -201,4 +201,27 @@ p.preview {
 .carousel-caption {
 	color: green;
 	text-align: center;
+}
+
+#notice {
+  color: green;
+}
+
+/* Rails scaffold style compatibility */
+#error_explanation {
+  @extend .alert;
+  @extend .alert-danger;
+  width: inherit;
+}
+
+.field_with_errors {
+  @extend .has-error;
+  display: inherit;
+  padding: inherit;
+	background-color: inherit;
+}
+
+#error_explanation h2 {
+	@extend .alert;
+	@extend .alert-danger;
 }
