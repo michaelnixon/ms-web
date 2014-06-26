@@ -9,24 +9,40 @@ module ApplicationHelper
     end
   end
   
-  def remove_link_html text = ''
-    text = ' ' + text unless text.nil?
-    raw("<span class='glyphicon glyphicon-trash'></span>") + text
+  def remove_link_html(text = '')
+    base_link = raw("<span class='glyphicon glyphicon-trash'></span>")
+    if text.empty?
+      base_link
+    else
+      "#{base_link} #{text}"
+    end
   end
   
   def add_link_html text = ''
-    text = ' ' + text unless text.nil?
-    raw("<span class='glyphicon glyphicon-plus-sign'></span>") + text
+    base_link = raw("<span class='glyphicon glyphicon-plus-sign'></span>")
+    if text.empty?
+      base_link
+    else
+      "#{base_link} #{text}"
+    end    
   end
   
   def back_link_html text = ''
-    text = ' ' + text unless text.nil?    
-    raw("<span class='glyphicon glyphicon-arrow-left'></span>") + text
+    base_link = raw("<span class='glyphicon glyphicon-arrow-left'></span>")
+    if text.empty?
+      base_link
+    else
+      "#{base_link} #{text}"
+    end 
   end
   
   def edit_link_html text = ''
-    text = ' ' + text unless text.nil?
-    raw("<span class='glyphicon glyphicon-edit'></span>") + text
+    base_link = raw("<span class='glyphicon glyphicon-arrow-edit'></span>")
+    if text.empty?
+      base_link
+    else
+      "#{base_link} #{text}"
+    end    
   end
   
 end
