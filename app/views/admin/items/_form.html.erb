@@ -47,7 +47,7 @@
 	    </p>
 	    <p>
 	    <%= attachment_form.label :file %><br />
-	    <%= attachment_form.file_field :file, :hint => "foo" %>
+	    <%= attachment_form.file_field :file %>	
 	    </p>
 			<%= link_to "Download existing attachment", attachment_form.object.file.url if attachment_form.object.file? %><br/>
 	    <%= attachment_form.link_to_remove remove_link_html("Remove this attachment") %>

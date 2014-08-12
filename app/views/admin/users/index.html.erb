@@ -4,14 +4,13 @@
   <thead>
     <tr>
       <th>Email</th>
-	    <th colspan="2"></th>	
     </tr>
   </thead>
 
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td style="width:1%; white-space:nowrap;"><%= link_to raw("<span class='glyphicon glyphicon-edit'></span>"), [:edit, :admin, user] %><%= link_to raw("<span class='glyphicon glyphicon-trash'></span>"), [:admin, user], method: :delete, data: { confirm: 'Are you sure?' } %><%= user.email %></td>
+        <td><%= link_to raw("<span class='glyphicon glyphicon-edit'></span>"), [:edit, :admin, user] %> <%= link_to raw("<span class='glyphicon glyphicon-trash'></span>"), [:admin, user], method: :delete, data: { confirm: 'Are you sure?' } %> <%= user.email %></td>
       </tr>
     <% end %>
   </tbody>
