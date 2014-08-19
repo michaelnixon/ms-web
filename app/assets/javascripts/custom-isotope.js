@@ -62,9 +62,9 @@ $(document).ready(function(){
 });
 
 $(document).ready(function () {
-    $('.nav li a').click(function(e) {
+    $('.nav-items li a').click(function(e) {
 
-        $('.nav li').removeClass('active');
+        $('.nav-items li').removeClass('active');
 
         var $parent = $(this).parent();
         if (!$parent.hasClass('active')) {
