@@ -8,7 +8,7 @@ $( function() {
     }
   });
 
-	$('.nav a').click(function(){
+	$('.nav-items a').click(function(){
 		var selector = $(this).attr('data-filter');
 		$container.isotope({ 
 		filter: selector,
