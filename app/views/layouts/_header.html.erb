@@ -1,10 +1,14 @@
+<div style="height: 123px" class="container-fluid">
+	<%= image_tag("low_fi_ms_logo.png", height: "120", alt: "Moving Stories project logo")%>
+	<span class="pull-right" style="margin-top: 40px; margin-right: 40px"><a href="/about"><i class="fa fa-question-circle fa-3x" style="margin-right: 10px"></i></a> <%= mail_to "admin@movingstories.ca", raw('<i class="fa fa-envelope fa-3x" style="margin-right: 10px"></i>') %> <a href="https://www.facebook.com/groups/430082843697624/"><i class="fa fa-facebook fa-3x" style="margin-right: 10px"></a></i> <a href="https://twitter.com/Moving_Stories"><i class="fa fa-twitter fa-3x"></i></a></span>
+</div>
 <nav class="navbar navbar-default" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <a class="navbar-brand" href="/">Moving Stories</a>
 		</div>
 		<div class="collapse navbar-collapse">
-	    <ul class="nav navbar-nav">
+	    <ul class="nav navbar-nav nav-items">
 	      <li class="active"><a href="" data-filter="*">All</a></li>
 	      <% @categories.each do |category| %>
 					<li><a href="" data-filter=".category<%=category.id%>"><%= category.name %></a></li>

@@ -261,3 +261,8 @@ p.preview {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+
+.nav-items > .active > a,.nav-items > .active,.nav-items > li > a:hover {
+	text-decoration: none;
+	border-bottom-style: solid;
+}
