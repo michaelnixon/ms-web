@@ -5,9 +5,15 @@
 <nav class="navbar navbar-default" role="navigation">
   <div class="container">
     <div class="navbar-header">
+	    <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+      </button>
       <a class="navbar-brand" href="/">Moving Stories</a>
 		</div>
-		<div class="collapse navbar-collapse">
+		<div class="collapse navbar-collapse" id="navbarCollapse">
 	    <ul class="nav navbar-nav nav-items">
 	      <li class="active"><a href="" data-filter="*">All</a></li>
 	      <% @categories.each do |category| %>
