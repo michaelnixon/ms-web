@@ -1,4 +1,4 @@
-<div class="story category<%=item.category.id%> <%= "width2" if item.landscape? %><%= "height2" if item.portrait? %>" id="story<%=item.id%>">
+<div class="story category<%=item.category.id%> <%= "width2" if item.landscape? %>" id="story<%=item.id%>">
 	<div class="top-wrapper">
 		<h2 class="gone"><%=item.name%></h2>
 		<%= image_tag(item.preview_url, size: item.preview_geometry) if item.image?%>

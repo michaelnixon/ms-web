@@ -118,7 +118,7 @@ footer ul li {
 /* ---- isotope ---- */
 
 #isotope {
-  max-width: 1200px;
+  max-width: 100%; /* 1200px */
 }
 
 /* clear fix */
@@ -127,21 +127,26 @@ footer ul li {
   display: block;
   clear: both;
 }
+.nav { font-size: 20px; }
+
 .gone { display: none }
 /* ---- .story ---- */
 
 #isotope > .story {
   float: left;
-  width: 200px;
+  width: 12%; /* was 200px */
   height: 200px;
   background: #F7F6F2;
   border: 2px solid #333;
   border-color: hsla(0, 0%, 0%, 0.7);
   overflow: hidden;
+	margin-right: 20px;
+	margin-bottom: 20px;
 }
 
-#isotope > .story.width2 { width: 400px; }
+#isotope > .story.width2 { width: 24%; }
 #isotope > .story.height2 { height: 400px; }
+#isotope > .story.hover { width: 38%; }
 
 #isotope > .story:hover {
 /*  background: #8CF; */

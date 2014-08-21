@@ -2,12 +2,10 @@ $( function() {
   var $current_id = "";
 
   var $container = $('#isotope').isotope({
+		layoutMode: 'fitRows',
     itemSelector: '.story',
-    masonry: {
-      columnWidth: 100
-    }
   });
-
+	// controls the filtering
 	$('.nav-items a').click(function(){
 		var selector = $(this).attr('data-filter');
 		$container.isotope({ 
@@ -55,12 +53,14 @@ $( function() {
 
 });
 
+// sets up the carousels for each of the items
 $(document).ready(function(){
   $('.carousel').carousel({
     interval: false
   });
 });
 
+// controls changing the active class on nav links so that the currently selected one is underlined
 $(document).ready(function () {
     $('.nav-items li a').click(function(e) {
 

@@ -32,7 +32,7 @@ class Item < ActiveRecord::Base
     elsif square?
       image_url(:square)
     else
-      # default image handling goes here or an error will occur
+      # default image handling goes here or an error will occur upon loading
       "http://placehold.it/200x200"
     end
   end
