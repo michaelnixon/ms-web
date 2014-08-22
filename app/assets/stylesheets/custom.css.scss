@@ -45,11 +45,6 @@ h2 {
   font-weight: normal;
   color: #999;
 }
-div.story h2 {
-  margin-top: 5px;
-  margin-bottom: 5px;
-  color: dimgray;	
-}
 
 p {
   font-size: 1.1em;
@@ -137,8 +132,8 @@ footer ul li {
   width: 12%; /* was 200px */
   height: 200px;
   background: #F7F6F2;
-  border: 2px solid #333;
-  border-color: hsla(0, 0%, 0%, 0.7);
+ /* border: 2px solid #333;
+  border-color: hsla(0, 0%, 0%, 0.7);*/
   overflow: hidden;
 	margin-right: 20px;
 	margin-bottom: 20px;
@@ -146,66 +141,93 @@ footer ul li {
 
 #isotope > .story.width2 { width: 24%; }
 #isotope > .story.height2 { height: 400px; }
-#isotope > .story.hover { width: 38%; }
-
-#isotope > .story:hover {
-/*  background: #8CF; */
-  cursor: pointer;
+#isotope > .story.hover { 
+	width: 38%; 
+	cursor: pointer;
 }
+
+#isotope > .story h2 { 
+	background-color: #C0BCBB; 
+	font-size: 50px;
+	text-align: left;
+	vertical-align: bottom;
+	color: black;
+	margin: 0;
+	padding-top: 10px;
+	padding-left: 20px;
+	height: 75px;
+}
+#isotope > div.story.hover div.preview-on-hover img {
+  vertical-align: 0%;	
+	border: 1px;
+}
+/* provides the name on hover */
+#isotope > .story.hover a.hovertext { position: absolute; left: 0; bottom:0; width: 100%; text-decoration: none !important; text-align: right; }
+#isotope > .story.hover a.hovertext:after { content: attr(title); position: absolute; left: 0; bottom: 0; padding: 0.5em 20px; width: 100%; 
+	background: rgba(0,0,0,0.8); text-decoration: none !important; color: #fff; opacity: 0; 
+	-webkit-transition: 0.5s; -moz-transition: 0.5s; -o-transition: 0.5s; -ms-transition: 0.5s; font-size: 20px; } 
+#isotope > .story.hover a.hovertext:hover:after, 
+#isotope > .story.hover a.hovertext:focus:after { opacity: 1.0; }
 
 /* gigante styles */
 #isotope > .story.gigante {
   width: 100%;
-  height: 310px;
+  height: 1390px;
 /*  background: #D38847; */
 }
 
 #isotope > .story.gigante img{
   float:right;	
-  margin-right: 20px;
-
+/*  margin-right: 20px;*/
 }
 
-p.preview {
-  margin-left: 20px;
-	width: 50%;
-  background-color: black;
-	height: 270px;
-	color: white;
-	padding-left: 10px;
+#isotope > .story div.story-content p.preview {
+	padding-left: 40px;
 	padding-right: 10px;
 	padding-top: 5px;
 }
 
-#isotope > .story.gigante button {
-	position: relative;
-	/*margin-left: 15px;*/
-	left: 50%;
-	top: -35px; 
-}
-
-#isotope > .story.full-gigante {
-	height: 820px;
+#isotope > .story div.story-content p.category {
+	clear: both;
+	font-size: 32px;
+	padding-left: 33%;
+	color: white;
+	background-color: black;
+	margin-bottom: 0px;
 }
 
 .carousel {
 	clear: both;
+	height: 975px;
 }
 
 .carousel-inner {
-	width: 70%;
+	width: 75%;
 	margin-right: auto;
 	margin-left: auto;
-  height: 400px !important;	
 }
 
+ol.carousel-indicators {
+  position: relative;
+  left: 50%;
+  top: 0;
+  z-index: 15;
+  width: 60%;
+  padding-left: 0;
+  margin-left: -30%;
+  text-align: center;
+  list-style: none;
+}
+
+ol.carousel-indicators li{
+	background-color: #F7F6F2;    
+}
+
+ol.carousel-indicators li.active {
+	background-color: #000;    
+}
 .item {   
 		margin-top: 10px;
-}
-
-.carousel-caption {
-	color: green;
-	text-align: center;
 }
 
 #notice {

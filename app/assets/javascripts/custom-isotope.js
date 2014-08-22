@@ -1,6 +1,5 @@
 $( function() {
-  var $current_id = "";
-
+  var prev_obj = null;
   var $container = $('#isotope').isotope({
 		layoutMode: 'fitRows',
     itemSelector: '.story',
@@ -18,38 +17,46 @@ $( function() {
 		});
 		return false;
 	});
-	
-	$('.btn.expander').click(function(){
-		$(this).parent().parent().toggleClass('full-gigante');
-		$(this).children("span").toggleClass("glyphicon-plus-sign glyphicon-minus-sign");		
-    $container.isotope('layout');
-		return false;
-	});
 		
-  $container.on( 'click', '.story', function() {
-		$new_id = $( this ).attr('id');
-		if ($new_id != $current_id) {
-			if ($current_id != "") {
-				// if there was an old id already open, hide its h2
-				$( "#" + $current_id + ">div>h2" ).toggleClass('gone');	
-
-				// if the old item was expanded, we need to make it small and switch the plus sign back
-				if ($( "#"+$current_id ).hasClass('full-gigante')) {
-					$( "#"+$current_id ).toggleClass('full-gigante');
-					$( "#"+$current_id + ">div>button>span" ).toggleClass("glyphicon-plus-sign glyphicon-minus-sign");
+	$(".story").on({
+	    mouseenter : function() {
+				if (!$(this).hasClass('gigante')) {
+	        $(this).addClass("hover");
+		    	$container.isotope('layout');
 				}
-			
-			}
-		
-			$current_id = $new_id;
-			$( "#" + $current_id + ">div>h2" ).toggleClass('gone');				
-		
-	    // change size of item by toggling gigante class
-	    $(".gigante").toggleClass('gigante');
-	    $( this ).toggleClass('gigante');
-	    $container.isotope('layout');
-		}
-  });
+	    },
+	    mouseleave : function() {
+				if (!$(this).hasClass('gigante')) {
+	        $(this).removeClass("hover");
+		    	$container.isotope('layout');
+				}
+	    },
+	    click      : function() {
+	        if(this !== prev_obj) {
+						// if an old object was full sized, shrink it to normal
+						if (prev_obj != null) {	
+				    	$(prev_obj).toggleClass('gigante');			
+							$preview_div = $(prev_obj).children("div.preview-on-hover");
+							$preview_div.slideDown(1);
+					 		$content_div = $(prev_obj).children("div.story-content");
+							$content_div.slideUp(1);										
+						} 	
+						
+		        var $obj = $(this);
+						$obj.removeClass("hover");		
+				    // change size of item by toggling gigante class
+				    $obj.toggleClass('gigante');
+						$preview_div = $obj.children("div.preview-on-hover");
+						$preview_div.slideUp(1);
+				 		$content_div = $obj.children("div.story-content");
+						$content_div.slideDown(1);
+						// isotope needs to relayout the items
+				    $container.isotope('layout');					
+						// record the new previous object for next click 
+						prev_obj = this;						
+	        } 
+	    }
+	});		
 
 });
 
