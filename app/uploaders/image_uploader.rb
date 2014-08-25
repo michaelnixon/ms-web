@@ -83,7 +83,7 @@ class ImageUploader < CarrierWave::Uploader::Base
         image = MiniMagick::Image.open(picture.path)
         return image[:width] == image[:height]      
       rescue => e
-        logger.warn "Unable to determine whether image is square, probably missing: #{e}" 
+        Rails.logger.warn "Unable to determine whether image is square, probably missing: #{e}" 
       end
     end
     
@@ -92,7 +92,7 @@ class ImageUploader < CarrierWave::Uploader::Base
         image = MiniMagick::Image.open(picture.path)
         return image[:width] > image[:height]
       rescue => e
-        logger.warn "Unable to determine whether image is landscape, probably missing: #{e}" 
+        Rails.logger.warn "Unable to determine whether image is landscape, probably missing: #{e}" 
       end      
     end
     
@@ -101,7 +101,7 @@ class ImageUploader < CarrierWave::Uploader::Base
         image = MiniMagick::Image.open(picture.path)
         return image[:width] < image[:height]
       rescue => e
-        logger.warn "Unable to determine whether image is portrait, probably missing: #{e}" 
+        Rails.logger.warn "Unable to determine whether image is portrait, probably missing: #{e}" 
       end        
     end
 
