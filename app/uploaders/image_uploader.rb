@@ -79,18 +79,30 @@ class ImageUploader < CarrierWave::Uploader::Base
   protected
   
     def is_square? picture
-      image = MiniMagick::Image.open(picture.path)
-      image[:width] == image[:height]      
+      begin
+        image = MiniMagick::Image.open(picture.path)
+        return image[:width] == image[:height]      
+      rescue => e
+        logger.warn "Unable to determine whether image is square, probably missing: #{e}" 
+      end
     end
     
     def is_landscape? picture
-      image = MiniMagick::Image.open(picture.path)
-      image[:width] > image[:height]
+      begin
+        image = MiniMagick::Image.open(picture.path)
+        return image[:width] > image[:height]
+      rescue => e
+        logger.warn "Unable to determine whether image is landscape, probably missing: #{e}" 
+      end      
     end
     
     def is_portrait? picture
-      image = MiniMagick::Image.open(picture.path)
-      image[:width] < image[:height]
+      begin
+        image = MiniMagick::Image.open(picture.path)
+        return image[:width] < image[:height]
+      rescue => e
+        logger.warn "Unable to determine whether image is portrait, probably missing: #{e}" 
+      end        
     end
 
 end
