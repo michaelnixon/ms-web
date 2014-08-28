@@ -35,8 +35,8 @@
   </div>
   <div class="field form-group">
 		<%= f.label :category, class: "control-label"  %><br/>
-		<%= f.collection_select :category_id, @categories, :id, :name %>
-		<span class="help-block">This controls which top-level category contains the item. Please return to the admin dashboard if you wish to manage the category list.</span>
+		<%= f.collection_select :category_id, @categories, :id, :pretty_name %>
+		<span class="help-block">This controls which category contains the item. You can manage the <%= link_to "category list", admin_categories_path %> separately.</span>
   </div>
   <h3>Attached Media Files</h3>
     <p class="help-block">You can upload related files using these controls. Videos will be played on the site, while other file formats (e.g. PDF) will be linked in the media carousel for browsers to download.</p>

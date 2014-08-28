@@ -1,10 +1,12 @@
 <div class="story category<%=item.category.id%> <% if item.category.category%>category<%=item.category.category.id%> <% end %><%= "width2" if item.landscape? %>" id="story<%=item.id%>" style="position:relative">
 	<div class="preview-on-hover">
-		<a class="hovertext" title="<%=item.name%> : <%= item.category.name if item.category %>">
+		<a class="hovertext" title="<%=item.name%> :: <%= item.category.name if item.category %>">
 		<%= image_tag(item.preview_url, size: item.preview_geometry) if item.image?%></a>
 	</div>
 	<div class="story-content gone">
-		<h2><%= item.name%></h2>
+		<h2>
+		<% if item.category.category %><small><%= item.category.category.name %> :: </small><% end %>
+		<small><%=item.category.name%> :: </small><%= item.name%></h2>
 		<%= image_tag(item.preview_url, size: item.preview_geometry) if item.image?%>
 		<p class="preview"><%=item.preview %></p> 
 		<p class="category"><%= item.category.name %></p>

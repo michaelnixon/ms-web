@@ -17,20 +17,20 @@ class Admin::ItemsController < ApplicationController
   def new
     @item = Item.new
     @shapes = Shape.all.order("name")
-    @categories = Category.all.order("name")
+    @categories = Category.find_all_nested
   end
 
   # GET /items/1/edit
   def edit
     @shapes = Shape.all.order("name")
-    @categories = Category.all.order("name")
+    @categories = Category.find_all_nested
   end
 
   # POST /items
   # POST /items.json
   def create
     @item = Item.new(item_params)
-    @categories = Category.all.order("name")
+    @categories = Category.find_all_nested
     @shapes = Shape.all.order("name")    
     respond_to do |format|
       if @item.save
@@ -46,7 +46,7 @@ class Admin::ItemsController < ApplicationController
   # PATCH/PUT /items/1
   # PATCH/PUT /items/1.json
   def update
-    @categories = Category.all.order("name")
+    @categories = Category.find_all_nested
     @shapes = Shape.all.order("name")    
     respond_to do |format|
       if @item.update(item_params)
