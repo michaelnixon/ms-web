@@ -32,6 +32,7 @@ $( function() {
 				}
 	    },
 	    click      : function() {
+				if (this !== prev_obj) {
 					// if an old object was full sized, shrink it to normal
 					if (prev_obj != null) {	
 			    	$(prev_obj).toggleClass('gigante');			
@@ -40,25 +41,66 @@ $( function() {
 				 		$content_div = $(prev_obj).children("div.story-content");
 						$content_div.slideUp(1);										
 					} 	
-					if(this !== prev_obj) {
-		        var $obj = $(this);
-						$obj.removeClass("hover");		
-				    // change size of item by toggling gigante class
-				    $obj.toggleClass('gigante');
-						$preview_div = $obj.children("div.preview-on-hover");
-						$preview_div.slideUp(1);
-				 		$content_div = $obj.children("div.story-content");
-						$content_div.slideDown(1);			
-	        } 
-				  if (this !== prev_obj) {
-						prev_obj = this;
-					} else {
-						prev_obj = null;
-					}
+	        var $obj = $(this);
+					$obj.removeClass("hover");		
+			    // change size of item by toggling gigante class
+			    $obj.toggleClass('gigante');
+					$preview_div = $obj.children("div.preview-on-hover");
+					$preview_div.slideUp(1);
+			 		$content_div = $obj.children("div.story-content");
+					$content_div.slideDown(1);			
+					prev_obj = this;
+
 					// isotope needs to relayout the items
 			    $container.isotope('layout');					
+				}
 	    }
 	});		
+	
+	$(".exit").on( {
+	  mouseenter : function() {
+			$(".story").off("click");
+		},
+		click      : function(e) {
+				// if an old object was full sized, shrink it to normal
+				if (prev_obj != null) {	
+		    	$(prev_obj).toggleClass('gigante');			
+					$preview_div = $(prev_obj).children("div.preview-on-hover");
+					$preview_div.slideDown(1);
+			 		$content_div = $(prev_obj).children("div.story-content");
+					$content_div.slideUp(1);										
+					prev_obj = null;
+					// isotope needs to relayout the items
+			    $container.isotope('layout');
+					e.stopImmediatePropagation();
+					$(".story").on("click", function() {
+						if (this !== prev_obj) {
+							// if an old object was full sized, shrink it to normal
+							if (prev_obj != null) {	
+					    	$(prev_obj).toggleClass('gigante');			
+								$preview_div = $(prev_obj).children("div.preview-on-hover");
+								$preview_div.slideDown(1);
+						 		$content_div = $(prev_obj).children("div.story-content");
+								$content_div.slideUp(1);										
+							} 	
+			        var $obj = $(this);
+							$obj.removeClass("hover");		
+					    // change size of item by toggling gigante class
+					    $obj.toggleClass('gigante');
+							$preview_div = $obj.children("div.preview-on-hover");
+							$preview_div.slideUp(1);
+					 		$content_div = $obj.children("div.story-content");
+							$content_div.slideDown(1);			
+							prev_obj = this;
+
+							// isotope needs to relayout the items
+					    $container.isotope('layout');					
+						}
+			    });
+			
+				} 	
+			}
+	});
 
 });
 
