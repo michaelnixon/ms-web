@@ -297,3 +297,29 @@ ol.carousel-indicators li.active {
 	text-decoration: none;
 	border-bottom-style: solid;
 }
+
+
+div.secondary {
+	color: #F8F8F8;
+	background-color: black;
+}
+
+#navbarCollapse {
+	height: 56px !important;
+}
+
+#subnavbar {
+	text-align: left;
+}
+#subnavbar ul a{
+	color: #F7F6F2;
+	font-size: 18px;
+	height: 56px;
+}
+
+#subnavbar ul a:hover, #subnavbar ul a:focus{
+	color: white;
+}
+#subnavbar li.active a {
+	background-color: black;
+}

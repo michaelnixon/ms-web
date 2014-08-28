@@ -1,0 +1,31 @@
+<div class="story category<%=item.category.id%> <% if item.category.category%>category<%=item.category.category.id%> <% end %><%= "width2" if item.landscape? %>" id="story<%=item.id%>" style="position:relative">
+	<div class="preview-on-hover">
+		<a class="hovertext" title="<%=item.name%> : <%= item.category.name if item.category %>">
+		<%= image_tag(item.preview_url, size: item.preview_geometry) if item.image?%></a>
+	</div>
+	<div class="story-content gone">
+		<h2><%= item.name%></h2>
+		<%= image_tag(item.preview_url, size: item.preview_geometry) if item.image?%>
+		<p class="preview"><%=item.preview %></p> 
+		<p class="category"><%= item.category.name %></p>
+		<!--  Carousel - consult the Twitter Bootstrap docs at
+	      http://twitter.github.com/bootstrap/javascript.html#carousel -->
+		<div id="carousel-story<%=item.id%>" class="carousel slide" data-ride="carousel"><!-- class of slide for animation -->
+			<!-- Carousel indicators -->
+	  	<ol class="carousel-indicators">
+					<% (item.attachments.size + 1).times do |count| %>
+						<%= render partial: 'indicator', locals: { item_id: item.id, count: count } %>
+					<% end %>
+		  </ol>
+		  <div class="carousel-inner">
+		    <div class="active item"><!-- class of active since it's the first item -->
+					<div><%= raw item.body%></div>
+		    </div>
+				<%= render partial: 'attachment', collection: item.attachments %>
+		  </div><!-- /.carousel-inner -->
+	  	<!--  Next and Previous controls below href values must reference the id for this carousel -->
+	    <a class="carousel-control left" href="#carousel-story<%=item.id%>" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+	    <a class="carousel-control right" href="#carousel-story<%=item.id%>" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+		</div><!-- /.carousel -->
+	</div>
+</div>

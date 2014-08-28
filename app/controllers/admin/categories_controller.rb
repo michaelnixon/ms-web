@@ -5,7 +5,7 @@ class Admin::CategoriesController < ApplicationController
   # GET /categories
   # GET /categories.json
   def index
-    @categories = Category.all.order("name")
+    @categories = Category.find_all_top_level.order("name")
   end
 
   # GET /categories/1
@@ -16,17 +16,19 @@ class Admin::CategoriesController < ApplicationController
   # GET /categories/new
   def new
     @category = Category.new
+    @top_level_categories = Category.find_all_top_level
   end
 
   # GET /categories/1/edit
   def edit
+    @top_level_categories = Category.find_all_top_level
   end
 
   # POST /categories
   # POST /categories.json
   def create
     @category = Category.new(category_params)
-
+    @top_level_categories = Category.find_all_top_level
     respond_to do |format|
       if @category.save
         format.html { redirect_to admin_categories_url, notice: 'Category was successfully created.' }
@@ -41,6 +43,7 @@ class Admin::CategoriesController < ApplicationController
   # PATCH/PUT /categories/1
   # PATCH/PUT /categories/1.json
   def update
+    @top_level_categories = Category.find_all_top_level    
     respond_to do |format|
       if @category.update(category_params)
         format.html { redirect_to admin_categories_url, notice: 'Category was successfully updated.' }
@@ -70,6 +73,6 @@ class Admin::CategoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def category_params
-      params.require(:category).permit(:name)
+      params.require(:category).permit(:name, :category_id)
     end
 end

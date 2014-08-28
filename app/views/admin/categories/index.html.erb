@@ -1,5 +1,5 @@
 <h1>Listing categories</h1>
-<p><em>These are the top-level categories that items can belong to.</em></p>
+<p><em>These are the categories that items can belong to.</em></p>
 <table class="table table-hover">
   <thead>
     <tr>
@@ -12,6 +12,11 @@
       <tr>
         <td><%= link_to edit_link_html, [:edit, :admin, category] %> <%= link_to remove_link_html, [:admin, category], method: :delete, data: { confirm: 'Are you sure?' }%> <%= category.name %></td>
       </tr>
+			<% category.categories.each do |subcat| %>
+				<tr>
+					<td>-- <%= link_to edit_link_html, [:edit, :admin, subcat] %> <%= link_to remove_link_html, [:admin, subcat], method: :delete, data: { confirm: 'Are you sure?' }%> <%= subcat.name %></td>
+				</tr>
+			<% end %>
     <% end %>
   </tbody>
 </table>

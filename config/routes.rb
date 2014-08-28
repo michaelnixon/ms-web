@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root to: 'pages#main'
 #  get 'pages/main'
   get 'main' => 'pages#main'
- # get 'pages/about'
+  get 'pages/change_subnav'
   get 'about' => 'pages#about'
 #  get 'pages/contact'
   get 'contact' => 'pages#contact'

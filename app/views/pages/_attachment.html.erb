@@ -1,0 +1,10 @@
+<div class="item">
+	<%= raw attachment.description %>
+	<hr/>
+	<% if attachment.is_video_file? %>
+		<video src="<%= attachment.file_url %>" width="320" height="240" 
+		        class="mejs-player" 
+		        data-mejsoptions='{"alwaysShowControls": true}'></video>
+	<% end %>
+	<%= link_to "Download the file", attachment.file.url %>
+</div>

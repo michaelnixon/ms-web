@@ -71,7 +71,7 @@ $(document).ready(function(){
 $(document).ready(function () {
     $('.nav-items li a').click(function(e) {
 
-        $('.nav-items li').removeClass('active');
+        $('.active').removeClass('active');
 
         var $parent = $(this).parent();
         if (!$parent.hasClass('active')) {
@@ -79,4 +79,10 @@ $(document).ready(function () {
         }
         e.preventDefault();
     });
+
+    $('.nav_elem').click(function(e) {
+				$.ajax({url: "pages/change_subnav", type: "GET", data: {id: $(this).attr("data-id")}});
+        e.preventDefault();
+    });
+
 });

@@ -1,5 +1,5 @@
 <div style="height: 123px" class="container-fluid">
-	<%= image_tag("mslogo_01.png", height: "120", alt: "Moving Stories project logo")%>
+	<%= image_tag("mslogo_01.png", height: "120", alt: "Moving Stories project logo", title: "Moving Stories project logo")%>
 	<span class="pull-right" style="margin-top: 40px; margin-right: 40px"><a href="/about"><i class="fa fa-question-circle fa-3x" style="margin-right: 10px"></i></a> <%= mail_to "admin@movingstories.ca", raw('<i class="fa fa-envelope fa-3x" style="margin-right: 10px"></i>') %> <a href="https://www.facebook.com/groups/430082843697624/"><i class="fa fa-facebook fa-3x" style="margin-right: 10px"></a></i> <a href="https://twitter.com/Moving_Stories"><i class="fa fa-twitter fa-3x"></i></a></span>
 </div>
 <nav class="navbar navbar-default" role="navigation">
@@ -11,16 +11,15 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">Moving Stories</a>
 		</div>
 		<div class="collapse navbar-collapse" id="navbarCollapse">
 	    <ul class="nav navbar-nav nav-items">
-	      <li class="active"><a href="" data-filter="*">All</a></li>
+	      <li class="active"><a href="" data-filter="*" class="nav_elem">All</a></li>
 	      <% @categories.each do |category| %>
-					<li><a href="" data-filter=".category<%=category.id%>"><%= category.name %></a></li>
+					<li><a href="#" data-filter=".category<%=category.id%>" data-id="<%=category.id%>" class="nav_elem"><%= category.name %></a></li>
 				<% end %>
 	    </ul>
-	  	<form class="navbar-form navbar-left" role="search">
+	  	<form class="navbar-form navbar-right" role="search">
 	        <div class="form-group">
 	          <input type="text" class="form-control" placeholder="Search" id="search" name="search"/>
 		      </div>
@@ -45,5 +44,7 @@
 				<% end %>
       </ul>	
     </div>
-  </div>
+		<div class="collapse navbar-collapse secondary container-fluid" id="subnavbar">
+			<%= render "layouts/secondary_nav"%>
+		</div>
 </nav>

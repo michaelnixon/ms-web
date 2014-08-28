@@ -1,0 +1,32 @@
+  <ul class="nav navbar-nav nav-items">
+    <li><a href="" data-filter="<% if @category %>.category<%=@category.id%><%else%>*<%end%>" class="subnav_elem">All</a></li>
+    <% @sub_categories.each do |category| %>
+			<li><a href="#" data-filter=".category<%=category.id%>" class="subnav_elem"><%= category.name %></a></li>
+		<% end %>
+  </ul>
+<script>
+// controls the filtering
+$('.subnav_elem').bind("click", function(){
+	var selector = $(this).attr('data-filter');
+	$('#isotope').isotope({ 
+	filter: selector,
+	animationOptions: {
+		duration: 750,
+   		easing: 'linear',
+   		queue: false,
+	}
+	});
+	return false;
+});
+
+$('.subnav_elem').bind("click", function(e) {
+
+    $('.active').removeClass('active');
+
+    var $parent = $(this).parent();
+    if (!$parent.hasClass('active')) {
+        $parent.addClass('active');
+    }
+    e.preventDefault();
+});
+</script>
