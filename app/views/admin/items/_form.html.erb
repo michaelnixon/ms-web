@@ -39,7 +39,7 @@
 		<span class="help-block">This controls which category contains the item. You can manage the <%= link_to "category list", admin_categories_path %> separately.</span>
   </div>
   <h3>Attached Media Files</h3>
-    <p class="help-block">You can upload related files using these controls. Videos will be played on the site, while other file formats (e.g. PDF) will be linked in the media carousel for browsers to download.</p>
+    <p class="help-block">You can upload related files here. They will automatically be sorted into appropriate categories on the front-end. Videos will be played on the site, while other file formats (e.g. PDF) will be linked in the media carousel for browsers to download.</p>
 	<%= f.fields_for :attachments do |attachment_form|  %>
 	    <p>
 	    <%= attachment_form.label :description %><br />

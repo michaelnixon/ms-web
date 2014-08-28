@@ -23,6 +23,18 @@ class Item < ActiveRecord::Base
     "#{the_image['width']}x#{the_image['height']}"
   end
   
+  def video_attachments
+    attachments.select {|a| a.is_video_file? }
+  end
+  
+  def doc_attachments
+    attachments.select {|a| a.is_doc_file? }    
+  end
+  
+  def image_attachments
+    attachments.select {|a| a.is_image_file? }    
+  end
+  
   # checks if various resized versions exists to provide the url to them 
   def preview_url
     if landscape?

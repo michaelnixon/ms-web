@@ -6,28 +6,67 @@
 	<div class="story-content gone">
 		<h2>
 		<% if item.category.category %><small><%= item.category.category.name %> :: </small><% end %>
-		<small><%=item.category.name%> :: </small><%= item.name%></h2>
+		<small><%=item.category.name%> :: </small><%= item.name%> <span class="glyphicon glyphicon-remove-circle exit" data-story-id="story<%=item.id%>"></span></h2>
 		<%= image_tag(item.preview_url, size: item.preview_geometry) if item.image?%>
 		<p class="preview"><%=item.preview %></p> 
-		<p class="category"><%= item.category.name %></p>
 		<!--  Carousel - consult the Twitter Bootstrap docs at
 	      http://twitter.github.com/bootstrap/javascript.html#carousel -->
 		<div id="carousel-story<%=item.id%>" class="carousel slide" data-ride="carousel"><!-- class of slide for animation -->
-			<!-- Carousel indicators -->
-	  	<ol class="carousel-indicators">
-					<% (item.attachments.size + 1).times do |count| %>
-						<%= render partial: 'indicator', locals: { item_id: item.id, count: count } %>
-					<% end %>
-		  </ol>
+			<div class="category"><ol>
+				<li data-target="#carousel-story<%=item.id%>" data-slide-to="0"><a href="#">About</a></li>
+				<li data-target="#carousel-story<%=item.id%>" data-slide-to="1"><a href="#">Images</a></li>
+				<li data-target="#carousel-story<%=item.id%>" data-slide-to="2"><a href="#">Video</a></li>
+				<li data-target="#carousel-story<%=item.id%>" data-slide-to="3"><a href="#">Publications</a></li>
+				</ol></div>
 		  <div class="carousel-inner">
-		    <div class="active item"><!-- class of active since it's the first item -->
+		    <div class="active item">
+					<h3>About</h3>
 					<div><%= raw item.body%></div>
 		    </div>
-				<%= render partial: 'attachment', collection: item.attachments %>
+				<div class="item">
+					<h3>Images</h3>
+					<% if item.image_attachments.empty? %>
+					<p>Sorry, no images have been attached.</p>
+					<% else %>
+						<% item.image_attachments.each do |img| %>
+						  <a href="<%=img.file.url%>"><img src="<%= img.file.url%>" class="gallery"/></a>
+						<% end %>
+					<% end %>
+				</div>
+				<div class="item">
+					<h3>Videos</h3>
+					<% if item.video_attachments.empty? %>
+					<p>Sorry, no videos have been attached.</p>
+					<% else %>
+						<% item.video_attachments.each do |video| %>
+							<div>
+							<%= render partial: "video", locals: {video: video} %>
+							<p><%= link_to_if(video.file, "Download the file '#{File.basename(video.file.path)}'", video.file.url) %></br>
+							</div>
+						<% end %>
+					<% end %>					
+				</div>
+				<div class="item">
+					<h3>Publications</h3>
+					<% if item.doc_attachments.empty? %>
+					<p>Sorry, no documents have been attached.</p>
+					<% else %>
+					<ul>
+						<% item.doc_attachments.each do |doc| %>
+							<li><%= link_to_if(doc.file, "Download the file '#{File.basename(doc.file.path)}'", doc.file.url) %>
+								<p><%= raw doc.description %></p></li>
+						<% end %>
+					</ul>
+					<% end %>
+				</div>
 		  </div><!-- /.carousel-inner -->
-	  	<!--  Next and Previous controls below href values must reference the id for this carousel -->
-	    <a class="carousel-control left" href="#carousel-story<%=item.id%>" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-	    <a class="carousel-control right" href="#carousel-story<%=item.id%>" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+		  <!-- Controls -->
+		  <a class="left carousel-control" href="#carousel-story<%=item.id%>" role="button" data-slide="prev">
+		    <span class="glyphicon glyphicon-chevron-left"></span>
+		  </a>
+		  <a class="right carousel-control" href="#carousel-story<%=item.id%>" role="button" data-slide="next">
+		    <span class="glyphicon glyphicon-chevron-right"></span>
+		  </a>
 		</div><!-- /.carousel -->
 	</div>
 </div>
