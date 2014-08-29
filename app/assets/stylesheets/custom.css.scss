@@ -157,8 +157,7 @@ footer ul li {
 	padding-left: 20px;
 	height: 75px;
 }
-#isotope > div.story.hover div.preview-on-hover img {
-  vertical-align: 0%;	
+div.preview-on-hover img {
 	border: 1px;
 }
 /* provides the name on hover */
@@ -178,7 +177,6 @@ footer ul li {
   -webkit-backface-visibility: hidden; /* Fix for transition flickering */	
  	-moz-filter: grayscale(100%);
   -ms-filter: grayscale(100%);
-
 }
 
 #isotope > div.story.hover div.preview-on-hover a img {
@@ -245,7 +243,6 @@ div.category ol a:hover, div.category ol a:focus{
 
 div.carousel {
 	clear: both;
-	height: 975px;
 }
 
 div.carousel.inner {
@@ -263,6 +260,7 @@ div.material {
 	padding-left: 20px;
 	padding-right: 20px;
 	height: 980px;
+	overflow-y: scroll;
 }
 
 ol.carousel-indicators {
