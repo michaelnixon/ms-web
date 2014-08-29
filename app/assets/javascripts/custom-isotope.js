@@ -18,6 +18,18 @@ $( function() {
 		return false;
 	});
 		
+	$(".category-control").on({
+			click					: function(e) {
+				id = $(this).attr("data-control-id");
+				item = $(this).attr("data-item");
+				target_id =  item + id;
+				$("#material"+id+">div").slideUp(1);
+				$("#"+target_id).slideDown(1);
+				e.preventDefault();				
+				e.stopImmediatePropagation();				
+			}
+	});
+	
 	$(".story").on({
 	    mouseenter : function() {
 				if (!$(this).hasClass('gigante')) {
@@ -114,9 +126,7 @@ $(document).ready(function(){
 // controls changing the active class on nav links so that the currently selected one is underlined
 $(document).ready(function () {
     $('.nav-items li a').click(function(e) {
-
         $('.active').removeClass('active');
-
         var $parent = $(this).parent();
         if (!$parent.hasClass('active')) {
             $parent.addClass('active');
@@ -129,5 +139,5 @@ $(document).ready(function () {
         e.preventDefault();
     });
 		// activate media plugin on all video links
-		$('a.media').media();       
+		$('a.media').media({width: 640, bgColor: "#E5E4E0"});       
 });

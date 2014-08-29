@@ -1,0 +1,22 @@
+<div id="carousel-video<%=item.id%>" class="carousel slide inner" data-ride="carousel"><!-- class of slide for animation -->
+	<ol class="carousel-indicators">
+		<% item.video_attachments.each_with_index do |vid, i| %>
+			<li data-target="#carousel-video<%=item.id%>" data-slide-to="<%= i %>" class="<%= "active" if i.zero? %>"></li>
+		<% end %>
+	</ol>
+  <div class="carousel-inner">
+		<% item.video_attachments.each_with_index do |video, i| %>
+			<div class="item<%= " active" if i.zero? %>">
+				<%= render partial: "video", locals: {video: video} %>
+				<p><%= link_to_if(video.file, "Download the file '#{File.basename(video.file.path)}'", video.file.url) %></br>								
+			</div>
+		<% end %>							
+  </div>
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-video<%=item.id%>" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-video<%=item.id%>" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div>

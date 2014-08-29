@@ -1,0 +1,23 @@
+<div id="carousel-image<%=item.id%>" class="carousel slide inner" data-ride="carousel"><!-- class of slide for animation -->
+	<ol class="carousel-indicators">
+		<% item.video_attachments.each_with_index do |vid, i| %>
+			<li data-target="#carousel-image<%=item.id%>" data-slide-to="<%= i %>" class="<%= "active" if i.zero? %>"></li>
+		<% end %>
+	</ol>
+  <div class="carousel-inner">
+		<% item.image_attachments.each_with_index do |image, i| %>
+			<div class="item<%= " active" if i.zero? %>">
+				<p><img src="<%= image.file.url%>"/><br/>
+				<%= link_to_if(image.file, "Download the file '#{File.basename(image.file.path)}'", image.file.url) %>
+				</p>								
+			</div>
+		<% end %>									
+  </div>
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-image<%=item.id%>" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-image<%=item.id%>" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div>
