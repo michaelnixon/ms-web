@@ -16,7 +16,8 @@
   </div>
   <div class="field form-group">
     <%= f.label :preview, class: "control-label"  %><br/>
-    <%= f.text_area :preview, size: "100x12", class: "form-control" %>
+    <%= f.bootsy_area :preview, editor_options: {html: true}, size: "100x12", class: "form-control" %>
+
     <span class="help-block">The preview is a small block of text that shows up in preview contexts and as the header image when an item is selected.</span>
   </div>
   <div class="field form-group">
@@ -43,7 +44,7 @@
 	<%= f.fields_for :attachments do |attachment_form|  %>
 	    <p>
 	    <%= attachment_form.label :description %><br />
-	    <%= attachment_form.bootsy_area :description, size: "100x12", class: "form-control" %>
+	    <%= attachment_form.bootsy_area :description, editor_options: {html: true}, size: "100x12", class: "form-control" %>
 	    </p>
 	    <p>
 	    <%= attachment_form.label :file %><br />

@@ -8,16 +8,16 @@
 		<% if item.category.category %><small><%= item.category.category.name %> :: </small><% end %>
 		<small><%=item.category.name%> :: </small><%= item.name%> <span class="glyphicon glyphicon-remove-circle exit" data-story-id="story<%=item.id%>"></span></h2>
 		<%= image_tag(item.preview_url, size: item.preview_geometry) if item.image?%>
-		<p class="preview"><%=item.preview %></p> 
+		<p class="preview"><%=raw item.preview %></p> 
 		<div>
 			<div class="category"><ol>
 				<li><a href="#" class="category-control" data-item="about" data-control-id="<%=item.id%>">About</a></li>
 				<li><a href="#" class="category-control" data-item="images" data-control-id="<%=item.id%>">Images</a></li>
-				<li><a href="#" class="category-control" data-item="video" data-control-id="<%=item.id%>">Video</a></li>
+				<li><a href="#" class="category-control" data-item="video" data-control-id="<%=item.id%>">Videos</a></li>
 				<li><a href="#" class="category-control" data-item="pubs" data-control-id="<%=item.id%>">Publications</a></li>
 				</ol></div>
 		  <div class="material" id="material<%=item.id%>">
-		    <div id="about<%=item.id%>" class="gone">
+		    <div id="about<%=item.id%>">
 					<h3>About</h3>
 					<div><%= raw item.body%></div>
 		    </div>

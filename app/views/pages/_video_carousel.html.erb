@@ -8,7 +8,7 @@
 		<% item.video_attachments.each_with_index do |video, i| %>
 			<div class="item<%= " active" if i.zero? %>">
 				<%= render partial: "video", locals: {video: video} %>
-				<p><%= link_to_if(video.file, "Download the file '#{File.basename(video.file.path)}'", video.file.url) %></br>								
+				<p><%= link_to_if(video.file, "Download the file '#{File.basename(video.file.path)}'", video.file.url) %></p>								
 			</div>
 		<% end %>							
   </div>
