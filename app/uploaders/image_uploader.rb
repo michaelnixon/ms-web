@@ -49,15 +49,15 @@ class ImageUploader < CarrierWave::Uploader::Base
   very_big_stupid_number_this_is_image_magick_i_hate_it = 1000000
   # Create different versions of your uploaded files:
   version :portrait, :if => :is_portrait? do
-    process :resize_to_fit => [very_big_stupid_number_this_is_image_magick_i_hate_it, 400]
+    process :resize_to_limit => [very_big_stupid_number_this_is_image_magick_i_hate_it, 400]
   end
   
   version :landscape, :if => :is_landscape? do
-    process :resize_to_fit => [400, very_big_stupid_number_this_is_image_magick_i_hate_it]
+    process :resize_to_limit => [400, very_big_stupid_number_this_is_image_magick_i_hate_it]
   end
    
   version :square, :if => :is_square? do
-    process :resize_to_fit => [400, 400]
+    process :resize_to_limit => [400, 400]
   end
       
   version :thumb do
