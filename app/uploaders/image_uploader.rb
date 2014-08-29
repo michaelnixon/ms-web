@@ -46,22 +46,26 @@ class ImageUploader < CarrierWave::Uploader::Base
   # def scale(width, height)
   #   # do something
   # end
-  very_big_stupid_number_this_is_image_magick_i_hate_it = 1000000
+  VERY_BIG_STUPID_NUMBER_THIS_IS_IMAGE_MAGICK_I_HATE_IT = 1000
+  HEIGHT_OF_PREVIEW_ITEMS = 200
+  HEIGHT_OF_FOCUS_ITEMS = 380
+  # this could be combined into one, it was over-enginered to begin with
   # Create different versions of your uploaded files:
   version :portrait, :if => :is_portrait? do
-    process :resize_to_limit => [very_big_stupid_number_this_is_image_magick_i_hate_it, 400]
+    process :resize_to_limit => [VERY_BIG_STUPID_NUMBER_THIS_IS_IMAGE_MAGICK_I_HATE_IT, HEIGHT_OF_FOCUS_ITEMS]
   end
   
   version :landscape, :if => :is_landscape? do
-    process :resize_to_limit => [400, very_big_stupid_number_this_is_image_magick_i_hate_it]
+    process :resize_to_limit => [VERY_BIG_STUPID_NUMBER_THIS_IS_IMAGE_MAGICK_I_HATE_IT, HEIGHT_OF_FOCUS_ITEMS]
   end
    
   version :square, :if => :is_square? do
-    process :resize_to_limit => [400, 400]
+    process :resize_to_limit => [HEIGHT_OF_FOCUS_ITEMS, HEIGHT_OF_FOCUS_ITEMS]
   end
       
+  # thumbnails are used on preview page; this code fixes them to be max 200 height and then whatever width is possible, maintaining scale
   version :thumb do
-    process :resize_to_fill => [200, 200]
+    process :resize_to_limit => [VERY_BIG_STUPID_NUMBER_THIS_IS_IMAGE_MAGICK_I_HATE_IT, HEIGHT_OF_PREVIEW_ITEMS]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

@@ -23,6 +23,15 @@ class Item < ActiveRecord::Base
     "#{the_image['width']}x#{the_image['height']}"
   end
   
+  def thumb_geometry
+    if image
+      the_image = MiniMagick::Image.open(image.versions[:thumb].path)  
+      return "#{the_image['width']}x#{the_image['height']}"
+    else 
+      return nil
+    end
+  end
+  
   def video_attachments
     attachments.select {|a| a.is_video_file? }
   end
