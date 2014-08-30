@@ -1,8 +1,8 @@
-<div class="story category<%=item.category.id%> <% if item.category.category%>category<%=item.category.category.id%> <% end %><%= "width2" if item.landscape? %>" id="story<%=item.id%>" style="position:relative">
+<div class="story category<%=item.category.id%> <% if item.category.category%>category<%=item.category.category.id%> <% end %><%= "width2" if item.landscape? %>" id="story<%=item.id%>">
 	<div class="preview-on-hover">
 		<figure>
 			<%= image_tag item.image_url(:thumb), size: item.thumb_geometry if item.image? %>
-			<figcaption><p><%=item.name%> :: <%= item.category.name unless item.category.nil?%></p></figcaption>		
+			<figcaption><p><%=item.name%></p></figcaption>		
 		</figure>
 	</div>
 	<div class="story-content gone">
@@ -26,24 +26,20 @@
 				</ol></div>
 		  <div class="material" id="material<%=item.id%>">
 		    <div id="about<%=item.id%>">
-					<h3>About</h3>
 					<div><%= raw item.body%></div>
 		    </div>
 				<% unless item.image_attachments.empty? %>		
 				<div class="gone" id="images<%=item.id%>">
-					<h3>Images</h3>
 						<%= render partial: "image_carousel", locals: {item: item} %>
 				</div>
 				<% end %>				
 				<% unless item.video_attachments.empty? %>				
 				<div class="gone" id="video<%=item.id%>">
-					<h3>Videos</h3>
 						<%= render partial: "video_carousel", locals: {item: item} %>		
 				</div>
 				<% end %>							
 				<% unless item.doc_attachments.empty? %>				
 				<div class="gone" id="pubs<%=item.id%>">
-					<h3>Publications</h3>
 					<ul>
 						<% item.doc_attachments.each do |doc| %>
 							<li><%= link_to_if(doc.file, "Download the file '#{File.basename(doc.file.path)}'", doc.file.url) %>

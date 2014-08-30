@@ -34,13 +34,13 @@ $( function() {
 	    mouseenter : function() {
 				if (!$(this).hasClass('gigante')) {
 	        $(this).addClass("hover");
-		    	$container.isotope('layout');
+		    /*	$container.isotope('layout');*/
 				}
 	    },
 	    mouseleave : function() {
 				if (!$(this).hasClass('gigante')) {
 	        $(this).removeClass("hover");
-		    	$container.isotope('layout');
+//		    	$container.isotope('layout');
 				}
 	    },
 	    click      : function() {
