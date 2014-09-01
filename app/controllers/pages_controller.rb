@@ -7,9 +7,6 @@ class PagesController < ApplicationController
 
   def about
   end
-
-  def contact
-  end
   
   def change_subnav
     if params[:id]

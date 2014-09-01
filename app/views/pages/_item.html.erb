@@ -1,7 +1,7 @@
 <div class="story category<%=item.category.id%> <% if item.category.category%>category<%=item.category.category.id%> <% end %><%= "width2" if item.landscape? %>" id="story<%=item.id%>">
 	<div class="preview-on-hover">
 		<figure>
-			<%= image_tag item.image_url(:thumb), size: item.thumb_geometry if item.image? %>
+			<%= image_tag item.image_url(:thumb) if item.image? %>
 			<figcaption><p><%=item.name%></p></figcaption>		
 		</figure>
 	</div>
@@ -9,7 +9,7 @@
 		<h2>
 		<% if item.category.category %><small><%= item.category.category.name %> :: </small><% end %>
 		<small><%=item.category.name%> :: </small><%= item.name%> <span class="glyphicon glyphicon-remove-circle exit" data-story-id="story<%=item.id%>"></span></h2>
-		<%= image_tag(item.preview_url, size: item.preview_geometry) if item.image?%>
+		<%= image_tag(item.preview_url) if item.image?%>
 		<p class="preview"><%=raw item.preview %></p> 
 		<div>
 			<div class="category"><ol>

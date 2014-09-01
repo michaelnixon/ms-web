@@ -4,8 +4,7 @@ Rails.application.routes.draw do
   get 'main' => 'pages#main'
   get 'pages/change_subnav'
   get 'about' => 'pages#about'
-#  get 'pages/contact'
-  get 'contact' => 'pages#contact'
+
   get "log_out" => "sessions#destroy", :as => "log_out"
   get "log_in" => "sessions#new", :as => "log_in"
 

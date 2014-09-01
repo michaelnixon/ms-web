@@ -34,6 +34,9 @@ GEM
       mini_magick (~> 3.7.0)
       remotipart (~> 1.2.1)
     builder (3.2.2)
+    bullet (4.13.1)
+      activesupport (>= 3.0.0)
+      uniform_notifier (>= 1.6.0)
     capistrano (3.2.1)
       i18n
       rake (>= 10.0.0)
@@ -84,6 +87,7 @@ GEM
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.1)
+    newrelic_rpm (3.9.3.241)
     polyglot (0.3.5)
     rack (1.5.2)
     rack-test (0.6.2)
@@ -145,6 +149,7 @@ GEM
     uglifier (2.5.1)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    uniform_notifier (1.6.2)
 
 PLATFORMS
   ruby
@@ -152,6 +157,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootsy
+  bullet
   capistrano-rails
   coffee-rails (~> 4.0.0)
   i18n (= 0.6.9)
@@ -161,6 +167,7 @@ DEPENDENCIES
   mini_magick
   mysql
   nested_form
+  newrelic_rpm
   rails (= 4.1.1)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)

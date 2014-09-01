@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140827195008) do
+ActiveRecord::Schema.define(version: 20140901044033) do
 
   create_table "attachments", force: true do |t|
     t.text     "description"
@@ -55,17 +55,9 @@ ActiveRecord::Schema.define(version: 20140827195008) do
     t.datetime "updated_at"
     t.integer  "category_id"
     t.string   "image"
-    t.integer  "shape_id"
   end
 
   add_index "items", ["category_id"], name: "index_items_on_category_id"
-  add_index "items", ["shape_id"], name: "index_items_on_shape_id"
-
-  create_table "shapes", force: true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "users", force: true do |t|
     t.string   "email"
