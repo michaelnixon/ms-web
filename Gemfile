@@ -30,7 +30,7 @@ gem 'bcrypt', '~> 3.1.7', :require => true
 
 # Use Capistrano for deployment
 gem 'capistrano-rails', group: :development
-
+gem 'newrelic_rpm'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 gem "mini_magick"
