@@ -114,6 +114,8 @@ footer ul li {
 
 #isotope {
   max-width: 100%; /* 1200px */
+margin-left: 100px;
+margin-right: 100px;
 }
 
 /* clear fix */
@@ -128,7 +130,6 @@ footer ul li {
 /* ---- .story ---- */
 
 #isotope > .story {
-  float: left;
   width: 12%; /* was 200px */
   height: 200px;
   background: #F7F6F2;
@@ -138,6 +139,8 @@ footer ul li {
 	margin-right: 60px;
 	margin-bottom: 20px;
 }
+
+/*#isotope > .story:after{content:''; width:60%; height:15px; background:gray; position:absolute; bottom:-5px;}*/
 
 #isotope > .story.width2 { width: 20%; }
 #isotope > .story.height2 { height: 400px; }
@@ -191,7 +194,7 @@ div.preview-on-hover img {
 /* gigante styles */
 #isotope > .story.gigante {
   width: 90%;
-	height: 1390px;
+	height: 960px;
 
 }
 
@@ -266,8 +269,7 @@ div.material {
 	padding-top: 10px;
 	padding-left: 20px;
 	padding-right: 20px;
-	height: 100%;
-	height: 980px;
+	height: 550px;
 	overflow-y: scroll;
 }
 
@@ -368,12 +370,16 @@ div.secondary {
 	height: 56px !important;
 }
 
+#navbarCollapse ul li {
+	font-size: 16px;
+}
+
 #subnavbar {
 	text-align: left;
 }
 #subnavbar ul a{
 	color: #F7F6F2;
-	font-size: 18px;
+	font-size: 15px;
 	height: 56px;
 }
 
@@ -435,4 +441,13 @@ div.preview-on-hover figcaption p {
 
 div.preview-on-hover:hover figcaption {
 	opacity: 1;
+}
+
+div.logo-block {
+	height: 123px;
+}
+
+span.social-media {
+	margin-top: 40px;
+	margin-right: 40px;
 }

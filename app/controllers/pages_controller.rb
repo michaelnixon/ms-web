@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def main
-    @categories = Category.find_all_top_level.order("name")
+    @categories = Category.find_all_top_level
     @sub_categories = []
     @items = Item.search(params[:search]).shuffle
   end
@@ -13,7 +13,7 @@ class PagesController < ApplicationController
       @category = Category.find_by_id(params[:id])
       @sub_categories = @category.categories
     else
-      @category = Category.find_all_top_level.order("name")
+      @category = Category.find_all_top_level
       @sub_categories = []
     end
     respond_to do |format|

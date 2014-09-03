@@ -16,13 +16,11 @@ class Admin::ItemsController < ApplicationController
   # GET /items/new
   def new
     @item = Item.new
-    @shapes = Shape.all.order("name")
     @categories = Category.find_all_nested
   end
 
   # GET /items/1/edit
   def edit
-    @shapes = Shape.all.order("name")
     @categories = Category.find_all_nested
   end
 
@@ -31,7 +29,6 @@ class Admin::ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     @categories = Category.find_all_nested
-    @shapes = Shape.all.order("name")    
     respond_to do |format|
       if @item.save
         format.html { redirect_to admin_items_url, notice: 'Item was successfully created.' }
@@ -47,7 +44,6 @@ class Admin::ItemsController < ApplicationController
   # PATCH/PUT /items/1.json
   def update
     @categories = Category.find_all_nested
-    @shapes = Shape.all.order("name")    
     respond_to do |format|
       if @item.update(item_params)
         format.html { redirect_to admin_items_url, notice: 'Item was successfully updated.' }
@@ -77,6 +73,6 @@ class Admin::ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:name, :body, :preview, :bootsy_image_gallery_id, :image, :category_id, :remove_image, :shape_id, attachments_attributes: [:description, :file, :_destroy, :id])
+      params.require(:item).permit(:name, :body, :preview, :bootsy_image_gallery_id, :image, :category_id, :remove_image, attachments_attributes: [:description, :file, :_destroy, :id])
     end
 end
