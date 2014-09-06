@@ -17,7 +17,35 @@ $( function() {
 		});
 		return false;
 	});
-		
+	
+	$(".promoted").on( {
+		click      : function(e) {
+				// if an old object was full sized, shrink it to normal
+				if (prev_obj != null) {	
+		    	$(prev_obj).toggleClass('gigante');			
+					$preview_div = $(prev_obj).children("div.preview-on-hover");
+					$preview_div.slideDown(1);
+			 		$content_div = $(prev_obj).children("div.story-content");
+					$content_div.slideUp(1);										
+					prev_obj = null;
+				}
+				var obj = "#story" + $(this).attr("data-item-id");
+			  var $obj = $( obj );
+				$obj.toggleClass("gone");		
+				// change size of item by toggling gigante class
+				$obj.toggleClass('gigante');
+				$preview_div = $obj.children("div.preview-on-hover");
+				$preview_div.slideUp(1);
+				$content_div = $obj.children("div.story-content");
+				$content_div.slideDown(1);			
+//				prev_obj = $obj.get(0); // refer back to the actual obj
+				prev_obj = $obj;
+				e.stopImmediatePropagation();
+				// isotope needs to relayout the items
+				$container.isotope('layout');							 	
+			}
+	});
+			
 	$(".category-control").on({
 			click					: function(e) {
 				id = $(this).attr("data-control-id");
@@ -81,7 +109,10 @@ $( function() {
 					$preview_div.slideDown(1);
 			 		$content_div = $(prev_obj).children("div.story-content");
 					$content_div.slideUp(1);										
-					prev_obj = null;
+					if ($(prev_obj).hasClass("promote")) {
+						$(prev_obj).toggleClass("gone");
+					}
+					prev_obj = null;					
 					// isotope needs to relayout the items
 			    $container.isotope('layout');
 					e.stopImmediatePropagation();
@@ -133,7 +164,7 @@ $(document).ready(function () {
         }
         e.preventDefault();
     });
-
+		
     $('.nav_elem').click(function(e) {
 				$.ajax({url: "pages/change_subnav", type: "GET", data: {id: $(this).attr("data-id")}});
         e.preventDefault();

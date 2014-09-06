@@ -39,6 +39,13 @@
 		<%= f.collection_select :category_id, @categories, :id, :pretty_name %>
 		<span class="help-block">This controls which category contains the item. You can manage the <%= link_to "category list", admin_categories_path %> separately.</span>
   </div>
+
+  <div class="field form-group">
+    <%= f.label :promoted, class: "control-label"  %><br/>
+    <%= f.check_box :promoted %> <br/>
+    <p class="help-block">A promoted item sticks as a menu item instead of joining the general population. Be careful what this does to the menu bar (i.e. if you add too many promoted items).</p>
+  </div>
+
   <h3>Attached Media Files</h3>
     <p class="help-block">You can upload related files here. They will automatically be sorted into appropriate categories on the front-end. Videos will be played on the site, while other file formats (e.g. PDF) will be linked in the media carousel for browsers to download.</p>
 	<%= f.fields_for :attachments do |attachment_form|  %>

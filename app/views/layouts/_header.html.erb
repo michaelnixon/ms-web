@@ -15,6 +15,9 @@
 		<div class="collapse navbar-collapse" id="navbarCollapse">
 	    <ul class="nav navbar-nav nav-items">
 	      <li class="active"><a href="" data-filter="*" class="nav_elem">All</a></li>
+				<% @promoted_items.each do |item| %>
+					<li><a href="#" class="nav_elem promoted" data-item-id="<%= item.id %>"><%= item.name %></a></li>
+				<% end %>
 	      <% @categories.each do |category| %>
 					<li><a href="#" data-filter=".category<%=category.id%>" data-id="<%=category.id%>" class="nav_elem"><%= category.name %></a></li>
 				<% end %>

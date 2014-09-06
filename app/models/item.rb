@@ -73,9 +73,10 @@ class Item < ActiveRecord::Base
   # uses SQL like to determine if the name or preview text matches the search term
   def self.search(search)
     if search
-      includes(:category, :attachments).where("name like ? or preview like ?", "%#{search}%", "%#{search}%")
+      includes(:category, :attachments).where("name like ? or preview like ? and promoted = ?", "%#{search}%", "%#{search}%", false)
+#      includes(:category, :attachments).where("name like ? or preview like ?", "%#{search}%", "%#{search}%")
     else
-      includes(:category, :attachments)
+      includes(:category, :attachments).where("promoted = ?", false)
     end
   end
 
