@@ -1,0 +1,46 @@
+<div class="story-content">
+	<h2>
+	<% if @item.category.category %><%= @item.category.category.name %> :: <% end %>
+	<%= @item.category.name%> :: <%= @item.name%></h2><br/>
+	<%= image_tag(@item.preview_url) if @item.image?%>
+	<p class="preview"><%=raw @item.preview %></p>
+	<div>
+		<div class="category"><ol>
+			<li><a href="#" class="category-control" data-item="about" data-control-id="<%= @item.id%>">About</a></li>
+			<% unless @item.image_attachments.empty? %>
+			<li><a href="#" class="category-control" data-item="images" data-control-id="<%= @item.id%>">Images</a></li>
+			<% end %>
+			<% unless @item.video_attachments.empty? %>
+			<li><a href="#" class="category-control" data-item="video" data-control-id="<%= @item.id%>">Videos</a></li>
+			<% end %>
+			<% unless @item.doc_attachments.empty? %>
+			<li><a href="#" class="category-control" data-item="pubs" data-control-id="<%= @item.id%>">Publications</a></li>
+			<% end %>
+			</ol></div>
+	  <div class="material" id="material<%= @item.id%>">
+	    <div id="about<%= @item.id%>">
+				<div><%= raw @item.body%></div>
+	    </div>
+			<% unless @item.image_attachments.empty? %>		
+			<div class="gone" id="images<%= @item.id%>">
+					<%= render partial: "/pages/image_carousel", locals: {item: @item} %>
+			</div>
+			<% end %>				
+			<% unless @item.video_attachments.empty? %>				
+			<div class="gone" id="video<%= @item.id%>">
+					<%= render partial: "/pages/video_carousel", locals: {item: @item} %>		
+			</div>
+			<% end %>							
+			<% unless @item.doc_attachments.empty? %>				
+			<div class="gone" id="pubs<%= @item.id%>">
+				<ul>
+					<% @item.doc_attachments.each do |doc| %>
+						<li><%= link_to_if(doc.file, "Download the file '#{File.basename(doc.file.path)}'", doc.file.url) %>
+							<p><%= raw doc.description %></p></li>
+					<% end %>
+				</ul>
+			</div>
+			<% end %>				
+	  </div>
+	</div>
+</div>

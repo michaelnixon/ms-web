@@ -7,7 +7,11 @@ class Item < ActiveRecord::Base
   belongs_to :category
   validates :name, presence: true
   validates :preview, presence: true
-    
+
+  def to_param
+    [id, name.parameterize].join("-")
+  end
+      
   # checks if various resized versions exists to provide the preview geometry
   def preview_geometry
     if landscape?

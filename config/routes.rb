@@ -3,12 +3,10 @@ Rails.application.routes.draw do
 #  get 'pages/main'
   get 'main' => 'pages#main'
   get 'pages/change_subnav'
-  get 'about' => 'pages#about'
-
+  resources :sessions, only: [:new, :create, :destroy]
   get "log_out" => "sessions#destroy", :as => "log_out"
   get "log_in" => "sessions#new", :as => "log_in"
-
-  resources :sessions, only: [:new, :create, :destroy]
+  get '/items/:id', to: 'items#show', as: 'item'
   namespace :admin do
     get '', to: 'dashboard#index', as: '/'
     resources :items

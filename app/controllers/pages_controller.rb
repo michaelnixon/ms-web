@@ -5,9 +5,6 @@ class PagesController < ApplicationController
     @sub_categories = []
     @items = Item.search(params[:search]).shuffle
   end
-
-  def about
-  end
   
   def change_subnav
     if params[:id]
