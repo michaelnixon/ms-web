@@ -10,7 +10,7 @@
 		<% if item.category.category %><small><%= item.category.category.name %> :: </small><% end %>
 		<small><%=item.category.name%> :: </small><%= item.name%> <span class="glyphicon glyphicon-remove-circle exit" data-story-id="story<%=item.id%>"></span></h2>
 		<div class="preview-container">
-			<%= image_tag(item.image.url(:large)) if item.image?%>
+			<%= image_tag(item.image.url(item.largest_version)) if item.image?%>
 			<div class="preview"><%=raw item.preview %></div> 
 		</div>
 		<div>

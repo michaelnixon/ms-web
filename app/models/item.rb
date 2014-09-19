@@ -32,6 +32,14 @@ class Item < ActiveRecord::Base
     attachments.select {|a| a.is_image_file? }    
   end
     
+  def largest_version
+    if image_large_height > image_thumb_height
+      return :large
+    else
+      return :thumb
+    end
+  end
+  
   def landscape?
     if image and image.version_exists? :large
       image_large_width > image_large_height
