@@ -9,8 +9,10 @@
 		<h2>
 		<% if item.category.category %><small><%= item.category.category.name %> :: </small><% end %>
 		<small><%=item.category.name%> :: </small><%= item.name%> <span class="glyphicon glyphicon-remove-circle exit" data-story-id="story<%=item.id%>"></span></h2>
-		<%= image_tag(item.preview_url) if item.image?%>
-		<p class="preview"><%=raw item.preview %></p> 
+		<div class="preview-container">
+			<%= image_tag(item.preview_url) if item.image?%>
+			<p class="preview"><%=raw item.preview %></p> 
+		</div>
 		<div>
 			<div class="category"><ol>
 				<li><a href="#" class="category-control" data-item="about" data-control-id="<%=item.id%>">About</a></li>

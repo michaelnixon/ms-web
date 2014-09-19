@@ -160,6 +160,7 @@ margin-right: 100px;
 	padding-top: 10px;
 	padding-left: 20px;
 	height: 75px;
+	overflow: hidden;
 }
 div.preview-on-hover img {
 	border: 1px;
@@ -194,7 +195,7 @@ div.preview-on-hover img {
 /* gigante styles */
 #isotope > .story.gigante {
   width: 90%;
-	height: 960px;
+	height: 1055px;
 }
 
 #isotope > .story.gigante.promote {
@@ -208,11 +209,15 @@ div.preview-on-hover img {
 /*  margin-right: 20px;*/
 }
 
+#isotope > .story div.story-content div.preview-container {
+	height: 380px;
+}
 #isotope > .story div.story-content p.preview {
 	padding-left: 40px;
 	padding-right: 20px;
 	font-size: 16px;
 	padding-top: 5px;
+	overflow: hidden;
 }
 
 #isotope > .story div.story-content {
