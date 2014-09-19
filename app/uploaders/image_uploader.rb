@@ -1,11 +1,8 @@
 # encoding: utf-8
 
 class ImageUploader < CarrierWave::Uploader::Base
-
-  # Include RMagick or MiniMagick support:
-  # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
-    
+
   # Choose what kind of storage to use for this uploader:
   storage :file
   # storage :fog
@@ -49,23 +46,16 @@ class ImageUploader < CarrierWave::Uploader::Base
   VERY_BIG_STUPID_NUMBER_THIS_IS_IMAGE_MAGICK_I_HATE_IT = 1000
   HEIGHT_OF_PREVIEW_ITEMS = 200
   HEIGHT_OF_FOCUS_ITEMS = 380
-  # this could be combined into one, it was over-enginered to begin with
-  # Create different versions of your uploaded files:
-  version :portrait, :if => :is_portrait? do
-    process :resize_to_limit => [VERY_BIG_STUPID_NUMBER_THIS_IS_IMAGE_MAGICK_I_HATE_IT, HEIGHT_OF_FOCUS_ITEMS]
-  end
   
-  version :landscape, :if => :is_landscape? do
+  version :large do
     process :resize_to_limit => [VERY_BIG_STUPID_NUMBER_THIS_IS_IMAGE_MAGICK_I_HATE_IT, HEIGHT_OF_FOCUS_ITEMS]
-  end
-   
-  version :square, :if => :is_square? do
-    process :resize_to_limit => [HEIGHT_OF_FOCUS_ITEMS, HEIGHT_OF_FOCUS_ITEMS]
+    process :store_dimensions    
   end
       
   # thumbnails are used on preview page; this code fixes them to be max 200 height and then whatever width is possible, maintaining scale
   version :thumb do
     process :resize_to_fit => [VERY_BIG_STUPID_NUMBER_THIS_IS_IMAGE_MAGICK_I_HATE_IT, HEIGHT_OF_PREVIEW_ITEMS]
+    process :store_dimensions    
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
@@ -80,33 +70,11 @@ class ImageUploader < CarrierWave::Uploader::Base
   #   "something.jpg" if original_filename
   # end
   
-  protected
-  
-    def is_square? picture
-      begin
-        image = MiniMagick::Image.open(picture.path)
-        return image[:width] == image[:height]      
-      rescue => e
-        Rails.logger.warn "Unable to determine whether image is square, probably missing: #{e}" 
+  private
+    def store_dimensions
+      if file && model
+        model.send("image_#{version_name.to_s}_width=", ::MiniMagick::Image.open(file.path)[:dimensions][0]) 
+        model.send("image_#{version_name.to_s}_height=", ::MiniMagick::Image.open(file.path)[:dimensions][1])
       end
     end
-    
-    def is_landscape? picture
-      begin
-        image = MiniMagick::Image.open(picture.path)
-        return image[:width] > image[:height]
-      rescue => e
-        Rails.logger.warn "Unable to determine whether image is landscape, probably missing: #{e}" 
-      end      
-    end
-    
-    def is_portrait? picture
-      begin
-        image = MiniMagick::Image.open(picture.path)
-        return image[:width] < image[:height]
-      rescue => e
-        Rails.logger.warn "Unable to determine whether image is portrait, probably missing: #{e}" 
-      end        
-    end
-
 end

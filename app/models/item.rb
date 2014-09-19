@@ -2,37 +2,21 @@ class Item < ActiveRecord::Base
   include Bootsy::Container
   mount_uploader :image, ImageUploader
   has_many :attachments, :as => :attachable
-  belongs_to :shape
   accepts_nested_attributes_for :attachments, :allow_destroy => true
   belongs_to :category
   validates :name, presence: true
   validates :preview, presence: true
-
+  
+  # provide a slightly nicer url for referencing individual items
   def to_param
     [id, name.parameterize].join("-")
   end
       
-  # checks if various resized versions exists to provide the preview geometry
-  def preview_geometry
-    if landscape?
-      the_image = MiniMagick::Image.open(image.versions[:landscape].path)    
-    elsif portrait?
-      the_image = MiniMagick::Image.open(image.versions[:portrait].path)
-    elsif square?
-      the_image = MiniMagick::Image.open(image.versions[:square].path)
-    else
-      # default image handling goes here or an error will occur
-      return "200x200"
-    end
-    "#{the_image['width']}x#{the_image['height']}"
-  end
-  
   def thumb_geometry
-    if image
-      the_image = MiniMagick::Image.open(image.versions[:thumb].path)  
-      return "#{the_image['width']}x#{the_image['height']}"
+    if image and image.version_exists? :thumb    
+      return "#{image_thumb_width}x#{image_thumb_height}"
     else 
-      return nil
+      return ""
     end
   end
   
@@ -47,33 +31,14 @@ class Item < ActiveRecord::Base
   def image_attachments
     attachments.select {|a| a.is_image_file? }    
   end
-  
-  # checks if various resized versions exists to provide the url to them 
-  def preview_url
-    if landscape?
-      image_url(:landscape)
-    elsif portrait?
-      image_url(:portrait)
-    elsif square?
-      image_url(:square)
+    
+  def landscape?
+    if image and image.version_exists? :large
+      image_large_width > image_large_height
     else
-      # default image handling goes here or an error will occur upon loading
-      "http://placehold.it/200x200"
+      return false
     end
   end
-  
-  def landscape?
-    image.version_exists? :landscape
-  end
-  
-  def portrait?
-    image.version_exists? :portrait
-  end
-  
-  def square?
-    image.version_exists? :square
-  end
-  
   # uses SQL like to determine if the name or preview text matches the search term
   def self.search(search)
     if search

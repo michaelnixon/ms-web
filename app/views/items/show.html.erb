@@ -3,7 +3,7 @@
 	<h2>
 	<% if @item.category.category %><%= @item.category.category.name %> :: <% end %>
 	<%= @item.category.name%> :: <%= @item.name%></h2><br/>
-	<%= image_tag(@item.preview_url) if @item.image?%>
+	<%= image_tag(item.image.url(:large)) if item.image?%>
 	<p class="preview"><%=raw @item.preview %></p>
 	<div>
 		<div class="category"><ol>

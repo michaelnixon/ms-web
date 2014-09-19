@@ -7,7 +7,7 @@
 	</div>
 	<div class="story-content gone">
 		<h2><%= promoted_item.name%> <span class="glyphicon glyphicon-remove-circle exit" data-story-id="story<%=promoted_item.id%>"></span></h2>
-		<%= image_tag(promoted_item.preview_url) if promoted_item.image?%>
+		<%= image_tag(promoted_item.image.url(:large)) if promoted_item.image?%>
 		<div class="material">
 		<%=raw promoted_item.preview %>
 		</div>
