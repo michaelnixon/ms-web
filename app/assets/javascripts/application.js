@@ -18,3 +18,17 @@
 //= require turbolinks
 //= require jquery.media
 //= require_tree .
+window.Bootsy.options.parserRules.tags.iframe=
+{
+  set_attributes: {
+    "frameborder": "0",
+    "allowfullscreen": "1",
+    "webkitallowfullscreen": "1",
+    "mozillaallowfullscreen": "1"
+  },
+  check_attributes: {
+    "width": "numbers",
+    "height": "numbers",
+    "src": "href"
+  }
+};

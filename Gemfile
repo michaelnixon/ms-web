@@ -39,5 +39,5 @@ gem 'nested_form'
 gem "mediaelement_rails"
 gem 'mysql', group: :production
 gem 'i18n', '0.6.9'
-
+gem 'rack-cache', group: :production
 gem "bullet", :group => "development"

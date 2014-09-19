@@ -5,7 +5,7 @@ class Admin::ItemsController < ApplicationController
   # GET /items
   # GET /items.json
   def index
-    @items = Item.all
+    @items = Item.all.order("name ASC").sort_by {|i| i.category.name }
   end
 
   # GET /items/1
