@@ -68,6 +68,34 @@ $( function() {
 			}
 	});
 	
+	function storyOnClickHandler() {
+		if (this !== prev_obj) {
+			shrinkBigOldObject();
+      var $obj = $(this);
+			$obj.removeClass("hover");		
+			enlargeNewObject($obj);
+			prev_obj = this;
+			var request = $.ajax({url: "pages/change_focus", type: "GET", data: {id: $(this).attr("data-story-content-id")}});
+			request.done(function( msg ) {
+				$(".exit").on("click", exitOnClickHandler);				
+			});
+			// isotope needs to relayout the items
+	    $container.isotope('layout');					
+		}    
+	}
+	
+	function exitOnClickHandler(event) {
+		// if an old object was full sized, shrink it to normal
+		if (prev_obj != null) {	
+			shrinkBigOldObject();
+			prev_obj = null;					
+			// isotope needs to relayout the items
+	    $container.isotope('layout');
+			event.stopImmediatePropagation();
+			$(".story").on("click", storyOnClickHandler);
+		}		
+	}
+		
 	$(".story").on({
 	    mouseenter : function() {
 				if (!$(this).hasClass('gigante')) {
@@ -81,47 +109,14 @@ $( function() {
 //		    	$container.isotope('layout');
 				}
 	    },
-	    click      : function() {
-				if (this !== prev_obj) {
-					shrinkBigOldObject();
-	        var $obj = $(this);
-					$obj.removeClass("hover");		
-					enlargeNewObject($obj);
-					prev_obj = this;
-
-					// isotope needs to relayout the items
-			    $container.isotope('layout');					
-				}
-	    }
+	    click      : storyOnClickHandler
 	});		
 	
 	$(".exit").on( {
 	  mouseenter : function() {
 			$(".story").off("click");
 		},
-		click      : function(e) {
-				// if an old object was full sized, shrink it to normal
-				if (prev_obj != null) {	
-					shrinkBigOldObject();
-					prev_obj = null;					
-					// isotope needs to relayout the items
-			    $container.isotope('layout');
-					e.stopImmediatePropagation();
-					$(".story").on("click", function() {
-						if (this !== prev_obj) {
-							shrinkBigOldObject();	
-			        var $obj = $(this);
-							$obj.removeClass("hover");		
-							enlargeNewObject($obj);
-							prev_obj = this;
-
-							// isotope needs to relayout the items
-					    $container.isotope('layout');					
-						}
-			    });
-			
-				} 	
-			}
+		click      : exitOnClickHandler
 	});
 
 });
