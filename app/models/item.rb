@@ -44,7 +44,11 @@ class Item < ActiveRecord::Base
   
   def landscape?
     unless image_large_width.nil? or image_large_height.nil?
-      image_large_width > image_large_height
+      if image_large_width > image_large_height
+        return true
+      else
+        return false
+      end
     else
       return false
     end
