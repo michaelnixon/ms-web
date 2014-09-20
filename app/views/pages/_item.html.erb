@@ -1,7 +1,7 @@
 <div class="story category<%=item.category.id%> <% if item.category.category%>category<%=item.category.category.id%> <% end %><%= "width2" if item.landscape? %>" id="story<%=item.id%>">
 	<div class="preview-on-hover">
 		<figure>
-			<%= image_tag(item.image_url(:thumb), size: item.thumb_geometry) if item.image? %>
+			<%= image_tag(item.image_url(:thumb), size: item.thumb_geometry) if item.image.version_exists?(:thumb) %>
 			<figcaption><p><%=item.name%></p></figcaption>		
 		</figure>
 	</div>
@@ -10,7 +10,7 @@
 		<% if item.category.category %><small><%= item.category.category.name %> :: </small><% end %>
 		<small><%=item.category.name%> :: </small><%= item.name%> <span class="glyphicon glyphicon-remove-circle exit" data-story-id="story<%=item.id%>"></span></h2>
 		<div class="preview-container">
-			<%= image_tag(item.image.url(item.largest_version)) if item.image?%>
+			<%= image_tag(item.image.url(item.largest_version)) if item.image.version_exists?(item.largest_version) %>
 			<div class="preview"><%=raw item.preview %></div> 
 		</div>
 		<div>

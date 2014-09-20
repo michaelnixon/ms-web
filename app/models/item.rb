@@ -33,7 +33,9 @@ class Item < ActiveRecord::Base
   end
     
   def largest_version
-    if image_large_height > image_thumb_height
+    if image_large_height.nil? or image_thumb_height.nil?
+      return :empty
+    elsif image_large_height > image_thumb_height
       return :large
     else
       return :thumb
