@@ -1,13 +1,13 @@
 <div class="story <%= "gone promote" if promoted_item.promoted?%>" id="story<%=promoted_item.id%>">
 	<div class="preview-on-hover">
 		<figure>
-			<%= image_tag promoted_item.image_url(:thumb) if promoted_item.image? %>
+			<%= image_tag(promoted_item.image_url(:thumb), size: promoted_item.thumb_geometry) if promoted_item.image.version_exists?(:thumb) %>
 			<figcaption><p><%=promoted_item.name%></p></figcaption>		
 		</figure>
 	</div>
 	<div class="story-content gone">
 		<h2><%= promoted_item.name%> <span class="glyphicon glyphicon-remove-circle exit" data-story-id="story<%=promoted_item.id%>"></span></h2>
-		<%= image_tag(promoted_item.image.url(:large)) if promoted_item.image?%>
+		<%= image_tag(promoted_item.image.url(promoted_item.largest_version)) if promoted_item.image.version_exists?(promoted_item.largest_version) %>
 		<div class="material">
 		<%=raw promoted_item.preview %>
 		</div>

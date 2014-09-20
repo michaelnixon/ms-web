@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 #  get 'pages/main'
   get 'main' => 'pages#main'
   get 'pages/change_subnav'
+  get 'pages/change_focus'  
   resources :sessions, only: [:new, :create, :destroy]
   get "log_out" => "sessions#destroy", :as => "log_out"
   get "log_in" => "sessions#new", :as => "log_in"

@@ -6,6 +6,13 @@ class PagesController < ApplicationController
     @items = Item.search(params[:search]).shuffle
   end
   
+  def change_focus
+    @item = Item.find(params[:id])
+    respond_to do |format|
+      format.js
+    end    
+  end
+  
   def change_subnav
     if params[:id]
       @category = Category.find_by_id(params[:id])
