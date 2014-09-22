@@ -1,12 +1,14 @@
-	<h2>
-	<% if @item.category.category %><small><%= @item.category.category.name %> :: </small><% end %>
-	<small><%=@item.category.name%> :: </small><%= @item.name%> <span class="glyphicon glyphicon-remove-circle exit" data-story-id="story<%=@item.id%>"></span></h2>
+	<h2><%= truncate(@item.name, length: 50, omission: '...') %>
+	<span class="glyphicon glyphicon-remove-circle exit" data-story-id="story<%=@item.id%>"></span></h2>
 	<div class="preview-container">
 		<%= image_tag(@item.image.url(@item.largest_version)) if @item.image.version_exists?(@item.largest_version) %>
 		<div class="preview"><%= raw @item.preview.force_encoding("UTF-8") %></div> 
 	</div>
 	<div>
-		<div class="category"><ol>
+		<div class="category">
+			<span class="category-name"><small>(<% if @item.category.category %><%= @item.category.category.name %> :: <% end %>
+			<%=@item.category.name%>)</small></span>			
+			<ol>
 			<li><a href="#" class="category-control" data-@item="about" data-control-id="<%=@item.id%>">About</a></li>
 			<% unless @item.image_attachments.empty? %>
 			<li><a href="#" class="category-control" data-@item="images" data-control-id="<%=@item.id%>">Images</a></li>
@@ -17,7 +19,8 @@
 			<% unless @item.doc_attachments.empty? %>
 			<li><a href="#" class="category-control" data-@item="pubs" data-control-id="<%=@item.id%>">Publications</a></li>
 			<% end %>
-			</ol></div>
+			</ol>
+		</div>
 	  <div class="material" id="material<%=@item.id%>">
 	    <div id="about<%=@item.id%>">
 				<div><%= raw @item.body.force_encoding("UTF-8") %></div>
