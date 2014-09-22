@@ -211,12 +211,14 @@ div.preview-on-hover img {
 
 #isotope > .story div.story-content div.preview-container {
 	height: 380px;
+	overflow: hidden;
 }
 #isotope > .story div.story-content div.preview {
 	padding-left: 40px;
 	padding-right: 20px;
+	padding-bottom: 10px;
 	font-size: 16px;
-	padding-top: 5px;
+	padding-top: 10px;
 	overflow: hidden;
 }
 

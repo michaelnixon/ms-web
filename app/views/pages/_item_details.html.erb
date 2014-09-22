@@ -9,8 +9,7 @@
 	</div>
 	<div>
 		<div class="category">
-			<span class="category-name"><small>(<% if @item.category.category %><%= @item.category.category.name %> :: <% end %>
-			<%=@item.category.name%>)</small></span>			
+			<span class="category-name"><small>(<%=@item.category.name%>)</small></span>			
 			<ol>
 			<li><a href="#" class="category-control" data-item="about" data-control-id="<%=@item.id%>">About</a></li>
 			<% unless @item.image_attachments.empty? %>

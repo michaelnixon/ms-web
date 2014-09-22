@@ -5,7 +5,7 @@
 			<% unless item.image? %>
 			<img src="http://placehold.it/200x200"/>
 			<% end %>
-			<figcaption><p><%= truncate(item.name, length: 30, omission: '...')%></p></figcaption>		
+			<figcaption><p><%= truncate(item.name, length: 25, omission: '...')%></p></figcaption>		
 		</figure>
 	</div>
 	<div class="story-content gone" id="story-content-<%=item.id%>">
