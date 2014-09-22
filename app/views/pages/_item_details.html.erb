@@ -1,7 +1,10 @@
 	<h2><%= truncate(@item.name, length: 50, omission: '...') %>
 	<span class="glyphicon glyphicon-remove-circle exit" data-story-id="story<%=@item.id%>"></span></h2>
-	<div class="preview-container" style="height: <%=@item.image_large_height > @item.image_thumb_height ? @item.image_large_height : @item.image_thumb_height%>px;">
-		<%= image_tag(@item.image.url(@item.largest_version)) if @item.image.version_exists?(@item.largest_version) %>
+	<div class="preview-container" style="height: <%=@item.image_large_height > @item.image_thumb_height ? @item.image_large_height : @item.image_thumb_height rescue '200'%>px;">
+		<%= image_tag(@item.image.url(@item.largest_version)) if @item.image? %>
+		<% unless @item.image? %>
+		<img src="http://placehold.it/200x200"/>
+		<% end %>		
 		<div class="preview"><%= raw @item.preview.force_encoding("UTF-8") %></div> 
 	</div>
 	<div>
