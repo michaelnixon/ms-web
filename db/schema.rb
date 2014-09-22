@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140919210512) do
+ActiveRecord::Schema.define(version: 20140922185323) do
 
   create_table "attachments", force: true do |t|
     t.text     "description"
@@ -56,10 +56,10 @@ ActiveRecord::Schema.define(version: 20140919210512) do
     t.integer  "category_id"
     t.string   "image"
     t.boolean  "promoted"
-    t.string   "image_thumb_height"
-    t.string   "image_thumb_width"
-    t.string   "image_large_height"
-    t.string   "image_large_width"
+    t.integer  "image_thumb_height", limit: 255
+    t.integer  "image_thumb_width",  limit: 255
+    t.integer  "image_large_height", limit: 255
+    t.integer  "image_large_width",  limit: 255
   end
 
   add_index "items", ["category_id"], name: "index_items_on_category_id"
