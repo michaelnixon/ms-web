@@ -55,18 +55,16 @@ $( function() {
 				$container.isotope('layout');							 	
 			}
 	});
-			
-	$(".category-control").on({
-			click					: function(e) {
-				id = $(this).attr("data-control-id");
-				item = $(this).attr("data-item");
-				target_id =  item + id;
-				$("#material"+id+">div").slideUp(1);
-				$("#"+target_id).slideDown(1);
-				e.preventDefault();				
-				e.stopImmediatePropagation();				
-			}
-	});
+	
+	function categoryControlOnClickHandler(e) {
+		id = $(this).attr("data-control-id");
+		item = $(this).attr("data-item");
+		target_id =  item + id;
+		$("#material"+id+">div").slideUp(1);
+		$("#"+target_id).slideDown(1);
+		e.preventDefault();				
+		e.stopImmediatePropagation();		
+	}
 	
 	function storyOnClickHandler() {
 		if (this !== prev_obj) {
@@ -77,7 +75,8 @@ $( function() {
 			prev_obj = this;
 			var request = $.ajax({url: "pages/change_focus", type: "GET", data: {id: $(this).attr("data-story-content-id")}});
 			request.done(function( msg ) {
-				$(".exit").on("click", exitOnClickHandler);				
+				$(".exit").on("click", exitOnClickHandler);			
+				$(".category-control").on("click", categoryControlOnClickHandler);					
 			});
 			// isotope needs to relayout the items
 	    $container.isotope('layout');					

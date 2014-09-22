@@ -1,6 +1,6 @@
 	<h2><%= truncate(@item.name, length: 50, omission: '...') %>
 	<span class="glyphicon glyphicon-remove-circle exit" data-story-id="story<%=@item.id%>"></span></h2>
-	<div class="preview-container">
+	<div class="preview-container" style="height: <%=@item.image_large_height > @item.image_thumb_height ? @item.image_large_height : @item.image_thumb_height%>px;">
 		<%= image_tag(@item.image.url(@item.largest_version)) if @item.image.version_exists?(@item.largest_version) %>
 		<div class="preview"><%= raw @item.preview.force_encoding("UTF-8") %></div> 
 	</div>
@@ -9,15 +9,15 @@
 			<span class="category-name"><small>(<% if @item.category.category %><%= @item.category.category.name %> :: <% end %>
 			<%=@item.category.name%>)</small></span>			
 			<ol>
-			<li><a href="#" class="category-control" data-@item="about" data-control-id="<%=@item.id%>">About</a></li>
+			<li><a href="#" class="category-control" data-item="about" data-control-id="<%=@item.id%>">About</a></li>
 			<% unless @item.image_attachments.empty? %>
-			<li><a href="#" class="category-control" data-@item="images" data-control-id="<%=@item.id%>">Images</a></li>
+			<li><a href="#" class="category-control" data-item="images" data-control-id="<%=@item.id%>">Images</a></li>
 			<% end %>
 			<% unless @item.video_attachments.empty? %>
-			<li><a href="#" class="category-control" data-@item="video" data-control-id="<%=@item.id%>">Videos</a></li>
+			<li><a href="#" class="category-control" data-item="video" data-control-id="<%=@item.id%>">Videos</a></li>
 			<% end %>
 			<% unless @item.doc_attachments.empty? %>
-			<li><a href="#" class="category-control" data-@item="pubs" data-control-id="<%=@item.id%>">Publications</a></li>
+			<li><a href="#" class="category-control" data-item="pubs" data-control-id="<%=@item.id%>">Publications</a></li>
 			<% end %>
 			</ol>
 		</div>
