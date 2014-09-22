@@ -9,7 +9,7 @@
 			<div class="item<%= " active" if i.zero? %>">
 				<p><img src="<%= image.file.url%>"/><br/>
 				<%= link_to_if(image.file, "Download the file '#{File.basename(image.file.path)}'", image.file.url) %></p>
-				<p><%= raw image.description%></p>								
+				<p><%= raw image.description.force_encoding("UTF-8")%></p>								
 			</div>
 		<% end %>									
   </div>
