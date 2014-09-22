@@ -2,7 +2,7 @@
 	<div class="preview-on-hover">
 		<figure>
 			<%= image_tag(item.image_url(:thumb), size: item.thumb_geometry) if item.image.version_exists?(:thumb) %>
-			<figcaption><p><%=item.name%></p></figcaption>		
+			<figcaption><p><%= truncate(item.name, length: 30, omission: '...')%></p></figcaption>		
 		</figure>
 	</div>
 	<div class="story-content gone" id="story-content-<%=item.id%>">
