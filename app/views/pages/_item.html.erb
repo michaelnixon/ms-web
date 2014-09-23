@@ -3,7 +3,7 @@
 		<figure>
 			<%= image_tag(item.image_url(:thumb), size: item.thumb_geometry) if item.image? %>
 			<% unless item.image? %>
-			<img src="http://placehold.it/200x200"/>
+			<%= image_tag("MS-photonotavailable.jpg", size: "200x200", alt: "MS no photo available") %>
 			<% end %>
 			<figcaption><p><%= truncate(item.name, length: 25, omission: '...')%></p></figcaption>		
 		</figure>

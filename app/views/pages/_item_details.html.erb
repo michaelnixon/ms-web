@@ -3,7 +3,7 @@
 	<div class="preview-container" style="height: <%=@item.image_large_height > @item.image_thumb_height ? @item.image_large_height : @item.image_thumb_height rescue '200'%>px;">
 		<%= image_tag(@item.image.url(@item.largest_version)) if @item.image? %>
 		<% unless @item.image? %>
-		<img src="http://placehold.it/200x200"/>
+		<%= image_tag("MS-photonotavailable.jpg", size: "200x200", alt: "MS no photo available") %>
 		<% end %>		
 		<div class="preview"><%= raw @item.preview.force_encoding("UTF-8") %></div> 
 	</div>
