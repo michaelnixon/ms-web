@@ -5,7 +5,7 @@
 			<% unless item.image? %>
 			<%= image_tag("MS-photonotavailable.jpg", size: "200x200", alt: "MS no photo available") %>
 			<% end %>
-			<figcaption><p><%= truncate(item.name, length: 25, omission: '...')%></p></figcaption>		
+			<figcaption><p><%= truncate(item.name, length: 22, omission: '...')%></p></figcaption>		
 		</figure>
 	</div>
 	<div class="story-content gone" id="story-content-<%=item.id%>">
