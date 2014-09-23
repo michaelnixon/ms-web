@@ -54,7 +54,7 @@ class ImageUploader < CarrierWave::Uploader::Base
       
   # thumbnails are used on preview page; this code fixes them to be max 200 height and then whatever width is possible, maintaining scale
   version :thumb do
-    process :resize_to_fill => [HEIGHT_OF_PREVIEW_ITEMS, HEIGHT_OF_PREVIEW_ITEMS]
+    process :resize_to_fill => [-1, HEIGHT_OF_PREVIEW_ITEMS]
     process :store_dimensions    
   end
 
