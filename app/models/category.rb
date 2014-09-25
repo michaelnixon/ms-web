@@ -1,7 +1,7 @@
 class Category < ActiveRecord::Base
-  has_many :items
+  has_many :items, :dependent => :nullify
   belongs_to :category
-  has_many :categories
+  has_many :categories, :dependent => :nullify
   validates :name, presence: true
   
   def pretty_name

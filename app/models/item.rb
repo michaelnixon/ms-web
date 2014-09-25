@@ -54,12 +54,12 @@ class Item < ActiveRecord::Base
     end
   end
   # uses SQL like to determine if the name or preview text matches the search term
+  # TODO fix promoted false issue
   def self.search(search)
     if search
-      includes(:category, :attachments).where("name like ? or preview like ? and promoted = ?", "%#{search}%", "%#{search}%", false)
-#      includes(:category, :attachments).where("name like ? or preview like ?", "%#{search}%", "%#{search}%")
+      includes(:category, :attachments).where("(name like ? OR preview like ?) AND category_id IS NOT NULL", "%#{search}%", "%#{search}%")
     else
-      includes(:category, :attachments).where("promoted = ?", false)
+      includes(:category, :attachments).where('category_id IS NOT NULL')
     end
   end
 

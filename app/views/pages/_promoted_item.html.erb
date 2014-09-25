@@ -1,4 +1,4 @@
-<div class="story <%= "gone promote" if promoted_item.promoted?%>" id="story<%=promoted_item.id%>">
+<div class="story <%= "gone promote"%>" id="story<%=promoted_item.id%>">
 	<div class="preview-on-hover">
 		<figure>
 			<%= image_tag(promoted_item.image_url(:thumb), size: promoted_item.thumb_geometry) if promoted_item.image.version_exists?(:thumb) %>

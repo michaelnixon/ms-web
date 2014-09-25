@@ -15,10 +15,9 @@
     <span class="help-block">The item's name is required for identification and appears in larger text in any context once it has been selected</span>
   </div>
   <div class="field form-group">
-    <%= f.label :preview, class: "control-label"  %><br/>
-    <%= f.bootsy_area :preview, editor_options: {html: true}, size: "100x12", class: "form-control" %>
-
-    <span class="help-block">The preview is a small block of text that shows up in preview contexts and as the header image when an item is selected.</span>
+		<%= f.label :category, class: "control-label"  %><br/>
+		<%= f.collection_select :category_id, @categories, :id, :pretty_name, {include_blank: true} %>
+		<span class="help-block">This controls which category contains the item. You can manage the <%= link_to "category list", admin_categories_path %> separately. Leave the category blank to turn the item into a promoted item that acts like a category itself on the menu bar.</span>
   </div>
   <div class="field form-group">
     <%= f.label :image, class: "control-label"  %><br/>
@@ -30,22 +29,15 @@
     <p class="help-block">This image is used in thumbnail format as the preview on the main page, and in full size once the item has been selected. Use the browse button to find a new image for this item.</p>
   </div>
   <div class="field form-group">
+    <%= f.label :preview, class: "control-label"  %><br/>
+    <%= f.bootsy_area :preview, editor_options: {html: true}, size: "100x12", class: "form-control" %>
+    <span class="help-block">The preview is a small block of text that shows up in preview contexts and as the header image when an item is selected.</span>
+  </div>
+  <div class="field form-group">
     <%= f.label :body, class: "control-label"  %><br/>
     <%= f.bootsy_area :body, editor_options: {html: true}, size: "100x12", class: "form-control" %>
 		<span class="help-block">The body is the full text that shows up when an item has been fully selected. You can use the controls to style this content, and you can embed images.</span>
   </div>
-  <div class="field form-group">
-		<%= f.label :category, class: "control-label"  %><br/>
-		<%= f.collection_select :category_id, @categories, :id, :pretty_name %>
-		<span class="help-block">This controls which category contains the item. You can manage the <%= link_to "category list", admin_categories_path %> separately.</span>
-  </div>
-
-  <div class="field form-group">
-    <%= f.label :promoted, class: "control-label"  %><br/>
-    <%= f.check_box :promoted %> <br/>
-    <p class="help-block">A promoted item sticks as a menu item instead of joining the general population. Be careful what this does to the menu bar (i.e. if you add too many promoted items).</p>
-  </div>
-
   <h3>Attached Media Files</h3>
     <p class="help-block">You can upload related files here. They will automatically be sorted into appropriate categories on the front-end. Videos will be played on the site, while other file formats (e.g. PDF) will be linked in the media carousel for browsers to download.</p>
 	<%= f.fields_for :attachments do |attachment_form|  %>
@@ -60,7 +52,6 @@
 			<%= link_to "Download existing attachment", attachment_form.object.file.url if attachment_form.object.file? %><br/>
 	    <%= attachment_form.link_to_remove remove_link_html("Remove this attachment") %>
 	  <% end %>
-		<br/>
 		<p><%= f.link_to_add add_link_html("Add new media attachment"), :attachments %></p>
   <div class="actions">
     <%= f.submit class: "btn btn-primary" %>
