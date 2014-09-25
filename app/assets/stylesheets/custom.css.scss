@@ -154,12 +154,13 @@ margin-right: 100px;
 	background-color: #C0BCBB; 
 	font-size: 42px;
 	text-align: left;
-	vertical-align: bottom;
+	vertical-align: top;
 	color: black;
 	margin: 0;
 	padding-top: 10px;
 	padding-left: 20px;
-	height: 75px;
+	padding-bottom: 10px;
+	min-height: 75px;
 	overflow: hidden;
 }
 div.preview-on-hover img {
@@ -421,8 +422,10 @@ img.gallery {
 }
 
 span.exit {
-	float: right; 
-	padding-right: 20px;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	vertical-align: top;	
 	cursor: pointer;
 }
 

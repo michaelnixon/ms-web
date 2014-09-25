@@ -15,7 +15,7 @@
       <tr>
 	      <td><%= link_to edit_link_html, [:edit, :admin, item] %></td>
         <td><%= link_to remove_link_html, [:admin, item], method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td style="width:1%; white-space:nowrap;"><%= link_to item.name, item_path(item) %></td>
+        <td style="width:1%; white-space:nowrap;"><%= link_to truncate(item.name, length: 45, omission: "..."), item_path(item) %></td>
 				<td><%= item.category.name %></td>
         <td><%= item.preview %></td>
       </tr>
