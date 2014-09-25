@@ -32,3 +32,20 @@ window.Bootsy.options.parserRules.tags.iframe=
     "src": "href"
   }
 };
+
+window.Bootsy.options.parserRules.tags.table= 
+{
+	check_attributes: {
+    "width": "numbers",
+    "height": "numbers",
+		"border": "numbers"
+
+	}
+}
+window.Bootsy.options.parserRules.tags.tr= {}
+window.Bootsy.options.parserRules.tags.td= 
+{
+	check_attributes: {
+    "width": "numbers"
+	}	
+}
