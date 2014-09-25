@@ -10,6 +10,7 @@
 		<%= image_tag(promoted_item.image.url(promoted_item.largest_version)) if promoted_item.image.version_exists?(promoted_item.largest_version) %>
 		<div class="material">
 		<%=raw promoted_item.preview %>
+		<%=raw promoted_item.body %>		
 		</div>
 	</div>
 </div>
