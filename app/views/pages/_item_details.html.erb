@@ -1,4 +1,4 @@
-	<h2><%= truncate(@item.name, length: 40, omission: '') %>
+	<h2><%= truncate(@item.name, length: 45, omission: '...') %>
 	<span class="glyphicon glyphicon-remove-circle exit" data-story-id="story<%=@item.id%>"></span></h2>
 	<div class="preview-container" style="height: <%=@item.image_large_height > @item.image_thumb_height ? @item.image_large_height : @item.image_thumb_height rescue '200'%>px;">
 		<%= image_tag(@item.image.url(@item.largest_version)) if @item.image? %>
