@@ -4,6 +4,10 @@ $( function() {
 		layoutMode: 'fitRows',
     itemSelector: '.story',
   });
+	// initial filtering
+	var selector = $('#home-nav').attr('data-filter');
+	$container.isotope({ filter: selector });
+
 	// controls the filtering
 	$('.nav-items a').click(function(){
 		var selector = $(this).attr('data-filter');
@@ -145,3 +149,4 @@ $(document).ready(function () {
 		// activate media plugin on all video links
 		$('a.media').media({width: 640, bgColor: "#E5E4E0"});       
 });
+

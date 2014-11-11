@@ -14,7 +14,7 @@
 		</div>
 		<div class="collapse navbar-collapse" id="navbarCollapse">
 	    <ul class="nav navbar-nav nav-items">
-	      <li class="active"><a href="#" data-filter=".category<%= home_category_id %>" class="nav_elem">Home</a></li>
+	      <li class="active"><a href="#" data-filter="<%= home_category %>" class="nav_elem" id="home-nav">Home</a></li>
 				<% @promoted_items.each do |item| %>
 					<li><a href="#" class="nav_elem promoted" data-item-id="<%= item.id %>"><%= item.name %></a></li>
 				<% end %>

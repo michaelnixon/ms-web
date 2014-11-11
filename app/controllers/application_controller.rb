@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   helper_method :current_user
-  helper_method :home_category_id
+  helper_method :home_category
   
   protected
   
@@ -28,9 +28,9 @@ class ApplicationController < ActionController::Base
   private
   
   # Editorial decision: home content should only include Steering Committee (i.e. PI's). 
-  def home_category_id
+  def home_category
     begin
-      Category.find_by_name("Steering Committee").id
+      ".category" + Category.find_by_name("Steering Committee").id
     rescue
       '*' # Returning * includes everything in case the Steering Committee is not set up
     end
