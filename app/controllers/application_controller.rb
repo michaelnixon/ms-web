@@ -29,7 +29,6 @@ class ApplicationController < ActionController::Base
   
   # Editorial decision: home content should only include Steering Committee (i.e. PI's). 
   def home_category_id
-    p 'FOÒ12312312312312312312313123123'
     begin
       Category.find_by_name("Steering Committee").id
     rescue
