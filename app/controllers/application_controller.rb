@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   helper_method :current_user
+  helper_method :home_category_id
   
   protected
   
@@ -25,7 +26,17 @@ class ApplicationController < ActionController::Base
   end
   
   private
-
+  
+  # Editorial decision: home content should only include Steering Committee (i.e. PI's). 
+  def home_category_id
+    p 'FOÒ12312312312312312312313123123'
+    begin
+      Category.find_by_name("Steering Committee").id
+    rescue
+      '*' # Returning * includes everything in case the Steering Committee is not set up
+    end
+  end
+  
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
