@@ -41,18 +41,19 @@
   <h3>Attached Media Files</h3>
     <p class="help-block">You can upload related files here. They will automatically be sorted into appropriate categories on the front-end. Videos will be played on the site, while other file formats (e.g. PDF) will be linked in the media carousel for browsers to download.</p>
 	<%= f.fields_for :attachments do |attachment_form|  %>
+	<h4>Attachment</h4>
+		  <p>
+		  <%= attachment_form.label :file %><br />
+			<%= link_to attachment_form.object.file.file.filename, attachment_form.object.file.url if attachment_form.object.file? %><br/>
+		  <%= attachment_form.link_to_remove remove_link_html("Remove this attachment") %>		
+		  <%= attachment_form.file_field :file %>	
+		  </p>
 	    <p>
 	    <%= attachment_form.label :description %><br />
 	    <%= attachment_form.bootsy_area :description, editor_options: {html: true}, size: "100x12", class: "form-control" %>
 	    </p>
-	    <p>
-	    <%= attachment_form.label :file %><br />
-	    <%= attachment_form.file_field :file %>	
-	    </p>
-			<%= link_to "Download existing attachment", attachment_form.object.file.url if attachment_form.object.file? %><br/>
-	    <%= attachment_form.link_to_remove remove_link_html("Remove this attachment") %>
 	  <% end %>
-		<p><%= f.link_to_add add_link_html("Add new media attachment"), :attachments %></p>
+		<p style="margin-top: 20px;"><%= f.link_to_add add_link_html("Add new media attachment"), :attachments %></p>
   <div class="actions">
     <%= f.submit class: "btn btn-primary" %>
   </div>
