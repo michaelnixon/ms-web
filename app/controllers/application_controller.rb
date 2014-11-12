@@ -29,9 +29,8 @@ class ApplicationController < ActionController::Base
   
   # Editorial decision: home content should only include Steering Committee (i.e. PI's). 
   def home_category
-    logger.debug 'message'
     begin
-      ".category" + Category.find_by_name("Steering Committee").id
+      ".category#{Category.find_by_name("Steering Committee").id}"
     rescue
       '*' # Returning * includes everything in case the Steering Committee is not set up
     end
