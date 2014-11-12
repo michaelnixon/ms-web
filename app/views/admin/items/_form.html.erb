@@ -15,9 +15,9 @@
     <span class="help-block">The item's name is required for identification and appears in larger text in any context once it has been selected</span>
   </div>
   <div class="field form-group">
-		<%= f.label :category, class: "control-label"  %><br/>
-		<%= f.collection_select :category_id, @categories, :id, :pretty_name, {include_blank: true} %>
-		<span class="help-block">This controls which category contains the item. You can manage the <%= link_to "category list", admin_categories_path %> separately. Leave the category blank to turn the item into a promoted item that acts like a category itself on the menu bar.</span>
+	<%= f.label :categories, class: "control-label"%><br/>
+	<%= f.collection_select :category_ids, @categories, :id, :pretty_name, {:include_blank => 'None'}, {:multiple => true} %>
+		<span class="help-block">This controls which category contains the item. You can manage the <%= link_to "category list", admin_categories_path %> separately. Leave the category blank to turn the item into a promoted item that acts like a category itself on the menu bar. Hold the ctrl/cmd key while selecting names to choose more than one.</span>
   </div>
   <div class="field form-group">
     <%= f.label :image, class: "control-label"  %><br/>

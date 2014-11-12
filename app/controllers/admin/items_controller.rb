@@ -73,6 +73,6 @@ class Admin::ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:name, :body, :preview, :bootsy_image_gallery_id, :image, :category_id, :remove_image, attachments_attributes: [:description, :file, :_destroy, :id])
+      params.require(:item).permit(:name, :body, :preview, :bootsy_image_gallery_id, :image, :category_id, :remove_image, attachments_attributes: [:description, :file, :_destroy, :id], :category_ids => [])
     end
 end

@@ -4,6 +4,7 @@ class Item < ActiveRecord::Base
   has_many :attachments, :as => :attachable, dependent: :destroy
   accepts_nested_attributes_for :attachments, :allow_destroy => true
   belongs_to :category
+  has_and_belongs_to_many :categories
   validates :name, presence: true
   validates :preview, presence: true
   
