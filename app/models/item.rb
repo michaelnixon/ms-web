@@ -3,7 +3,6 @@ class Item < ActiveRecord::Base
   mount_uploader :image, ImageUploader
   has_many :attachments, :as => :attachable, dependent: :destroy
   accepts_nested_attributes_for :attachments, :allow_destroy => true
-  belongs_to :category
   has_and_belongs_to_many :categories
   validates :name, presence: true
   validates :preview, presence: true
@@ -58,9 +57,9 @@ class Item < ActiveRecord::Base
   # TODO fix promoted false issue
   def self.search(search)
     if search
-      includes(:category, :attachments).where("(name like ? OR preview like ?) AND category_id IS NOT NULL", "%#{search}%", "%#{search}%")
+      includes(:categories, :attachments).where("(name like ? OR preview like ?) AND category_id IS NOT NULL", "%#{search}%", "%#{search}%")
     else
-      includes(:category, :attachments).where('category_id IS NOT NULL')
+      includes(:categories, :attachments).where('category_id IS NOT NULL')
     end
   end
 

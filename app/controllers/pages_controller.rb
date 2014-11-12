@@ -1,7 +1,8 @@
 class PagesController < ApplicationController
   def main
     @categories = Category.find_all_top_level
-    @promoted_items = Item.where(category_id: nil).order("name")
+    @promoted_items = Item.all.select {|i| i.categories.empty? }
+    #Item.where(category_id: nil).order("name")
     @sub_categories = []
     @items = Item.search(params[:search]).shuffle
   end
