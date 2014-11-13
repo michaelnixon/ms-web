@@ -57,9 +57,11 @@ class Item < ActiveRecord::Base
   # TODO fix promoted false issue
   def self.search(search)
     if search
-      includes(:categories, :attachments).where("(name like ? OR preview like ?) AND category_id IS NOT NULL", "%#{search}%", "%#{search}%")
+#      includes(:categories, :attachments).where("(name like ? OR preview like ?) AND categories IS NOT NULL", "%#{search}%", "%#{search}%")
+      joins(:categories).where("(name like ? OR preview like ?)", "%#{search}%").distinct
     else
-      includes(:categories, :attachments).where('category_id IS NOT NULL')
+      p 'foo'
+      joins(:categories).distinct
     end
   end
 

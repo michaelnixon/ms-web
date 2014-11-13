@@ -54,7 +54,7 @@ $( function() {
 				$obj.toggleClass("gone");		
 				enlargeNewObject($obj);
 				prev_obj = $obj;
-				e.stopImmediatePropagation();
+				//e.stopImmediatePropagation();
 				// isotope needs to relayout the items
 				$container.isotope('layout');							 	
 			}

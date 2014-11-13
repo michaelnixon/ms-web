@@ -1,9 +1,8 @@
 <% provide(:title, @item.name) %>
 <div class="story-content">
-	<h2>
-	<% if @item.category.category %><%= @item.category.category.name %> :: <% end %>
-	<%= @item.category.name%> :: <%= @item.name%></h2><br/>
-	<%= image_tag(item.image.url(:large)) if item.image?%>
+	<h2><%= @item.name%></h2><br/>
+	<p><% unless @item.categories.empty? %><%= @item.categories.map{|category| category.name }.join(", ")%><% end%></p>
+	<%= image_tag(@item.image.url(:large)) if @item.image?%>
 	<p class="preview"><%=raw @item.preview %></p>
 	<div>
 		<div class="category"><ol>

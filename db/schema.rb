@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141112024506) do
+ActiveRecord::Schema.define(version: 20141113212620) do
 
   create_table "attachments", force: true do |t|
     t.text     "description"
@@ -58,15 +58,12 @@ ActiveRecord::Schema.define(version: 20141112024506) do
     t.text     "preview"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "category_id"
     t.string   "image"
     t.integer  "image_thumb_height", limit: 255
     t.integer  "image_thumb_width",  limit: 255
     t.integer  "image_large_height", limit: 255
     t.integer  "image_large_width",  limit: 255
   end
-
-  add_index "items", ["category_id"], name: "index_items_on_category_id"
 
   create_table "users", force: true do |t|
     t.string   "email"

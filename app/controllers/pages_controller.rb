@@ -4,7 +4,7 @@ class PagesController < ApplicationController
     @promoted_items = Item.all.select {|i| i.categories.empty? }
     #Item.where(category_id: nil).order("name")
     @sub_categories = []
-    @items = Item.search(params[:search]).shuffle
+    @items = Item.search(params[:search]).reject {|i| i.categories.empty?}.shuffle
   end
   
   def change_focus

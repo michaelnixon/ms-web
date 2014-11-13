@@ -5,7 +5,7 @@
     <tr>
 	    <th colspan="2"></th>
       <th>Name</th>
-			<th>Category</th>
+			<th>Categories</th>
       <th>Preview Text</th>
     </tr>
   </thead>
@@ -16,8 +16,9 @@
 	      <td><%= link_to edit_link_html, [:edit, :admin, item] %></td>
         <td><%= link_to remove_link_html, [:admin, item], method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <td style="width:1%; white-space:nowrap;"><%= link_to truncate(item.name, length: 45, omission: "..."), item_path(item) %></td>
-				<td><% unless item.category.nil? %><%= item.category.name %><% else %>NO CATEGORY (Promoted Item)<% end %></td>
+				<td><% unless item.categories.empty? %><%= item.categories.map{|category| category.name }.join(", ")%><% else %>NO CATEGORIES (Promoted Item)<% end %></td>
         <td><%= truncate(item.preview, length: 90, omission: "...") %></td>
+
       </tr>
     <% end %>
   </tbody>
