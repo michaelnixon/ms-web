@@ -60,7 +60,6 @@ class Item < ActiveRecord::Base
 #      includes(:categories, :attachments).where("(name like ? OR preview like ?) AND categories IS NOT NULL", "%#{search}%", "%#{search}%")
       joins(:categories).where("(name like ? OR preview like ?)", "%#{search}%").distinct
     else
-      p 'foo'
       joins(:categories).distinct
     end
   end

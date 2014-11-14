@@ -17,11 +17,11 @@ class Category < ActiveRecord::Base
   end
   
   def self.find_all_top_level
-    Category.where('category' => nil).order("name")
+    Category.where('category' => nil).order(position: :asc, name: :asc)
   end
   
   def self.find_all_children id
-    Category.where('category_id' => id).order("name")
+    Category.where('category_id' => id).order(position: :asc, name: :asc)
   end
   
   def self.find_all_nested

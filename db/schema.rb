@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141113212620) do
+ActiveRecord::Schema.define(version: 20141113232104) do
 
   create_table "attachments", force: true do |t|
     t.text     "description"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20141113212620) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "category_id"
+    t.integer  "position",    default: 100
   end
 
   add_index "categories", ["category_id"], name: "index_categories_on_category_id"

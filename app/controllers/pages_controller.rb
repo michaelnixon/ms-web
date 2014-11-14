@@ -17,7 +17,7 @@ class PagesController < ApplicationController
   def change_subnav
     if params[:id]
       @category = Category.find_by_id(params[:id])
-      @sub_categories = @category.categories
+      @sub_categories = @category.categories.order(position: :asc, name: :asc)
     else
       @category = nil
       @sub_categories = []

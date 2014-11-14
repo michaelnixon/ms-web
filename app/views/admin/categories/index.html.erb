@@ -10,11 +10,11 @@
   <tbody>
     <% @categories.each do |category| %>
       <tr>
-        <td><%= link_to edit_link_html, [:edit, :admin, category] %> <%= link_to remove_link_html, [:admin, category], method: :delete, data: { confirm: 'Are you sure?' }%> <%= category.name %></td>
+        <td><%= link_to edit_link_html, [:edit, :admin, category] %> <%= link_to remove_link_html, [:admin, category], method: :delete, data: { confirm: 'Are you sure?' }%> <%= category.name %> (Position: <%= category.position %>)</td>
       </tr>
 			<% category.categories.each do |subcat| %>
 				<tr>
-					<td>-- <%= link_to edit_link_html, [:edit, :admin, subcat] %> <%= link_to remove_link_html, [:admin, subcat], method: :delete, data: { confirm: 'Are you sure? This will turn any remaining items with this category into PROMOTED items on the menu' }%> <%= subcat.name %></td>
+					<td>-- <%= link_to edit_link_html, [:edit, :admin, subcat] %> <%= link_to remove_link_html, [:admin, subcat], method: :delete, data: { confirm: 'Are you sure? This will turn any remaining items with this category into PROMOTED items on the menu' }%> <%= subcat.name %> (Position: <%= subcat.position %>)</td>
 				</tr>
 			<% end %>
     <% end %>
