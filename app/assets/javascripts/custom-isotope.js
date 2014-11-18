@@ -3,7 +3,7 @@ $( function() {
   var $container = $('#isotope').isotope({
 		layoutMode: 'fitRows',
     itemSelector: '.story',
-  });
+  });				
 	// initial filtering
 	var selector = $('#home-nav').attr('data-filter');
 	$container.isotope({ filter: selector });
@@ -129,13 +129,6 @@ $( function() {
 
 });
 
-// sets up the carousels for each of the items
-$(document).ready(function(){
-  $('.carousel').carousel({
-    interval: false
-  });
-});
-
 // controls changing the active class on nav links so that the currently selected one is underlined
 $(document).ready(function () {
     $('.nav-items li a').click(function(e) {
@@ -153,4 +146,15 @@ $(document).ready(function () {
     });
 		// activate media plugin on all video links
 		$('a.media').media({width: 640, bgColor: "#E5E4E0"});       
+		
+		// sets up the carousels for each of the items
+	  $('.carousel').carousel({
+	    interval: false
+	  });
+
+		$(".story").each(function(index, value) {
+			var numRand = Math.floor(Math.random() * 10 + 10);
+			$(this).css('margin-right', numRand+"%");
+			$('#isotope').isotope('layout');							 	
+		});
 });
