@@ -12,6 +12,9 @@
 			<span class="category-name"><small><%@item.categories.each do |c|%>(<%= c.name%>) <% end %></small></span>			
 			<ol>
 			<li><a href="#" class="category-control" data-item="about" data-control-id="<%=@item.id%>">About</a></li>
+			<% unless @item.connecteds.empty? %>
+			<li><a href="#" class="category-control" data-item="connections" data-control-id="<%=@item.id%>">Connections</a></li>
+			<% end %>
 			<% unless @item.image_attachments.empty? %>
 			<li><a href="#" class="category-control" data-item="images" data-control-id="<%=@item.id%>">Images</a></li>
 			<% end %>
@@ -27,6 +30,15 @@
 	    <div id="about<%=@item.id%>">
 				<div><%= raw @item.body.force_encoding("UTF-8") %></div>
 	    </div>
+			<% unless @item.connecteds.empty? %>
+			<div class="gone" id="connections<%=@item.id%>">
+				<ul>
+				<% @item.connecteds.each do |c| %>
+					<li><%= link_to c.name, item_path(c)%></li>
+				<% end %>
+				</ul>
+			</div>			
+			<% end %>
 			<% unless @item.image_attachments.empty? %>		
 			<div class="gone" id="images<%=@item.id%>">
 					<%= render partial: "image_carousel", locals: {item: @item} %>

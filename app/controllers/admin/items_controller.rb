@@ -17,11 +17,13 @@ class Admin::ItemsController < ApplicationController
   def new
     @item = Item.new
     @categories = Category.find_all_nested
+    @connectable_items = Item.all
   end
 
   # GET /items/1/edit
-  def edit
+  def edit  
     @categories = Category.find_all_nested
+    @connectable_items = Item.all
   end
 
   # POST /items
@@ -31,6 +33,7 @@ class Admin::ItemsController < ApplicationController
     @categories = Category.find_all_nested
     respond_to do |format|
       if @item.save
+        # add
         format.html { redirect_to admin_items_url, notice: 'Item was successfully created.' }
         format.json { render :show, status: :created, location: [:admin,@item] }
       else
@@ -46,6 +49,7 @@ class Admin::ItemsController < ApplicationController
     @categories = Category.find_all_nested
     respond_to do |format|
       if @item.update(item_params)
+        # add
         format.html { redirect_to admin_items_url, notice: 'Item was successfully updated.' }
         format.json { render :show, status: :ok, location: [:admin,@item] }
       else
@@ -73,6 +77,6 @@ class Admin::ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:name, :body, :preview, :bootsy_image_gallery_id, :image, :category_id, :remove_image, attachments_attributes: [:description, :file, :_destroy, :id], :category_ids => [])
+      params.require(:item).permit(:name, :body, :preview, :bootsy_image_gallery_id, :image, :remove_image, attachments_attributes: [:description, :file, :_destroy, :id], :connected_ids => [], :category_ids => [])
     end
 end

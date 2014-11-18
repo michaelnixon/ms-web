@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141113232104) do
+ActiveRecord::Schema.define(version: 20141114035429) do
 
   create_table "attachments", force: true do |t|
     t.text     "description"
@@ -51,6 +51,11 @@ ActiveRecord::Schema.define(version: 20141113232104) do
   create_table "categories_items", id: false, force: true do |t|
     t.integer "item_id",     null: false
     t.integer "category_id", null: false
+  end
+
+  create_table "connections", force: true do |t|
+    t.integer "item_id"
+    t.integer "connected_id"
   end
 
   create_table "items", force: true do |t|

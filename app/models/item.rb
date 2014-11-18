@@ -7,6 +7,20 @@ class Item < ActiveRecord::Base
   validates :name, presence: true
   validates :preview, presence: true
   
+  # create a many to many bi-directional association with Items through a join table
+  has_many :connections, :foreign_key => "item_id", :class_name => "Connection"
+  has_many :connecteds, :through => :connections 
+
+  def connect(item)
+    unless self.connecteds.include? item
+      self.connecteds << item
+      item.connecteds << self
+    end
+  end
+  
+  def short_name
+    name.truncate(50)
+  end
   # provide a slightly nicer url for referencing individual items
   def to_param
     [id, name.parameterize].join("-")

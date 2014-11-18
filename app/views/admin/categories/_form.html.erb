@@ -22,7 +22,7 @@
 		<%= f.label :category, class: "control-label"  %><br/>
 		<%= f.collection_select :category_id, @top_level_categories, :id, :name, {include_blank: true} %>
 		<span class="help-block">This controls which top-level category contains the category. Only use this to produce a hierarchy of categories, such as "Grad Students"", which belong to "People".</span>
-	</div>	
+	</div>		
   <div class="actions">
     <%= f.submit class: "btn btn-primary" %>
   </div>

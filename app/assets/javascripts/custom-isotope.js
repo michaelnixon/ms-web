@@ -10,6 +10,10 @@ $( function() {
 
 	// controls the filtering
 	$('.nav-items a').click(function(){
+		if (prev_obj != null) {	
+			shrinkBigOldObject();
+			prev_obj = null;
+		}
 		var selector = $(this).attr('data-filter');
 		$container.isotope({ 
 		filter: selector,
@@ -150,4 +154,3 @@ $(document).ready(function () {
 		// activate media plugin on all video links
 		$('a.media').media({width: 640, bgColor: "#E5E4E0"});       
 });
-

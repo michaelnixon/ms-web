@@ -16,7 +16,7 @@
   </div>
   <div class="field form-group">
 	<%= f.label :categories, class: "control-label"%><br/>
-	<%= f.collection_select :category_ids, @categories, :id, :pretty_name, {:include_blank => 'None'}, {:multiple => true} %>
+	<%= f.collection_select :category_ids, @categories, :id, :pretty_name, {:include_blank => 'None'}, {multiple: true, size: @categories.size+1} %>
 		<span class="help-block">This controls which category contains the item. You can manage the <%= link_to "category list", admin_categories_path %> separately. Leave the category blank to turn the item into a promoted item that acts like a category itself on the menu bar. Hold the ctrl/cmd key while selecting names to choose more than one.</span>
   </div>
   <div class="field form-group">
@@ -38,6 +38,11 @@
     <%= f.bootsy_area :body, editor_options: {html: true}, size: "100x12", class: "form-control" %>
 		<span class="help-block">The body is the full text that shows up when an item has been fully selected. You can use the controls to style this content, and you can embed images.</span>
   </div>
+	<div class="field form-group">
+		<%= f.label :connections, class: "control-label"  %><br/>
+		<%= f.collection_select :connected_ids, @connectable_items, :id, :short_name, {include_blank: "None"}, {multiple: true, size: 10}%>
+		<span class="help-block">This controls links between items which appear in their main profile.</span>
+	</div>
   <h3>Attached Media Files</h3>
     <p class="help-block">You can upload related files here. They will automatically be sorted into appropriate categories on the front-end. Videos will be played on the site, while other file formats (e.g. PDF) will be linked in the media carousel for browsers to download.</p>
 	<%= f.fields_for :attachments do |attachment_form|  %>
