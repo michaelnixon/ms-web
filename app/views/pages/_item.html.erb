@@ -1,4 +1,4 @@
-<div class="story <% item.categories.each do |category| %><%= "category#{category.id}"%> <% if category.category%><%="category#{category.category.id}"%> <% end %>categoryControlOnClickHandler<% end %><%= "width2" if item.landscape? %>" id="story<%=item.id%>" data-story-content-id="<%=item.id%>">
+<div class="story <% item.categories.each do |category| %><%= "category#{category.id}"%> <% if category.category%><%="category#{category.category.id}"%> <% end %> <% end %><%= " width2" if item.landscape? %>" id="story<%=item.id%>" data-story-content-id="<%=item.id%>">
 	<div class="preview-on-hover">
 		<figure>
 			<%= image_tag(item.image_url(:thumb), size: item.thumb_geometry) if item.image? %>

@@ -155,6 +155,7 @@ $(document).ready(function () {
 		$(".story").each(function(index, value) {
 			var numRand = Math.floor(Math.random() * 10 + 10);
 			$(this).css('margin-right', numRand+"%");
+			$(this).css('margin-bottom', numRand+"%");			
 			$('#isotope').isotope('layout');							 	
 		});
 });
