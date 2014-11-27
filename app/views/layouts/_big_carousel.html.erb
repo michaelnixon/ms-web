@@ -1,0 +1,15 @@
+<div id="main-carousel" class="carousel slide" data-ride="carousel"><!-- class of slide for animation -->
+  <div class="carousel-inner">
+		<% @banner_items.each_with_index do |banner, i| %>
+			<div class="<%= " active" if i.zero? %>"> <!-- item class makes it disappear but is needed so get it back-->
+				<% image_tag(banner.image_url(:banner)) if banner.image? %><img src="http://placehold.it/1400x300/000000/ffffff" height="300" width="1400"/>
+				<div class="carousel-caption"><% banner.name %>Test carousel</div>								
+			</div>
+		<% end %>									
+  </div>
+	<ol class="carousel-indicators">
+		<% @banner_items.each_with_index do |banner, i| %>
+			<li data-target="#main-carousel-<%=banner.id%>" data-slide-to="<%= i %>" class="<%= "active" if i.zero? %>"></li>
+		<% end %>
+	</ol>
+</div>

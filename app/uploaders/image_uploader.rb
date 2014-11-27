@@ -44,8 +44,14 @@ class ImageUploader < CarrierWave::Uploader::Base
   #   # do something
   # end
   VERY_BIG_STUPID_NUMBER_THIS_IS_IMAGE_MAGICK_I_HATE_IT = 1000
+  WIDTH_OF_BANNER_ITEMS = 1200
   HEIGHT_OF_PREVIEW_ITEMS = 200
   HEIGHT_OF_FOCUS_ITEMS = 380
+  
+  version :banner do
+    process :resize_to_limit => [WIDTH_OF_BANNER_ITEMS, -1]
+    process :store_dimensions 
+  end
   
   version :large do
     process :resize_to_limit => [VERY_BIG_STUPID_NUMBER_THIS_IS_IMAGE_MAGICK_I_HATE_IT, HEIGHT_OF_FOCUS_ITEMS]

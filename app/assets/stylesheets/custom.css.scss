@@ -288,7 +288,7 @@ div.material {
 	overflow-y: auto;
 }
 
-ol.carousel-indicators {
+ol.carousel-indicators.override {
   position: relative;
   left: 50%;
   top: 0;
@@ -301,11 +301,11 @@ ol.carousel-indicators {
 }
 
 
-ol.carousel-indicators li{
+ol.carousel-indicators.override li{
 	background-color: #F7F6F2;    
 }
 
-ol.carousel-indicators li.active {
+ol.carousel-indicators.override li.active {
 	background-color: #000;    
 }
 .item {   
@@ -381,6 +381,9 @@ div.secondary {
 	background-color: black;
 }
 
+.navbar {
+	margin-bottom: 0px;
+}
 #navbarCollapse {
 	height: 56px !important;
 }
@@ -403,6 +406,10 @@ div.secondary {
 }
 #subnavbar li.active a {
 	background-color: black;
+}
+
+div#main-carousel {
+	margin-bottom: 10px;
 }
 
 img.gallery {

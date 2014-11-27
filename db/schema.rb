@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141114035429) do
+ActiveRecord::Schema.define(version: 20141126060325) do
 
   create_table "attachments", force: true do |t|
     t.text     "description"
@@ -65,10 +65,13 @@ ActiveRecord::Schema.define(version: 20141114035429) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image"
-    t.integer  "image_thumb_height", limit: 255
-    t.integer  "image_thumb_width",  limit: 255
-    t.integer  "image_large_height", limit: 255
-    t.integer  "image_large_width",  limit: 255
+    t.integer  "image_thumb_height",  limit: 255
+    t.integer  "image_thumb_width",   limit: 255
+    t.integer  "image_large_height",  limit: 255
+    t.integer  "image_large_width",   limit: 255
+    t.boolean  "featured"
+    t.integer  "image_banner_height"
+    t.integer  "image_banner_width"
   end
 
   create_table "users", force: true do |t|

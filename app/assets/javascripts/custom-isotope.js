@@ -68,7 +68,7 @@ $( function() {
 	function categoryControlOnClickHandler(e) {
 		id = $(this).attr("data-control-id");
 		item = $(this).attr("data-item");
-		target_id =  item + id;
+		target_id = item + id;
 		$("#material"+id+">div").slideUp(1);
 		$("#"+target_id).slideDown(1);
 		e.preventDefault();				
@@ -153,10 +153,9 @@ $(document).ready(function () {
 	  });
 
 		$(".story").each(function(index, value) {
-			var numRand = Math.floor((Math.random() * 120) + 50);
-			$(this).css('margin-right', numRand+"px");
-			var numRand = Math.floor((Math.random() * 100) + 50);
-			$(this).css('margin-bottom', numRand+"px");			
+
+			var numRand = Math.floor((Math.random() * 60) + 80);
+			$(this).css('margin-left', numRand+"px");			
 			$('#isotope').isotope('layout');							 	
 		});
 });

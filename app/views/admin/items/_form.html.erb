@@ -29,6 +29,11 @@
     <p class="help-block">This image is used in thumbnail format as the preview on the main page, and in full size once the item has been selected. Use the browse button to find a new image for this item.</p>
   </div>
   <div class="field form-group">
+	<%= f.label :featured_item, class: "control-label" %><br/>
+	<%= f.check_box :featured %> 
+    <p class="help-block">Should this item be featured as a banner on the main page?</p>	
+	</div>
+  <div class="field form-group">
     <%= f.label :preview, class: "control-label"  %><br/>
     <%= f.bootsy_area :preview, editor_options: {html: true}, size: "100x12", class: "form-control" %>
     <span class="help-block">The preview is a small block of text that shows up in preview contexts and as the header image when an item is selected.</span>

@@ -1,5 +1,5 @@
 <div id="carousel-video<%=item.id%>" class="carousel slide inner" data-ride="carousel"><!-- class of slide for animation -->
-	<ol class="carousel-indicators">
+	<ol class="carousel-indicators override">
 		<% item.video_attachments.each_with_index do |vid, i| %>
 			<li data-target="#carousel-video<%=item.id%>" data-slide-to="<%= i %>" class="<%= "active" if i.zero? %>"></li>
 		<% end %>

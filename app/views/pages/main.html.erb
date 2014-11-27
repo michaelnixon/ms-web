@@ -1,4 +1,5 @@
 <% provide(:title, 'Main') %>
+<%= render 'layouts/big_carousel'%>
 <div id="isotope">
 	<%= render partial: 'promoted_item', collection: @promoted_items %>	
 	<%= render partial: 'item', collection: @items %>
