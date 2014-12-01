@@ -2,7 +2,7 @@
   <div class="carousel-inner">
 		<% @banner_items.each_with_index do |banner, i| %>
 			<div class="<%= " active" if i.zero? %>"> <!-- item class makes it disappear but is needed so get it back-->
-				<% image_tag(banner.image_url(:banner)) if banner.image? %><img src="http://placehold.it/1400x300/000000/ffffff" height="300" width="1400"/>
+				<% image_tag(banner.image_url(:banner)) if banner.image? %><img src="http://placehold.it/1800x400/000000/ffffff" height="400" width="1800"/>
 				<div class="carousel-caption"><% banner.name %>Test carousel</div>								
 			</div>
 		<% end %>									
